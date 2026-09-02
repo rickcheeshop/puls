@@ -1417,7 +1417,7 @@ const STORAGE_KEY = 'wheel_codes';
                     var statusEmoji = item.status === 'win' ? 'ได้รับรางวัล' : 'ไม่ได้รางวัล';
                     return '<div class="dashboard-history-item ' + item.status + '">' +
                         '<div class="item-code">' + escapeCodeHtml(item.code) + ' <span class="status-dot">' + statusEmoji + '</span></div>' +
-                        '<div class="item-prize">' + escapeCodeHtml(getFriendlyPrizeName(item.prize)) + '</div>' +
+                        '<div class="item-prize"><span class="item-prize-label">ได้รับ:</span><span class="item-prize-value">' + escapeCodeHtml(getFriendlyPrizeName(item.prize)) + '</span></div>' +
                         '<div class="item-time"><b>' + timeStr + '</b><small>' + dateStr + '</small></div>' +
                         '</div>';
                 }).join('');

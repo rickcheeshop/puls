@@ -1,0 +1,42 @@
+/* Rick Chee Shop V7.8.8 — Review form clean fields */
+[data-page-view="reviews"] .review-form-group,
+[data-page-view="reviews"] .review-image-upload{
+  background:transparent!important;
+  box-shadow:none!important;
+}
+
+/* Labels requested to have no badge/card background. */
+[data-page-view="reviews"] .review-form-group>label:first-child,
+[data-page-view="reviews"] .review-image-upload>label:first-child{
+  width:auto!important;
+  min-height:0!important;
+  margin:0!important;
+  padding:0!important;
+  border:0!important;
+  border-radius:0!important;
+  background:transparent!important;
+  box-shadow:none!important;
+}
+
+/* Name / Rating / Comment fields are transparent, with the outline retained for readability. */
+[data-page-view="reviews"] .review-form input,
+[data-page-view="reviews"] .review-form select,
+[data-page-view="reviews"] .review-form textarea{
+  background:transparent!important;
+  background-image:none!important;
+  box-shadow:none!important;
+}
+[data-page-view="reviews"] .review-form select option{
+  background:#0a0a0c;
+  color:#f3ead8;
+}
+
+/* Image review area and upload action: no filled background. */
+[data-page-view="reviews"] .review-image-upload{
+  background:transparent!important;
+}
+[data-page-view="reviews"] .file-input-button,
+[data-page-view="reviews"] .file-input-button:hover{
+  background:transparent!important;
+  box-shadow:none!important;
+}

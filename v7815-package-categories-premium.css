@@ -1,0 +1,316 @@
+/* Rick Chee Shop V7.8.15 — Premium package category selector */
+.products-catalog-page-v75{
+  --v7815-cat-gold:var(--pro-primary,#d6aa4d);
+  --v7815-cat-gold-hi:#f4d98b;
+  --v7815-cat-text:var(--pro-text,#f6eddc);
+  --v7815-cat-muted:var(--pro-muted,rgba(246,237,220,.65));
+  --v7815-cat-line:color-mix(in srgb,var(--v7815-cat-gold) 24%,transparent);
+  --v7815-cat-line-strong:color-mix(in srgb,var(--v7815-cat-gold) 42%,transparent);
+}
+
+/* Category selector — no bright cyan tile / no white active tab */
+.products-catalog-page-v75 .packages-toolbar-v75{
+  position:relative!important;
+  isolation:isolate!important;
+  overflow:hidden!important;
+  display:grid!important;
+  grid-template-columns:minmax(210px,.72fr) minmax(420px,1.28fr)!important;
+  align-items:center!important;
+  gap:18px!important;
+  margin:0 0 26px!important;
+  padding:14px!important;
+  border:1px solid var(--v7815-cat-line)!important;
+  border-radius:24px!important;
+  background:
+    radial-gradient(260px 120px at 100% 0%,rgba(164,19,32,.09),transparent 72%),
+    linear-gradient(145deg,rgba(18,18,22,.95),rgba(10,10,13,.96))!important;
+  box-shadow:0 16px 42px rgba(0,0,0,.18),inset 0 1px 0 rgba(255,239,198,.03)!important;
+}
+.products-catalog-page-v75 .packages-toolbar-v75::before{
+  content:"";
+  position:absolute;
+  right:-40px;
+  top:-78px;
+  width:180px;
+  height:180px;
+  border:22px solid rgba(255,255,255,.018);
+  border-radius:50%;
+  pointer-events:none;
+  z-index:-1;
+}
+.products-catalog-page-v75 .packages-toolbar-label-v75{
+  display:flex!important;
+  align-items:center!important;
+  gap:12px!important;
+  min-width:0!important;
+  color:var(--v7815-cat-text)!important;
+}
+.products-catalog-page-v75 .packages-toolbar-label-v75 > i{
+  width:48px!important;
+  height:48px!important;
+  flex:0 0 48px!important;
+  display:grid!important;
+  place-items:center!important;
+  border:1px solid var(--v7815-cat-line)!important;
+  border-radius:16px!important;
+  background:linear-gradient(145deg,rgba(214,170,77,.16),rgba(169,14,25,.07))!important;
+  color:var(--v7815-cat-gold-hi)!important;
+  font-size:.9rem!important;
+  box-shadow:none!important;
+}
+.products-catalog-page-v75 .packages-toolbar-label-v75 > div{
+  display:grid!important;
+  gap:2px!important;
+  min-width:0!important;
+}
+.products-catalog-page-v75 .packages-toolbar-label-v75 small{
+  color:var(--v7815-cat-gold)!important;
+  font-size:.58rem!important;
+  font-weight:900!important;
+  letter-spacing:.13em!important;
+  line-height:1.2!important;
+}
+.products-catalog-page-v75 .packages-toolbar-label-v75 strong{
+  overflow:hidden!important;
+  color:var(--v7815-cat-text)!important;
+  font-size:.88rem!important;
+  font-weight:850!important;
+  line-height:1.25!important;
+  text-overflow:ellipsis!important;
+  white-space:nowrap!important;
+}
+
+.products-catalog-page-v75 .packages-filter-pills-v75{
+  display:grid!important;
+  grid-template-columns:repeat(3,minmax(0,1fr))!important;
+  gap:8px!important;
+  width:100%!important;
+  min-width:0!important;
+  padding:5px!important;
+  border:1px solid rgba(214,170,77,.12)!important;
+  border-radius:17px!important;
+  background:rgba(6,6,8,.40)!important;
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.015)!important;
+}
+.products-catalog-page-v75 .packages-filter-pills-v75 .product-filter-pill{
+  position:relative!important;
+  display:flex!important;
+  align-items:center!important;
+  justify-content:center!important;
+  gap:7px!important;
+  min-width:0!important;
+  min-height:44px!important;
+  padding:0 13px!important;
+  border:1px solid transparent!important;
+  border-radius:13px!important;
+  background:transparent!important;
+  color:rgba(246,237,220,.58)!important;
+  font-size:.76rem!important;
+  font-weight:800!important;
+  white-space:nowrap!important;
+  box-shadow:none!important;
+  transition:background .18s ease,border-color .18s ease,color .18s ease,transform .18s ease!important;
+}
+.products-catalog-page-v75 .packages-filter-pills-v75 .product-filter-pill i{
+  width:auto!important;
+  height:auto!important;
+  flex:0 0 auto!important;
+  display:inline-block!important;
+  margin:0!important;
+  border:0!important;
+  border-radius:0!important;
+  background:transparent!important;
+  color:rgba(244,217,139,.66)!important;
+  font-size:.72rem!important;
+  box-shadow:none!important;
+}
+.products-catalog-page-v75 .packages-filter-pills-v75 .product-filter-pill:hover{
+  transform:translateY(-1px)!important;
+  border-color:rgba(214,170,77,.14)!important;
+  background:rgba(214,170,77,.055)!important;
+  color:var(--v7815-cat-text)!important;
+}
+.products-catalog-page-v75 .packages-filter-pills-v75 .product-filter-pill.is-active{
+  border-color:rgba(244,217,139,.34)!important;
+  background:linear-gradient(135deg,#b87b13 0%,#d6aa4d 52%,#f1d173 100%)!important;
+  color:#120d05!important;
+  box-shadow:0 8px 20px rgba(214,170,77,.13),inset 0 1px 0 rgba(255,255,255,.22)!important;
+}
+.products-catalog-page-v75 .packages-filter-pills-v75 .product-filter-pill.is-active i{
+  color:#120d05!important;
+}
+
+/* Product group heading — makes each category feel intentional, not like a plain divider */
+.products-catalog-page-v75 .package-category-v75{
+  margin:0 0 30px!important;
+  padding:0!important;
+  border:0!important;
+  background:transparent!important;
+  box-shadow:none!important;
+}
+.products-catalog-page-v75 .package-category-head-v75{
+  position:relative!important;
+  display:flex!important;
+  align-items:center!important;
+  justify-content:space-between!important;
+  gap:18px!important;
+  min-height:76px!important;
+  margin:0 0 16px!important;
+  padding:11px 13px!important;
+  overflow:hidden!important;
+  border:1px solid rgba(214,170,77,.15)!important;
+  border-radius:20px!important;
+  background:
+    radial-gradient(190px 90px at 100% 15%,rgba(169,14,25,.075),transparent 75%),
+    linear-gradient(145deg,rgba(17,17,21,.84),rgba(9,9,12,.86))!important;
+  box-shadow:none!important;
+}
+.products-catalog-page-v75 .package-category-head-v75::after{
+  content:"";
+  position:absolute;
+  left:14px;
+  right:14px;
+  bottom:0;
+  height:1px;
+  background:linear-gradient(90deg,transparent,rgba(214,170,77,.24),transparent);
+  pointer-events:none;
+}
+.products-catalog-page-v75 .package-category-name-v75{
+  display:flex!important;
+  align-items:center!important;
+  gap:12px!important;
+  min-width:0!important;
+}
+.products-catalog-page-v75 .package-category-name-v75 > span{
+  position:relative!important;
+  width:48px!important;
+  height:48px!important;
+  flex:0 0 48px!important;
+  display:grid!important;
+  place-items:center!important;
+  overflow:hidden!important;
+  border:1px solid var(--v7815-cat-line)!important;
+  border-radius:16px!important;
+  background:linear-gradient(145deg,rgba(214,170,77,.17),rgba(169,14,25,.075))!important;
+  color:var(--v7815-cat-gold-hi)!important;
+  box-shadow:none!important;
+}
+.products-catalog-page-v75 .package-category-name-v75 > span::before{
+  content:""!important;
+  position:absolute!important;
+  width:28px!important;
+  height:28px!important;
+  right:-12px!important;
+  top:-12px!important;
+  border-radius:50%!important;
+  background:rgba(244,217,139,.10)!important;
+}
+.products-catalog-page-v75 .package-category-name-v75 > span i{
+  position:relative!important;
+  z-index:1!important;
+  color:inherit!important;
+  font-size:.9rem!important;
+  text-shadow:none!important;
+}
+.products-catalog-page-v75 .package-category-name-v75 > div{
+  min-width:0!important;
+}
+.products-catalog-page-v75 .package-category-kicker-v7815{
+  display:block!important;
+  margin:0 0 3px!important;
+  color:var(--v7815-cat-gold)!important;
+  font-size:.52rem!important;
+  font-weight:900!important;
+  letter-spacing:.12em!important;
+  line-height:1.2!important;
+}
+.products-catalog-page-v75 .package-category-name-v75 h3{
+  margin:0!important;
+  color:var(--v7815-cat-text)!important;
+  font-size:1.02rem!important;
+  font-weight:850!important;
+  line-height:1.25!important;
+}
+.products-catalog-page-v75 .package-category-name-v75 p{
+  margin:3px 0 0!important;
+  color:var(--v7815-cat-muted)!important;
+  font-size:.68rem!important;
+  line-height:1.42!important;
+}
+.products-catalog-page-v75 .package-category-meta-v7815{
+  display:flex!important;
+  align-items:center!important;
+  gap:8px!important;
+  flex:0 0 auto!important;
+}
+.products-catalog-page-v75 .package-category-meta-v7815 > span,
+.products-catalog-page-v75 .package-category-meta-v7815 > small{
+  display:inline-flex!important;
+  align-items:center!important;
+  justify-content:center!important;
+  gap:5px!important;
+  min-height:32px!important;
+  padding:0 10px!important;
+  border:1px solid rgba(214,170,77,.15)!important;
+  border-radius:999px!important;
+  background:rgba(214,170,77,.05)!important;
+  color:var(--v7815-cat-muted)!important;
+  white-space:nowrap!important;
+}
+.products-catalog-page-v75 .package-category-meta-v7815 > span{
+  font-size:.64rem!important;
+  font-weight:750!important;
+}
+.products-catalog-page-v75 .package-category-meta-v7815 > span b{
+  color:var(--v7815-cat-gold-hi)!important;
+  font-size:.78rem!important;
+}
+.products-catalog-page-v75 .package-category-meta-v7815 > small{
+  color:#a9cfb6!important;
+  font-size:.59rem!important;
+  font-weight:750!important;
+}
+.products-catalog-page-v75 .package-category-meta-v7815 > small i{
+  color:#79b78e!important;
+  font-size:.58rem!important;
+}
+
+@media(max-width:900px){
+  .products-catalog-page-v75 .packages-toolbar-v75{
+    grid-template-columns:1fr!important;
+    gap:12px!important;
+  }
+}
+@media(max-width:680px){
+  .products-catalog-page-v75 .packages-toolbar-v75{
+    margin-bottom:20px!important;
+    padding:11px!important;
+    border-radius:20px!important;
+  }
+  .products-catalog-page-v75 .packages-toolbar-label-v75 > i{
+    width:43px!important;height:43px!important;flex-basis:43px!important;border-radius:14px!important;
+  }
+  .products-catalog-page-v75 .packages-filter-pills-v75{
+    gap:5px!important;padding:4px!important;border-radius:15px!important;
+  }
+  .products-catalog-page-v75 .packages-filter-pills-v75 .product-filter-pill{
+    min-height:40px!important;padding:0 8px!important;font-size:.69rem!important;border-radius:11px!important;
+  }
+  .products-catalog-page-v75 .package-category-head-v75{
+    align-items:flex-start!important;
+    min-height:0!important;
+    padding:11px!important;
+    border-radius:17px!important;
+  }
+  .products-catalog-page-v75 .package-category-name-v75 > span{
+    width:44px!important;height:44px!important;flex-basis:44px!important;border-radius:14px!important;
+  }
+  .products-catalog-page-v75 .package-category-name-v75 p{display:none!important;}
+  .products-catalog-page-v75 .package-category-meta-v7815 > small{display:none!important;}
+}
+@media(max-width:390px){
+  .products-catalog-page-v75 .packages-toolbar-label-v75 strong{font-size:.82rem!important;}
+  .products-catalog-page-v75 .packages-filter-pills-v75 .product-filter-pill i{display:none!important;}
+  .products-catalog-page-v75 .packages-filter-pills-v75 .product-filter-pill{font-size:.66rem!important;padding:0 6px!important;}
+  .products-catalog-page-v75 .package-category-meta-v7815 > span{padding:0 8px!important;}
+}

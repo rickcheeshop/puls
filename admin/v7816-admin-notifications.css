@@ -1,0 +1,212 @@
+/* Rick Chee Shop V7.8.16 — compact premium notifications across Admin */
+:root{
+  --v7816a-gold:var(--adm-primary,#d6aa4d);
+  --v7816a-gold-hi:var(--adm-primary-strong,#f4d98b);
+  --v7816a-ruby:#a90e19;
+  --v7816a-ivory:var(--adm-text,#f6eddc);
+  --v7816a-muted:var(--adm-muted,#a59c90);
+}
+
+/* Main admin notification. Strong specificity intentionally neutralizes legacy .toast width/position rules. */
+#adminToast.toast{
+  position:fixed!important;
+  inset:auto 22px auto auto!important;
+  top:max(82px,calc(env(safe-area-inset-top) + 76px))!important;
+  width:auto!important;
+  min-width:300px!important;
+  max-width:min(410px,calc(100vw - 32px))!important;
+  min-height:64px!important;
+  height:auto!important;
+  display:flex!important;
+  flex-direction:row!important;
+  align-items:center!important;
+  justify-content:flex-start!important;
+  gap:12px!important;
+  margin:0!important;
+  padding:11px 14px!important;
+  border:1px solid rgba(214,170,77,.29)!important;
+  border-left:3px solid var(--v7816a-gold)!important;
+  border-radius:17px!important;
+  background:
+    radial-gradient(160px 90px at 100% 0%,rgba(169,14,25,.12),transparent 72%),
+    linear-gradient(145deg,rgba(20,20,24,.99),rgba(9,9,11,.99))!important;
+  color:var(--v7816a-ivory)!important;
+  box-shadow:0 18px 50px rgba(0,0,0,.48),inset 0 1px 0 rgba(255,239,198,.045)!important;
+  opacity:0!important;
+  visibility:hidden!important;
+  pointer-events:none!important;
+  transform:translate3d(16px,-4px,0)!important;
+  transition:opacity .2s ease,transform .22s ease,visibility .2s ease!important;
+  overflow:hidden!important;
+  z-index:200000!important;
+}
+#adminToast.toast.show{
+  opacity:1!important;
+  visibility:visible!important;
+  transform:translate3d(0,0,0)!important;
+}
+#adminToast.toast.hidden:not(.show){display:flex!important;visibility:hidden!important;}
+#adminToast.toast::after{
+  content:""!important;
+  position:absolute!important;
+  left:0!important;
+  bottom:0!important;
+  width:100%!important;
+  height:2px!important;
+  background:linear-gradient(90deg,var(--v7816a-gold),var(--v7816a-gold-hi))!important;
+  transform-origin:left center!important;
+  pointer-events:none!important;
+}
+#adminToast.toast.show::after{animation:v7816AdminToastLife 2.8s linear forwards!important;}
+@keyframes v7816AdminToastLife{from{transform:scaleX(1)}to{transform:scaleX(0)}}
+#adminToast .toast__icon{
+  flex:0 0 40px!important;
+  width:40px!important;
+  height:40px!important;
+  display:grid!important;
+  place-items:center!important;
+  margin:0!important;
+  border:1px solid rgba(214,170,77,.24)!important;
+  border-radius:13px!important;
+  background:linear-gradient(145deg,rgba(214,170,77,.17),rgba(169,14,25,.055))!important;
+  color:var(--v7816a-gold-hi)!important;
+  box-shadow:none!important;
+  font-size:.88rem!important;
+}
+#adminToast .toast__message{
+  min-width:0!important;
+  flex:1 1 auto!important;
+  display:block!important;
+  margin:0!important;
+  padding:0!important;
+  color:var(--v7816a-ivory)!important;
+  font-size:.82rem!important;
+  font-weight:750!important;
+  line-height:1.48!important;
+  text-align:left!important;
+  overflow-wrap:anywhere!important;
+}
+#adminToast.toast--error{
+  border-color:rgba(226,69,80,.34)!important;
+  border-left-color:#d53d49!important;
+}
+#adminToast.toast--error .toast__icon{
+  border-color:rgba(226,69,80,.28)!important;
+  background:rgba(169,14,25,.17)!important;
+  color:#ffb5ba!important;
+}
+#adminToast.toast--error::after{background:linear-gradient(90deg,#b81522,#ef5964)!important;}
+
+/* Code manager has its own toast markup; bring it into the same visual language. */
+.jm-code-manager-root #toast.toast,
+.jm-code-manager-root .toast{
+  position:fixed!important;
+  top:auto!important;
+  bottom:20px!important;
+  left:auto!important;
+  right:20px!important;
+  width:auto!important;
+  min-width:290px!important;
+  max-width:min(390px,calc(100vw - 32px))!important;
+  min-height:62px!important;
+  height:auto!important;
+  display:flex!important;
+  align-items:center!important;
+  justify-content:flex-start!important;
+  gap:11px!important;
+  padding:10px 13px!important;
+  border:1px solid rgba(214,170,77,.28)!important;
+  border-left:3px solid var(--v7816a-gold)!important;
+  border-radius:16px!important;
+  background:linear-gradient(145deg,rgba(20,20,24,.99),rgba(9,9,11,.99))!important;
+  color:var(--v7816a-ivory)!important;
+  box-shadow:0 18px 48px rgba(0,0,0,.44)!important;
+  transform:translate3d(0,14px,0)!important;
+  opacity:0!important;
+  overflow:hidden!important;
+  z-index:200000!important;
+}
+.jm-code-manager-root #toast.toast.show,
+.jm-code-manager-root .toast.show{opacity:1!important;transform:translate3d(0,0,0)!important;}
+.jm-code-manager-root .code-toast-icon{
+  width:38px!important;
+  height:38px!important;
+  min-width:38px!important;
+  display:grid!important;
+  place-items:center!important;
+  border-radius:12px!important;
+  border:1px solid rgba(214,170,77,.22)!important;
+  background:rgba(214,170,77,.10)!important;
+  color:var(--v7816a-gold-hi)!important;
+  font-size:.86rem!important;
+  font-weight:900!important;
+}
+.jm-code-manager-root .code-toast-copy{
+  display:grid!important;
+  gap:2px!important;
+  min-width:0!important;
+}
+.jm-code-manager-root .code-toast-copy strong{
+  color:var(--v7816a-ivory)!important;
+  font-size:.75rem!important;
+  font-weight:900!important;
+}
+.jm-code-manager-root .code-toast-copy small{
+  color:#a99f92!important;
+  font-size:.68rem!important;
+  line-height:1.42!important;
+  overflow-wrap:anywhere!important;
+}
+.jm-code-manager-root .toast.error{
+  border-color:rgba(226,69,80,.34)!important;
+  border-left-color:#d53d49!important;
+}
+.jm-code-manager-root .toast.error .code-toast-icon{
+  border-color:rgba(226,69,80,.28)!important;
+  background:rgba(169,14,25,.17)!important;
+  color:#ffb5ba!important;
+}
+
+/* Login / TOTP errors: concise and readable instead of oversized alert boxes. */
+.admin-auth-error{
+  min-height:0!important;
+  padding:10px 12px!important;
+  border-radius:12px!important;
+  border:1px solid rgba(226,69,80,.30)!important;
+  background:rgba(169,14,25,.10)!important;
+  color:#f0b4b8!important;
+  box-shadow:none!important;
+  font-size:.76rem!important;
+  line-height:1.45!important;
+}
+
+@media(max-width:620px){
+  #adminToast.toast{
+    top:max(72px,calc(env(safe-area-inset-top) + 66px))!important;
+    left:10px!important;
+    right:10px!important;
+    width:auto!important;
+    min-width:0!important;
+    max-width:none!important;
+    min-height:58px!important;
+    padding:10px 12px!important;
+    border-radius:15px!important;
+  }
+  #adminToast .toast__icon{width:36px!important;height:36px!important;flex-basis:36px!important;border-radius:11px!important;}
+  #adminToast .toast__message{font-size:.78rem!important;}
+  .jm-code-manager-root #toast.toast,
+  .jm-code-manager-root .toast{
+    left:10px!important;
+    right:10px!important;
+    bottom:10px!important;
+    width:auto!important;
+    min-width:0!important;
+    max-width:none!important;
+    min-height:58px!important;
+  }
+}
+
+@media(prefers-reduced-motion:reduce){
+  #adminToast.toast,.jm-code-manager-root .toast{transition:none!important;}
+  #adminToast.toast.show::after{animation:none!important;transform:scaleX(1)!important;}
+}

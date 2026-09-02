@@ -1,0 +1,247 @@
+/* Rick Chee Shop V7.8.14 — System admin sections use Lucky Club header language */
+:root{
+  --v7814-admin-gold:var(--adm-primary,var(--a74-gold,#d6aa4d));
+  --v7814-admin-gold-hi:var(--adm-primary-strong,var(--a74-gold2,#f4d98b));
+  --v7814-admin-text:var(--adm-text,var(--a74-ivory,#f6eddc));
+  --v7814-admin-muted:var(--adm-muted,rgba(246,237,220,.68));
+  --v7814-admin-line:color-mix(in srgb,var(--v7814-admin-gold) 34%,transparent);
+  --v7814-admin-soft:rgba(10,10,13,.76);
+}
+
+#adminUsersSection .admin-section-dashboard,
+#admin2faRecoverySection .admin-section-dashboard,
+#adminAuditSection .admin-section-dashboard{
+  position:relative!important;
+  isolation:isolate!important;
+  overflow:hidden!important;
+  display:grid!important;
+  grid-template-columns:minmax(0,1fr) auto!important;
+  align-items:center!important;
+  gap:24px!important;
+  min-height:158px!important;
+  padding:26px 24px!important;
+  margin:0 0 22px!important;
+  border-radius:28px!important;
+  border:1px solid var(--v7814-admin-line)!important;
+  background:
+    radial-gradient(430px 220px at 92% 34%,rgba(150,13,26,.13),transparent 72%),
+    radial-gradient(300px 180px at 82% 100%,rgba(214,170,77,.04),transparent 72%),
+    linear-gradient(135deg,rgba(18,18,22,.98),rgba(11,11,14,.98) 70%,rgba(25,12,17,.98))!important;
+  box-shadow:0 20px 58px rgba(0,0,0,.25),inset 0 1px 0 rgba(255,239,198,.035)!important;
+}
+#adminUsersSection .admin-section-dashboard::before,
+#admin2faRecoverySection .admin-section-dashboard::before,
+#adminAuditSection .admin-section-dashboard::before{
+  content:""!important;
+  position:absolute!important;
+  z-index:-1!important;
+  width:270px!important;
+  height:270px!important;
+  right:-54px!important;
+  top:-92px!important;
+  border:28px solid rgba(255,255,255,.025)!important;
+  border-radius:50%!important;
+  pointer-events:none!important;
+}
+#adminUsersSection .admin-section-dashboard::after,
+#admin2faRecoverySection .admin-section-dashboard::after,
+#adminAuditSection .admin-section-dashboard::after{
+  position:absolute!important;
+  z-index:-1!important;
+  right:34px!important;
+  bottom:-22px!important;
+  color:rgba(255,255,255,.02)!important;
+  font:800 clamp(3.6rem,7vw,6.8rem)/1 'Inter','Kanit','Segoe UI',sans-serif!important;
+  letter-spacing:.04em!important;
+  white-space:nowrap!important;
+  pointer-events:none!important;
+}
+#adminUsersSection .admin-section-dashboard::after{content:"AUTH"!important;}
+#admin2faRecoverySection .admin-section-dashboard::after{content:"2FA"!important;}
+#adminAuditSection .admin-section-dashboard::after{content:"AUDIT"!important;}
+
+#adminUsersSection .admin-section-dashboard > *,
+#admin2faRecoverySection .admin-section-dashboard > *,
+#adminAuditSection .admin-section-dashboard > *{
+  position:relative!important;
+  z-index:2!important;
+}
+
+#adminUsersSection .admin-section-heading,
+#admin2faRecoverySection .admin-section-heading,
+#adminAuditSection .admin-section-heading{
+  align-items:flex-start!important;
+  gap:14px!important;
+  min-width:0!important;
+}
+#adminUsersSection .admin-section-icon,
+#admin2faRecoverySection .admin-section-icon,
+#adminAuditSection .admin-section-icon{
+  width:54px!important;
+  height:54px!important;
+  border-radius:18px!important;
+  display:grid!important;
+  place-items:center!important;
+  background:linear-gradient(145deg,rgba(214,170,77,.17),rgba(169,14,25,.08))!important;
+  color:var(--v7814-admin-gold-hi)!important;
+  border:1px solid color-mix(in srgb,var(--v7814-admin-gold) 42%,transparent)!important;
+  box-shadow:none!important;
+}
+#adminUsersSection .admin-section-heading small,
+#admin2faRecoverySection .admin-section-heading small,
+#adminAuditSection .admin-section-heading small{
+  display:inline-flex!important;
+  align-items:center!important;
+  gap:7px!important;
+  margin:0 0 8px!important;
+  color:var(--v7814-admin-gold)!important;
+  font-size:.67rem!important;
+  font-weight:900!important;
+  letter-spacing:.14em!important;
+  text-transform:uppercase!important;
+}
+#adminUsersSection .admin-section-heading h2,
+#admin2faRecoverySection .admin-section-heading h2,
+#adminAuditSection .admin-section-heading h2{
+  margin:0!important;
+  color:var(--v7814-admin-text)!important;
+  font-size:clamp(1.8rem,3vw,2.55rem)!important;
+  font-weight:850!important;
+  line-height:1.08!important;
+  letter-spacing:-.035em!important;
+  text-shadow:none!important;
+}
+#adminUsersSection .admin-section-heading p,
+#admin2faRecoverySection .admin-section-heading p,
+#adminAuditSection .admin-section-heading p{
+  max-width:780px!important;
+  margin:9px 0 0!important;
+  color:var(--v7814-admin-muted)!important;
+  font-size:.91rem!important;
+  line-height:1.55!important;
+}
+
+#adminUsersSection .v74-auth-stat-grid,
+#adminAuditSection .admin-mini-stats{
+  flex:0 0 auto!important;
+  width:auto!important;
+  gap:12px!important;
+}
+#adminUsersSection .v74-auth-stat-grid{
+  grid-template-columns:repeat(4,minmax(150px,1fr))!important;
+}
+#adminUsersSection .v74-auth-stat-grid article,
+#adminAuditSection .admin-mini-stats > div,
+#admin2faRecoverySection .admin-section-note{
+  background:var(--v7814-admin-soft)!important;
+  border:1px solid color-mix(in srgb,var(--v7814-admin-gold) 24%,transparent)!important;
+  border-radius:18px!important;
+  box-shadow:none!important;
+  backdrop-filter:blur(10px)!important;
+}
+#adminUsersSection .v74-auth-stat-grid article{
+  min-height:88px!important;
+  padding:15px 16px!important;
+}
+#adminUsersSection .v74-auth-stat-grid article > span,
+#adminAuditSection .admin-mini-stats > div::before{
+  box-shadow:none!important;
+}
+#adminUsersSection .v74-auth-stat-grid article>span{
+  width:44px!important;
+  height:44px!important;
+  border-radius:14px!important;
+  background:rgba(214,170,77,.10)!important;
+  color:var(--v7814-admin-gold-hi)!important;
+  border:1px solid color-mix(in srgb,var(--v7814-admin-gold) 24%,transparent)!important;
+}
+#adminUsersSection .v74-auth-stat-grid small,
+#adminAuditSection .admin-mini-stats span{
+  color:rgba(246,237,220,.68)!important;
+}
+#adminUsersSection .v74-auth-stat-grid strong,
+#adminAuditSection .admin-mini-stats b{
+  color:#f4d98b!important;
+}
+#adminUsersSection #fbAdminCurrentUser{
+  color:var(--v7814-admin-text)!important;
+}
+
+#admin2faRecoverySection .admin-section-note{
+  max-width:420px!important;
+  padding:12px 16px!important;
+  display:inline-flex!important;
+  align-items:center!important;
+  gap:10px!important;
+  color:var(--v7814-admin-text)!important;
+}
+#admin2faRecoverySection .admin-section-note i{
+  color:var(--v7814-admin-gold-hi)!important;
+}
+#admin2faRecoverySection .admin-section-note span{
+  color:rgba(246,237,220,.86)!important;
+}
+
+#adminAuditSection .admin-mini-stats > div{
+  min-width:146px!important;
+  padding:12px 15px!important;
+}
+
+@media(max-width:1180px){
+  #adminUsersSection .admin-section-dashboard,
+  #admin2faRecoverySection .admin-section-dashboard,
+  #adminAuditSection .admin-section-dashboard{
+    grid-template-columns:1fr!important;
+    align-items:flex-start!important;
+  }
+  #adminUsersSection .v74-auth-stat-grid,
+  #adminAuditSection .admin-mini-stats{
+    width:100%!important;
+  }
+}
+@media(max-width:760px){
+  #adminUsersSection .admin-section-dashboard,
+  #admin2faRecoverySection .admin-section-dashboard,
+  #adminAuditSection .admin-section-dashboard{
+    min-height:0!important;
+    padding:20px 17px!important;
+    border-radius:22px!important;
+    gap:16px!important;
+  }
+  #adminUsersSection .admin-section-dashboard::before,
+  #admin2faRecoverySection .admin-section-dashboard::before,
+  #adminAuditSection .admin-section-dashboard::before{
+    width:210px!important;
+    height:210px!important;
+    right:-76px!important;
+    top:-88px!important;
+    border-width:22px!important;
+  }
+  #adminUsersSection .admin-section-dashboard::after,
+  #admin2faRecoverySection .admin-section-dashboard::after,
+  #adminAuditSection .admin-section-dashboard::after{
+    right:12px!important;
+    bottom:-10px!important;
+    font-size:3.6rem!important;
+  }
+  #adminUsersSection .admin-section-heading h2,
+  #admin2faRecoverySection .admin-section-heading h2,
+  #adminAuditSection .admin-section-heading h2{
+    font-size:clamp(1.5rem,7vw,2rem)!important;
+  }
+  #adminUsersSection .admin-section-heading p,
+  #admin2faRecoverySection .admin-section-heading p,
+  #adminAuditSection .admin-section-heading p{
+    font-size:.82rem!important;
+  }
+  #adminUsersSection .v74-auth-stat-grid{
+    grid-template-columns:1fr 1fr!important;
+  }
+  #adminAuditSection .admin-mini-stats{
+    grid-template-columns:1fr!important;
+  }
+  #admin2faRecoverySection .admin-section-note{
+    max-width:none!important;
+    width:100%!important;
+  }
+}

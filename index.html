@@ -1,785 +1,739 @@
 <!DOCTYPE html>
+
 <html lang="th">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-    <meta name="theme-color" content="#050506">
-    <style>html,body{background:#050506!important;color:#f3ead8}</style>
-    <title>Rick Chee Shop | Premium Streaming Service</title>
-    <meta name="description" content="Rick Chee Shop บริการแพ็กเกจสตรีมมิ่ง ดีไซน์พรีเมียม ระบบสั่งซื้อง่าย รองรับทั้งมือถือและคอมพิวเตอร์">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800&family=Inter:wght@400;600;700&family=Kanit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="icon" type="image" href="logo.png">
-    <link rel="stylesheet" href="styles.css?v=20260902-v771-base">
-    <link rel="stylesheet" href="v771-theme.css?v=20260902-v771-v76-look">
-    <link rel="stylesheet" href="v772-premium-unified.css?v=20260902-v772-premium">
-    <link rel="stylesheet" href="v773-cart.css?v=20260902-v773-cart">
-    <link rel="stylesheet" href="v774-storefront-polish.css?v=20260902-v774">
-    <link rel="stylesheet" href="v775-dynamic-theme.css?v=20260902-v775">
-    <link rel="stylesheet" href="v777-wheel-pointer-fix.css?v=20260902-v777-pointer">
-    <link rel="stylesheet" href="v778-no-white.css?v=20260902-v778-no-white">
-    <link rel="stylesheet" href="v7710-global-unbox.css?v=20260902-v7710-unbox">
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0, viewport-fit=cover" name="viewport"/>
+<meta content="#050506" name="theme-color"/>
+<style>html,body{background:#050506!important;color:#f3ead8}</style>
+<title>Rick Chee Shop | Premium Streaming Service</title>
+<meta content="Rick Chee Shop บริการแพ็กเกจสตรีมมิ่ง ดีไซน์พรีเมียม ระบบสั่งซื้อง่าย รองรับทั้งมือถือและคอมพิวเตอร์" name="description"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://cdnjs.cloudflare.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800&amp;family=Inter:wght@400;600;700&amp;family=Kanit:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet"/>
+<link href="logo.png" rel="icon" type="image"/>
+<link href="styles.css?v=20260902-v771-base" rel="stylesheet"/><link href="storefront.css?v=20260902-v780-professional" rel="stylesheet"/><link href="stable-fixes.css?v=20260903-v783-hero-clean" rel="stylesheet"/><link href="hero-clean-final.css?v=20260903-v785-premium" rel="stylesheet"/><link href="v786-customer-polish.css?v=20260903-v786-polish" rel="stylesheet"/><link href="v787-product-clean.css?v=20260903-v787-product-clean" rel="stylesheet"/><link href="v788-review-form-clean.css?v=20260903-v788-review-clean" rel="stylesheet"/><link href="v7810-customer-detail-fixes.css?v=20260903-v7810-detail-fixes" rel="stylesheet"/><link href="v7811-unified-lucky-headers.css?v=20260903-v7811-lucky-headers" rel="stylesheet"/><link href="v7812-order-history-polish.css?v=20260903-v7812-order-history-polish" rel="stylesheet"/><link href="v7813-review-premium.css?v=20260903-v7813-review-premium" rel="stylesheet"/><link href="v7814-index-alerts.css?v=20260903-v7814-alerts" rel="stylesheet"/><link href="v7815-package-categories-premium.css?v=20260903-v7815-package-categories" rel="stylesheet"/><link href="v7816-storefront-notify-review.css?v=20260903-v7816-notify-review" rel="stylesheet"/>
+
+
+
+
+
+
+
+
+
 </head>
 <body class="app-shell-body">
-    <div id="pageLoader" class="page-loader">
-        <div class="page-loader-card">
-            <div class="page-loader-spinner"></div>
-            <p>กำลังโหลดเว็บไซต์...</p>
-        </div>
-    </div>
-
-    <div id="maintenanceOverlay" class="maintenance-overlay hidden" aria-live="polite">
-        <section class="maintenance-card" role="dialog" aria-modal="true" aria-labelledby="maintenanceTitle">
-            <div class="maintenance-brand"><img src="assets/optimized/logo.webp" onerror="this.src='logo.png'" alt="Rick Chee Shop"><div><span>RICK CHEE SHOP</span><strong>SYSTEM UPDATE</strong></div></div>
-            <div class="maintenance-status-pill"><i class="fas fa-screwdriver-wrench"></i><span>กำลังปรับปรุงระบบ</span></div>
-            <h2 id="maintenanceTitle">เว็บไซต์กำลังอัพเดท</h2>
-            <p id="maintenanceMessage">เรากำลังปรับปรุงระบบเพื่อให้ใช้งานได้ดีขึ้น กรุณารอสักครู่</p>
-            <div class="maintenance-progress"><span></span></div>
-            <a id="maintenanceActionLink" class="maintenance-action is-disabled" href="#" target="_blank" rel="noopener noreferrer" aria-disabled="true"><i class="fas fa-arrow-up-right-from-square"></i><span id="maintenanceActionLabel">ดูประกาศอัพเดท</span></a>
-            <small class="maintenance-foot"><i class="fas fa-shield-halved"></i> Rick Chee Shop Control Center</small>
-        </section>
-    </div>
-
-    <div class="site-app-layout">
-        <aside id="sidebar" class="sidebar" aria-label="เมนูหลัก">
-            <div class="sidebar-brand">
-                <img src="assets/optimized/logo.webp" alt="Rick Chee Shop" class="sidebar-logo" decoding="async">
-                <div class="sidebar-brand-copy">
-                    <strong>Rick Chee Shop</strong>
-                    <span>Streaming Premium</span>
-                </div>
-                <button id="sidebarClose" class="sidebar-close" type="button" aria-label="ปิดเมนู">
-                    <i class="fas fa-times"></i>
-                </button>
-            </div>
-
-            <nav class="sidebar-nav">
-                <button class="side-nav-item" type="button" data-page="home">
-                    <i class="fas fa-house"></i>
-                    <span>หน้าแรก</span>
-                </button>
-
-                <div class="side-nav-group" id="productNavGroup">
-                    <button class="side-nav-item side-nav-parent" type="button" aria-expanded="false" aria-controls="productSubnav">
-                        <i class="fas fa-boxes-stacked"></i>
-                        <span>แพ็คเกจทั้งหมด</span>
-                        <i class="fas fa-chevron-down side-nav-chevron"></i>
-                    </button>
-                    <div class="side-subnav" id="productSubnav">
-                        <button class="side-subnav-item" type="button" data-page="products" data-category="all">ทั้งหมด</button>
-                        <button class="side-subnav-item" type="button" data-page="products" data-category="netflix">Netflix</button>
-                        <button class="side-subnav-item" type="button" data-page="products" data-category="other">YouTube / แอปอื่น</button>
-                    </div>
-                </div>
-
-                <div class="side-nav-group" id="movieNavGroup">
-                    <button class="side-nav-item side-nav-parent" type="button" aria-expanded="false" aria-controls="movieSubnav">
-                        <i class="fas fa-clapperboard"></i>
-                        <span>หนังแนะนำ</span>
-                        <i class="fas fa-chevron-down side-nav-chevron"></i>
-                    </button>
-                    <div class="side-subnav" id="movieSubnav">
-                        <button class="side-subnav-item" type="button" data-page="movies-top"><i class="fas fa-fire"></i> หนังติด TOP</button>
-                        <button class="side-subnav-item" type="button" data-page="movies-upcoming"><i class="fas fa-calendar-check"></i> หนังใกล้เข้า</button>
-                        <button class="side-subnav-item" type="button" data-page="movies-recommended"><i class="fas fa-heart"></i> หนังแนะนำจากทางร้าน</button>
-                    </div>
-                </div>
-
-                <button class="side-nav-item" type="button" data-page="wheel">
-                    <i class="fas fa-dharmachakra"></i>
-                    <span>วงล้อสุ่มโชค</span>
-                </button>
-
-                <button class="side-nav-item" type="button" data-page="reviews">
-                    <i class="fas fa-star"></i>
-                    <span>รีวิวลูกค้า</span>
-                </button>
-
-                <div class="side-nav-group" id="promotionNavGroup">
-                    <button class="side-nav-item side-nav-parent" type="button" aria-expanded="false" aria-controls="promotionSubnav">
-                        <i class="fas fa-percent"></i>
-                        <span>โปรโมชั่น</span>
-                        <i class="fas fa-chevron-down side-nav-chevron"></i>
-                    </button>
-                    <div class="side-subnav" id="promotionSubnav">
-                        <button class="side-subnav-item" type="button" data-page="promotions-active"><i class="fas fa-bolt"></i> โปรโมชั่นเริ่มใช้งาน</button>
-                        <button class="side-subnav-item" type="button" data-page="promotions-upcoming"><i class="fas fa-clock"></i> โปรโมชั่นรอเริ่ม</button>
-                        <button class="side-subnav-item" type="button" data-page="promotions-disabled"><i class="fas fa-ban"></i> โปรโมชั่นปิดการใช้งาน</button>
-                    </div>
-                </div>
-
-                <button class="side-nav-item" type="button" data-page="my-orders">
-                    <i class="fas fa-receipt"></i>
-                    <span>ประวัติการซื้อของฉัน</span>
-                </button>
-
-                <button class="side-nav-item" type="button" data-page="faq">
-                    <i class="fas fa-circle-question"></i>
-                    <span>คำถามที่พบบ่อย</span>
-                </button>
-
-                <div class="side-nav-group" id="contactNavGroup">
-                    <button class="side-nav-item side-nav-parent" type="button" aria-expanded="false" aria-controls="contactSubnav">
-                        <i class="fas fa-headset"></i>
-                        <span>ติดต่อแอดมิน</span>
-                        <i class="fas fa-chevron-down side-nav-chevron"></i>
-                    </button>
-                    <div class="side-subnav contact-subnav" id="contactSubnav">
-                        <a id="contactPageLink" class="side-subnav-item side-subnav-link is-unconfigured" href="#" target="_blank" rel="noopener noreferrer" data-contact-link="page" aria-disabled="true">
-                            <i class="fab fa-facebook"></i><span>เพจร้าน</span>
-                        </a>
-                        <a id="contactLineLink" class="side-subnav-item side-subnav-link" href="https://line.me/R/ti/p/%40106zyrpm" target="_blank" rel="noopener noreferrer" data-contact-link="line">
-                            <i class="fab fa-line"></i><span>LINE ร้าน</span>
-                        </a>
-                        <a id="contactOwnerLink" class="side-subnav-item side-subnav-link is-unconfigured" href="#" target="_blank" rel="noopener noreferrer" data-contact-link="owner" aria-disabled="true">
-                            <i class="fas fa-user-tie"></i><span>เจ้าของร้าน</span>
-                        </a>
-                    </div>
-                </div>
-            </nav>
-
-            <div class="sidebar-footer">
-                <div><i class="fas fa-shield-halved"></i> ปลอดภัย • บริการทุกวัน</div>
-                <small>© 2026 Rick Chee Shop</small>
-            </div>
-        </aside>
-
-        <div id="sidebarBackdrop" class="sidebar-backdrop"></div>
-
-        <div class="app-main-column">
-            <header class="content-topbar">
-                <div class="content-topbar-left">
-                    <button id="sidebarToggle" class="mobile-menu-button" type="button" aria-label="เปิดเมนู">
-                        <i class="fas fa-bars"></i>
-                    </button>
-                    <div>
-                        <span class="content-eyebrow">RICK CHEE SHOP</span>
-                        <h1 id="currentPageTitle">หน้าแรก</h1>
-                    </div>
-                </div>
-                <div class="content-topbar-actions">
-                    <div id="userBadge" class="user-badge hidden"></div>
-                    <div class="jm-language-picker topbar-language-picker">
-                        <button class="language-select jm-language-toggle topbar-language-toggle" type="button" aria-label="เปลี่ยนภาษา" aria-haspopup="true">
-                            <span class="jm-language-flag flag-th" aria-hidden="true"></span>
-                            <strong class="jm-language-current">TH</strong>
-                            <i class="fas fa-chevron-down"></i>
-                        </button>
-                        <div class="jm-language-menu topbar-language-menu" role="menu">
-                            <button type="button" data-jm-language="th" role="menuitem"><span class="jm-language-flag flag-th" aria-hidden="true"></span><b>TH</b><small>ภาษาไทย</small></button>
-                            <button type="button" data-jm-language="en" role="menuitem"><span class="jm-language-flag flag-en" aria-hidden="true"></span><b>EN</b><small>English</small></button>
-                        </div>
-                    </div>
-                    <button id="cartBtn" class="cart-top-button" type="button">
-                        <i class="fas fa-shopping-cart"></i>
-                        <span>ตะกร้า</span>
-                        <b id="cartCount">0</b>
-                    </button>
-                </div>
-            </header>
-
-            <main class="app-page-content" id="pageContent">
-                <!-- HOME -->
-                <section class="app-page is-active" data-page-view="home">
-                    <section class="hero app-hero">
-                        <div class="hero-content">
-                            <span class="eyebrow">Premium Streaming Service</span>
-                            <h2>ดูหนังง่าย จ่ายคุ้ม<br>เลือกบริการจากเมนูซ้ายบนได้เลย</h2>
-                            <p>ระบบใช้งานง่ายรองรับทั้งคอมและมือถือ จากร้าน Rick Chee Shop</p>
-                            <div class="hero-buttons">
-                                <button id="heroShopBtn" class="button button-primary btn-lg" type="button">
+<div class="page-loader" id="pageLoader">
+<div class="page-loader-card">
+<div class="page-loader-spinner"></div>
+<p>กำลังโหลดเว็บไซต์...</p>
+</div>
+</div>
+<div aria-live="polite" class="maintenance-overlay hidden" id="maintenanceOverlay">
+<section aria-labelledby="maintenanceTitle" aria-modal="true" class="maintenance-card" role="dialog">
+<div class="maintenance-brand"><img alt="Rick Chee Shop" onerror="this.src='logo.png'" src="assets/optimized/logo.webp"/><div><span>RICK CHEE SHOP</span><strong>SYSTEM UPDATE</strong></div></div>
+<div class="maintenance-status-pill"><i class="fas fa-screwdriver-wrench"></i><span>กำลังปรับปรุงระบบ</span></div>
+<h2 id="maintenanceTitle">เว็บไซต์กำลังอัพเดท</h2>
+<p id="maintenanceMessage">เรากำลังปรับปรุงระบบเพื่อให้ใช้งานได้ดีขึ้น กรุณารอสักครู่</p>
+<div class="maintenance-progress"><span></span></div>
+<a aria-disabled="true" class="maintenance-action is-disabled" href="#" id="maintenanceActionLink" rel="noopener noreferrer" target="_blank"><i class="fas fa-arrow-up-right-from-square"></i><span id="maintenanceActionLabel">ดูประกาศอัพเดท</span></a>
+<small class="maintenance-foot"><i class="fas fa-shield-halved"></i> Rick Chee Shop Control Center</small>
+</section>
+</div>
+<div class="site-app-layout">
+<aside aria-label="เมนูหลัก" class="sidebar" id="sidebar">
+<div class="sidebar-brand">
+<img alt="Rick Chee Shop" class="sidebar-logo" decoding="async" src="assets/optimized/logo.webp"/>
+<div class="sidebar-brand-copy">
+<strong>Rick Chee Shop</strong>
+<span>Streaming Premium</span>
+</div>
+<button aria-label="ปิดเมนู" class="sidebar-close" id="sidebarClose" type="button">
+<i class="fas fa-times"></i>
+</button>
+</div>
+<nav class="sidebar-nav">
+<button class="side-nav-item" data-page="home" type="button">
+<i class="fas fa-house"></i>
+<span>หน้าแรก</span>
+</button>
+<div class="side-nav-group" id="productNavGroup">
+<button aria-controls="productSubnav" aria-expanded="false" class="side-nav-item side-nav-parent" type="button">
+<i class="fas fa-boxes-stacked"></i>
+<span>แพ็คเกจทั้งหมด</span>
+<i class="fas fa-chevron-down side-nav-chevron"></i>
+</button>
+<div class="side-subnav" id="productSubnav">
+<button class="side-subnav-item" data-category="all" data-page="products" type="button">ทั้งหมด</button>
+<button class="side-subnav-item" data-category="netflix" data-page="products" type="button">Netflix</button>
+<button class="side-subnav-item" data-category="other" data-page="products" type="button">YouTube / แอปอื่น</button>
+</div>
+</div>
+<div class="side-nav-group" id="movieNavGroup">
+<button aria-controls="movieSubnav" aria-expanded="false" class="side-nav-item side-nav-parent" type="button">
+<i class="fas fa-clapperboard"></i>
+<span>หนังแนะนำ</span>
+<i class="fas fa-chevron-down side-nav-chevron"></i>
+</button>
+<div class="side-subnav" id="movieSubnav">
+<button class="side-subnav-item" data-page="movies-top" type="button"><i class="fas fa-fire"></i> หนังติด TOP</button>
+<button class="side-subnav-item" data-page="movies-upcoming" type="button"><i class="fas fa-calendar-check"></i> หนังใกล้เข้า</button>
+<button class="side-subnav-item" data-page="movies-recommended" type="button"><i class="fas fa-heart"></i> หนังแนะนำจากทางร้าน</button>
+</div>
+</div>
+<button class="side-nav-item" data-page="wheel" type="button">
+<i class="fas fa-dharmachakra"></i>
+<span>วงล้อสุ่มโชค</span>
+</button>
+<button class="side-nav-item" data-page="reviews" type="button">
+<i class="fas fa-star"></i>
+<span>รีวิวลูกค้า</span>
+</button>
+<div class="side-nav-group" id="promotionNavGroup">
+<button aria-controls="promotionSubnav" aria-expanded="false" class="side-nav-item side-nav-parent" type="button">
+<i class="fas fa-percent"></i>
+<span>โปรโมชั่น</span>
+<i class="fas fa-chevron-down side-nav-chevron"></i>
+</button>
+<div class="side-subnav" id="promotionSubnav">
+<button class="side-subnav-item" data-page="promotions-active" type="button"><i class="fas fa-bolt"></i> โปรโมชั่นเริ่มใช้งาน</button>
+<button class="side-subnav-item" data-page="promotions-upcoming" type="button"><i class="fas fa-clock"></i> โปรโมชั่นรอเริ่ม</button>
+<button class="side-subnav-item" data-page="promotions-disabled" type="button"><i class="fas fa-ban"></i> โปรโมชั่นปิดการใช้งาน</button>
+</div>
+</div>
+<button class="side-nav-item" data-page="my-orders" type="button">
+<i class="fas fa-receipt"></i>
+<span>ประวัติการซื้อของฉัน</span>
+</button>
+<button class="side-nav-item" data-page="faq" type="button">
+<i class="fas fa-circle-question"></i>
+<span>คำถามที่พบบ่อย</span>
+</button>
+<div class="side-nav-group" id="contactNavGroup">
+<button aria-controls="contactSubnav" aria-expanded="false" class="side-nav-item side-nav-parent" type="button">
+<i class="fas fa-headset"></i>
+<span>ติดต่อแอดมิน</span>
+<i class="fas fa-chevron-down side-nav-chevron"></i>
+</button>
+<div class="side-subnav contact-subnav" id="contactSubnav">
+<a aria-disabled="true" class="side-subnav-item side-subnav-link is-unconfigured" data-contact-link="page" href="#" id="contactPageLink" rel="noopener noreferrer" target="_blank">
+<i class="fab fa-facebook"></i><span>เพจร้าน</span>
+</a>
+<a class="side-subnav-item side-subnav-link" data-contact-link="line" href="https://line.me/R/ti/p/%40106zyrpm" id="contactLineLink" rel="noopener noreferrer" target="_blank">
+<i class="fab fa-line"></i><span>LINE ร้าน</span>
+</a>
+<a aria-disabled="true" class="side-subnav-item side-subnav-link is-unconfigured" data-contact-link="owner" href="#" id="contactOwnerLink" rel="noopener noreferrer" target="_blank">
+<i class="fas fa-user-tie"></i><span>เจ้าของร้าน</span>
+</a>
+</div>
+</div>
+</nav>
+<div class="sidebar-footer">
+<div><i class="fas fa-shield-halved"></i> ปลอดภัย • บริการทุกวัน</div>
+<small>© 2026 Rick Chee Shop</small>
+</div>
+</aside>
+<div class="sidebar-backdrop" id="sidebarBackdrop"></div>
+<div class="app-main-column">
+<header class="content-topbar">
+<div class="content-topbar-left">
+<button aria-label="เปิดเมนู" class="mobile-menu-button" id="sidebarToggle" type="button">
+<i class="fas fa-bars"></i>
+</button>
+<div>
+<span class="content-eyebrow">RICK CHEE SHOP</span>
+<h1 id="currentPageTitle">หน้าแรก</h1>
+</div>
+</div>
+<div class="content-topbar-actions">
+<div class="user-badge hidden" id="userBadge"></div>
+<div class="jm-language-picker topbar-language-picker">
+<button aria-haspopup="true" aria-label="เปลี่ยนภาษา" class="language-select jm-language-toggle topbar-language-toggle" type="button">
+<span aria-hidden="true" class="jm-language-flag flag-th"></span>
+<strong class="jm-language-current">TH</strong>
+<i class="fas fa-chevron-down"></i>
+</button>
+<div class="jm-language-menu topbar-language-menu" role="menu">
+<button data-jm-language="th" role="menuitem" type="button"><span aria-hidden="true" class="jm-language-flag flag-th"></span><b>TH</b><small>ภาษาไทย</small></button>
+<button data-jm-language="en" role="menuitem" type="button"><span aria-hidden="true" class="jm-language-flag flag-en"></span><b>EN</b><small>English</small></button>
+</div>
+</div>
+<button class="cart-top-button" id="cartBtn" type="button">
+<i class="fas fa-shopping-cart"></i>
+<span>ตะกร้า</span>
+<b id="cartCount">0</b>
+</button>
+</div>
+</header>
+<main class="app-page-content" id="pageContent">
+<!-- HOME -->
+<section class="app-page is-active" data-page-view="home">
+<section class="hero app-hero home-hero-clean">
+<div class="hero-content">
+<span class="eyebrow">Premium Streaming Service</span>
+<h2>ความบันเทิงระดับพรีเมียม<br/>เลือกแพ็กเกจที่เหมาะกับคุณ</h2>
+<p>เลือกแพ็กเกจ ชำระเงิน และติดตามออเดอร์ได้ง่าย รองรับทั้งมือถือและคอมพิวเตอร์</p>
+<div class="hero-buttons">
+<button class="button button-primary btn-lg" id="heroShopBtn" type="button">
                                     เลือกแพ็กเกจ <i class="fas fa-arrow-right"></i>
-                                </button>
-                                <button id="heroReviewBtn" class="button button-primary btn-lg" type="button">
+</button>
+<button class="button button-outline btn-lg" id="heroReviewBtn" type="button">
                                     ดูรีวิวลูกค้า <i class="fas fa-star"></i>
-                                </button>
-                            </div>
-                        </div>
-                        <div class="hero-card home-status-card">
-                            <div class="feature-card"><i class="fas fa-bolt"></i><span><strong>รับรหัสไว</strong><small>ตรวจสอบและส่งรหัสรวดเร็ว</small></span></div>
-                            <div class="feature-card"><i class="fas fa-shield-alt"></i><span><strong>การันตีการใช้งาน</strong><small>มีปัญหาติดต่อแอดมินได้</small></span></div>
-                            <div class="feature-card"><i class="fas fa-headset"></i><span><strong>ดูแลลูกค้า</strong><small>ติดต่อผ่าน LINE ได้ทันที</small></span></div>
-                        </div>
-                    </section>
-
-
-                    <section class="home-shortcuts">
-                        <button class="home-shortcut-card" type="button" data-page="movies">
-                            <span class="home-shortcut-icon"><i class="fas fa-clapperboard"></i></span>
-                            <div><strong>แนะนำหนัง</strong><small>รวมหนังติด TOP หนังใกล้เข้า และหนังแนะนำ</small></div>
-                            <i class="fas fa-chevron-right"></i>
-                        </button>
-                        <button class="home-shortcut-card" type="button" data-page="wheel">
-                            <span class="home-shortcut-icon"><i class="fas fa-dharmachakra"></i></span>
-                            <div><strong>วงล้อสุ่มโชค</strong><small>เข้าไปสุ่มรางวัลในหน้านี้</small></div>
-                            <i class="fas fa-chevron-right"></i>
-                        </button>
-                        <button class="home-shortcut-card" type="button" data-page="promotions">
-                            <span class="home-shortcut-icon"><i class="fas fa-percent"></i></span>
-                            <div><strong>โปรโมชั่น</strong><small>ดูโปรโมชั่นและสิทธิพิเศษล่าสุด</small></div>
-                            <i class="fas fa-chevron-right"></i>
-                        </button>
-                    </section>
-                </section>
-
-                <!-- PRODUCTS -->
-                <section class="app-page products-catalog-page-v75" data-page-view="products">
-                    <header class="packages-head-v75">
-                        <div class="packages-head-copy-v75">
-                            <span class="packages-kicker-v75"><i class="fas fa-bag-shopping"></i> RICK CHEE PACKAGES</span>
-                            <h2 id="productsPageHeading">แพ็คเกจทั้งหมด</h2>
-                            <p>เลือกแพ็กเกจที่ต้องการ ดูข้อมูลให้ครบก่อนสั่งซื้อ และเพิ่มลงตะกร้าได้ทันที</p>
-                        </div>
-                    </header>
-
-                    <div class="packages-toolbar-v75">
-                        <div class="packages-toolbar-label-v75"><i class="fas fa-filter"></i><span>หมวดหมู่</span></div>
-                        <div class="product-filter-pills packages-filter-pills-v75" role="tablist" aria-label="เลือกหมวดแพ็กเกจ">
-                            <button class="product-filter-pill is-active" type="button" data-product-filter="all"><i class="fas fa-border-all"></i><span>ทั้งหมด</span></button>
-                            <button class="product-filter-pill" type="button" data-product-filter="netflix"><i class="fas fa-play"></i><span>Netflix</span></button>
-                            <button class="product-filter-pill" type="button" data-product-filter="other"><i class="fas fa-mobile-screen-button"></i><span>แอปทั้งหมด</span></button>
-                        </div>
-                    </div>
-
-                    <section class="products products-page-section products-page-section-v75">
-                        <div id="products" class="product-grid"></div>
-                    </section>
-                </section>
-
-                <!-- MOVIES: ALL -->
-                <section class="app-page movies-page" data-page-view="movies">
-                    <div class="page-section-header movies-page-header">
-                        <div>
-                            <span class="page-kicker">MOVIE PICKS</span>
-                            <h2>แนะนำหนัง</h2>
-                            <p>รวมหนังติด TOP หนังใกล้เข้า และหนังแนะนำจากทางร้านไว้ในหน้าเดียว</p>
-                        </div>
-                        <div class="movie-page-counts" aria-label="สรุปหนังแนะนำทั้งหมด">
-                            <span><i class="fas fa-clapperboard"></i><b id="allMovieCount">0</b> เรื่อง</span>
-                        </div>
-                    </div>
-                    <section class="movie-shelf movie-shelf-top">
-                        <div class="movie-shelf-heading">
-                            <div><span class="movie-shelf-icon"><i class="fas fa-fire"></i></span><div><span>RANKING NOW</span><h3>หนังติด TOP</h3></div></div>
-                            <small>หนังยอดนิยมที่กำลังติดอันดับ</small>
-                        </div>
-                        <div id="allTopMoviesGrid" class="movie-grid"></div>
-                    </section>
-                    <section class="movie-shelf movie-shelf-upcoming">
-                        <div class="movie-shelf-heading">
-                            <div><span class="movie-shelf-icon"><i class="fas fa-calendar-check"></i></span><div><span>COMING SOON</span><h3>หนังใกล้เข้า</h3></div></div>
-                            <small>หนังที่กำลังจะเข้ารับชม</small>
-                        </div>
-                        <div id="allUpcomingMoviesGrid" class="movie-grid"></div>
-                    </section>
-                    <section class="movie-shelf">
-                        <div class="movie-shelf-heading">
-                            <div><span class="movie-shelf-icon"><i class="fas fa-heart"></i></span><div><span>RICK CHEE PICKS</span><h3>หนังแนะนำจากทางร้าน</h3></div></div>
-                            <small>รายการที่ทางร้านคัดมาแนะนำ</small>
-                        </div>
-                        <div id="allRecommendedMoviesGrid" class="movie-grid"></div>
-                    </section>
-                </section>
-
-                <!-- MOVIES: TOP -->
-                <section class="app-page movies-page" data-page-view="movies-top">
-                    <div class="page-section-header movies-page-header">
-                        <div>
-                            <span class="page-kicker">TOP MOVIES</span>
-                            <h2>หนังติด TOP</h2>
-                            <p>หนังยอดนิยมที่กำลังติดอันดับ</p>
-                        </div>
-                        <div class="movie-page-counts" aria-label="สรุปหนังติด TOP">
-                            <span><i class="fas fa-trophy"></i><b id="topMovieCount">0</b> เรื่อง</span>
-                        </div>
-                    </div>
-                    <section class="movie-shelf movie-shelf-top movie-single-page-shelf">
-                        <div class="movie-shelf-heading">
-                            <div><span class="movie-shelf-icon"><i class="fas fa-fire"></i></span><div><span>RANKING NOW</span><h3>หนังติด TOP</h3></div></div>
-                            <small>เรียงตามอันดับที่ความนิยม</small>
-                        </div>
-                        <div id="topMoviesGrid" class="movie-grid"></div>
-                    </section>
-                </section>
-
-                <!-- MOVIES: UPCOMING -->
-                <section class="app-page movies-page" data-page-view="movies-upcoming">
-                    <div class="page-section-header movies-page-header">
-                        <div>
-                            <span class="page-kicker">COMING SOON</span>
-                            <h2>หนังที่ใกล้จะเข้า</h2>
-                            <p>เช็คหนังที่กำลังจะเข้ารับชม พร้อมวันกำหนดเข้าและรายละเอียดล่าสุด</p>
-                        </div>
-                        <div class="movie-page-counts" aria-label="สรุปหนังใกล้เข้า">
-                            <span><i class="fas fa-calendar-days"></i><b id="upcomingMovieCount">0</b> เรื่อง</span>
-                        </div>
-                    </div>
-                    <section class="movie-shelf movie-shelf-upcoming movie-single-page-shelf">
-                        <div class="movie-shelf-heading">
-                            <div><span class="movie-shelf-icon"><i class="fas fa-calendar-check"></i></span><div><span>COMING SOON</span><h3>หนังที่ใกล้จะเข้า</h3></div></div>
-                            <small>แสดงวันกำหนดเข้าและรายละเอียดที่แอดมินตั้งไว้</small>
-                        </div>
-                        <div id="upcomingMoviesGrid" class="movie-grid"></div>
-                    </section>
-                </section>
-
-                <!-- MOVIES: STORE PICKS -->
-                <section class="app-page movies-page" data-page-view="movies-recommended">
-                    <div class="page-section-header movies-page-header">
-                        <div>
-                            <span class="page-kicker">STORE PICKS</span>
-                            <h2>หนังแนะนำจากทางร้าน</h2>
-                            <p>รวมหนังที่ทางร้านคัดมาแนะนำให้ลูกค้า ทั้งเรื่องติด TOP และหนังที่กำลังจะเข้า</p>
-                        </div>
-                        <div class="movie-page-counts" aria-label="สรุปหนังแนะนำจากทางร้าน">
-                            <span><i class="fas fa-heart"></i><b id="recommendedMovieCount">0</b> เรื่อง</span>
-                        </div>
-                    </div>
-                    <section class="movie-shelf movie-single-page-shelf">
-                        <div class="movie-shelf-heading">
-                            <div><span class="movie-shelf-icon"><i class="fas fa-heart"></i></span><div><span>RICK CHEE PICKS</span><h3>หนังแนะนำจากทางร้าน</h3></div></div>
-                            <small>รวมรายการแนะนำที่กำลังน่าสนใจในตอนนี้</small>
-                        </div>
-                        <div id="recommendedMoviesGrid" class="movie-grid"></div>
-                    </section>
-                </section>
-
-                <!-- WHEEL -->
-                <section class="app-page rcw-page" data-page-view="wheel">
-                    <div class="page-section-header wheel-page-heading rcw-page-heading">
-                        <div>
-                            <span class="page-kicker">RICK CHEE LUCKY CLUB</span>
-                            <h2>วงล้อสุ่มโชค</h2>
-                            <p>ประสบการณ์ลุ้นรางวัลแบบพรีเมียม อยู่ภายใน Rick Chee Shop หน้าเดียว ไม่เปิดเว็บหรือแท็บใหม่</p>
-                        </div>
-                        <div class="wheel-heading-actions">
-                            <span class="wheel-live-badge"><i class="fas fa-circle"></i> ระบบพร้อมให้บริการ</span>
-                        </div>
-                    </div>
-
-                    <section class="rcw-luxury-shell" aria-label="Rick Chee Lucky Wheel">
-                        <div class="rcw-luxury-glow rcw-luxury-glow-gold"></div>
-                        <div class="rcw-luxury-glow rcw-luxury-glow-ruby"></div>
-
-                        <div class="rcw-brand-strip">
-                            <div class="rcw-brand-mark">
-                                <img src="assets/optimized/logo.webp" alt="Rick Chee Shop" decoding="async">
-                            </div>
-                            <div class="rcw-brand-copy">
-                                <span>RICK CHEE SHOP • PRIVATE REWARDS</span>
-                                <strong>Lucky Wheel Experience</strong>
-                                <small>กรอกโค้ดสิทธิ์จากร้าน แล้วหมุนเพื่อลุ้นรางวัลได้ทันที</small>
-                            </div>
-                            <div class="rcw-security-chip"><i class="fas fa-shield-halved"></i><span>Secure Reward</span></div>
-                        </div>
-
-                        <div class="rcw-main-grid">
-                            <div class="rcw-wheel-column">
-                                <div class="rcw-wheel-stage">
-                                    <div class="rcw-wheel-orbit rcw-wheel-orbit-one"></div>
-                                    <div class="rcw-wheel-orbit rcw-wheel-orbit-two"></div>
-                                    <div class="rcw-pointer" aria-hidden="true"><span></span></div>
-                                    <div class="rcw-wheel-ring">
-                                        <canvas id="rcwWheelCanvas" width="620" height="620" aria-label="วงล้อรางวัล"></canvas>
-                                        <div class="rcw-center-hub" aria-hidden="true">
-                                            <img src="assets/optimized/logo.webp" alt="">
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="rcw-wheel-actions">
-                                    <button id="rcwSpinBtn" class="rcw-spin-button" type="button" disabled>
-                                        <span class="rcw-spin-button-icon"><i class="fas fa-dharmachakra"></i></span>
-                                        <span class="rcw-spin-button-copy"><b>กรุณาใส่โค้ด</b><small>VERIFY CODE TO UNLOCK</small></span>
-                                        <i class="fas fa-arrow-right"></i>
-                                    </button>
-                                    <div class="rcw-fair-note"><i class="fas fa-gem"></i><span>อัตรารางวัลอ้างอิงค่าที่ตั้งจากระบบแอดมินของร้าน</span></div>
-                                </div>
-                            </div>
-
-                            <aside class="rcw-access-card">
-                                <div class="rcw-access-heading">
-                                    <span class="rcw-access-icon"><i class="fas fa-key"></i></span>
-                                    <div><small>MEMBER ACCESS</small><h3>ปลดล็อกสิทธิ์หมุน</h3><p>ใช้โค้ดที่ได้รับจาก Rick Chee Shop เท่านั้น</p></div>
-                                </div>
-
-                                <label class="rcw-code-label" for="rcwCodeInput">รหัสสิทธิ์ของคุณ</label>
-                                <div class="rcw-code-field">
-                                    <i class="fas fa-ticket"></i>
-                                    <input id="rcwCodeInput" type="text" inputmode="text" autocomplete="off" maxlength="32" placeholder="เช่น RICKCHEE2026" aria-describedby="rcwCodeStatus">
-                                    <button id="rcwClearCode" type="button" aria-label="ล้างโค้ด"><i class="fas fa-xmark"></i></button>
-                                </div>
-                                <button id="rcwVerifyBtn" class="rcw-verify-button" type="button"><i class="fas fa-magnifying-glass"></i><span>ตรวจสอบโค้ด</span></button>
-
-                                <div id="rcwCodeStatus" class="rcw-code-status" aria-live="polite"></div>
-                                <div id="rcwSpinsInfo" class="rcw-credit-card" hidden>
-                                    <div><small>สิทธิ์คงเหลือ</small><strong id="rcwSpinsValue">0</strong></div>
-                                    <span>SPINS</span>
-                                </div>
-
-                                <div class="rcw-access-divider"><span>HOW IT WORKS</span></div>
-                                <div class="rcw-steps">
-                                    <div><b>01</b><span><strong>รับโค้ดจากร้าน</strong><small>โค้ดแต่ละชุดมีจำนวนสิทธิ์กำหนดไว้</small></span></div>
-                                    <div><b>02</b><span><strong>ตรวจสอบโค้ด</strong><small>ระบบตรวจสิทธิ์ก่อนเปิดปุ่มหมุน</small></span></div>
-                                    <div><b>03</b><span><strong>หมุนและรับผล</strong><small>ผลการสุ่มจะถูกบันทึกในประวัติ</small></span></div>
-                                </div>
-                            </aside>
-                        </div>
-
-                        <div class="rcw-prize-showcase">
-                            <div class="rcw-section-title">
-                                <div><span>REWARD VAULT</span><h3>รางวัลที่มีในวงล้อ</h3></div>
-                                <small>รายการรางวัลอัปเดตตามการตั้งค่าของร้าน</small>
-                            </div>
-                            <div id="rcwPrizesGrid" class="rcw-prizes-grid"></div>
-                        </div>
-
-                        <div class="rcw-history-grid">
-                            <section class="rcw-history-card">
-                                <div class="rcw-history-heading"><div><span><i class="fas fa-key"></i></span><div><small>ACCESS LOG</small><h3>ประวัติการตรวจโค้ด</h3></div></div></div>
-                                <div id="rcwCodeHistoryList" class="rcw-history-list"><div class="rcw-empty-state"><i class="fas fa-clock-rotate-left"></i><span>ยังไม่มีประวัติ</span></div></div>
-                            </section>
-                            <section class="rcw-history-card">
-                                <div class="rcw-history-heading"><div><span><i class="fas fa-gift"></i></span><div><small>REWARD LOG</small><h3>ประวัติการสุ่ม</h3></div></div></div>
-                                <div id="rcwSpinHistoryList" class="rcw-history-list"><div class="rcw-empty-state"><i class="fas fa-clock-rotate-left"></i><span>ยังไม่มีประวัติ</span></div></div>
-                            </section>
-                        </div>
-                    </section>
-
-                    <div id="rcwResultModal" class="rcw-result-modal" aria-hidden="true">
-                        <div class="rcw-result-card" role="dialog" aria-modal="true" aria-labelledby="rcwResultTitle">
-                            <div class="rcw-result-crown"><i class="fas fa-crown"></i></div>
-                            <span class="rcw-result-kicker">RICK CHEE REWARD</span>
-                            <h3 id="rcwResultTitle">ผลการสุ่มของคุณ</h3>
-                            <div id="rcwResultPrize" class="rcw-result-prize">-</div>
-                            <div class="rcw-result-details">
-                                <div><span>โค้ดที่ใช้</span><strong id="rcwResultCode">-</strong></div>
-                                <div><span>วันที่</span><strong id="rcwResultDate">-</strong></div>
-                                <div><span>เวลา</span><strong id="rcwResultTime">-</strong></div>
-                            </div>
-                            <button id="rcwCloseResult" type="button"><i class="fas fa-check"></i><span>รับทราบ</span></button>
-                        </div>
-                    </div>
-                </section>
-
-                <!-- REVIEWS -->
-                <section class="app-page" data-page-view="reviews">
-                    <div class="page-section-header">
-                        <div>
-                            <span class="page-kicker">CUSTOMER REVIEWS</span>
-                            <h2>รีวิวจากลูกค้า</h2>
-                            <p>หน้านี้แสดงรีวิวอย่างเดียว พร้อมฟอร์มส่งรีวิวของคุณ</p>
-                        </div>
-                    </div>
-                    <section id="reviews" class="review-section reviews-page-section">
-                        <div class="review-overview-card" aria-label="สรุปรีวิวจากลูกค้า">
-                            <div class="review-overview-main">
-                                <span class="review-overview-icon"><i class="fas fa-star"></i></span>
-                                <div>
-                                    <span class="review-overview-kicker">รีวิวจากลูกค้าจริง</span>
-                                    <div class="review-overview-score-row">
-                                        <strong id="reviewAverageScore">5.0</strong>
-                                        <div>
-                                            <div id="reviewAverageStars" class="review-overview-stars" aria-label="คะแนนเฉลี่ย 5 ดาว"></div>
-                                            <small><b id="reviewTotalCount">0</b> รีวิวทั้งหมด</small>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="review-overview-points">
-                                <span><i class="fas fa-shield-heart"></i> รีวิวจากผู้ใช้งาน</span>
-                                <span><i class="fas fa-image"></i> แนบรูปได้</span>
-                                <span><i class="fas fa-bolt"></i> ส่งรีวิวได้ง่าย</span>
-                            </div>
-                        </div>
-                        <div class="review-grid">
-                            <div class="review-card review-list-card">
-                                <div class="review-list-header">
-                                    <div>
-                                        <h4>รีวิวล่าสุด</h4>
-                                        <p class="review-card-subtitle">โปรดรีวิวอย่างสุภาพ หากพบข้อความผิดกฎขออนุญาตลบครับ/ค่ะ</p>
-                                    </div>
-                                    <div class="review-nav">
-                                        <button id="reviewCarouselPrev" type="button" class="carousel-btn hidden"><i class="fas fa-chevron-left"></i></button>
-                                        <button id="reviewCarouselNext" type="button" class="carousel-btn hidden"><i class="fas fa-chevron-right"></i></button>
-                                    </div>
-                                    <div id="reviewPageIndicator" class="review-page-indicator">1 / 1</div>
-                                </div>
-                                <div id="reviewListWrapper" class="review-list-wrapper">
-                                    <div id="reviewList" class="review-list"></div>
-                                </div>
-                                <div id="reviewNoData" class="no-reviews hidden" hidden>ยังไม่มีรีวิว สามารถแชร์ประสบการณ์ของคุณได้เลย</div>
-                            </div>
-
-                            <div class="review-card review-form-card">
-                                <div class="review-form-heading">
-                                    <span class="review-form-heading-icon"><i class="fas fa-pen-nib"></i></span>
-                                    <div>
-                                        <small>SHARE YOUR EXPERIENCE</small>
-                                        <h4>ส่งรีวิวของคุณ</h4>
-                                        <p>แชร์ประสบการณ์ใช้งานเพื่อช่วยลูกค้าคนอื่นตัดสินใจ</p>
-                                    </div>
-                                </div>
-                                <form id="reviewForm" class="review-form">
-                                    <div class="review-form-group">
-                                        <label for="reviewName">ชื่อ</label>
-                                        <input id="reviewName" type="text" placeholder="เช่น Rick Chee" required>
-                                    </div>
-                                    <div class="review-form-group">
-                                        <label for="reviewRating">คะแนน</label>
-                                        <select id="reviewRating">
-                                            <option value="5">5 ดาว — ดีเยี่ยม</option>
-                                            <option value="4">4 ดาว — ดีมาก</option>
-                                            <option value="3">3 ดาว — ดี</option>
-                                            <option value="2">2 ดาว — ธรรมดา</option>
-                                            <option value="1">1 ดาว — ต้องปรับปรุง</option>
-                                        </select>
-                                    </div>
-                                    <div class="review-form-group">
-                                        <label for="reviewComment">ความคิดเห็น</label>
-                                        <textarea id="reviewComment" rows="5" placeholder="เช่น บริการรวดเร็ว คุณภาพดี" required></textarea>
-                                    </div>
-                                    <div class="review-form-group review-image-upload">
-                                        <label>รูปภาพรีวิว (ถ้ามี)</label>
-                                        <label class="file-input-button" for="reviewImage">
-                                            <i class="fas fa-image"></i>
+</button>
+</div>
+</div>
+<div class="hero-card home-status-card">
+<div class="feature-card"><i class="fas fa-bolt"></i><span><strong>รับรหัสไว</strong><small>ตรวจสอบและส่งรหัสรวดเร็ว</small></span></div>
+<div class="feature-card"><i class="fas fa-shield-alt"></i><span><strong>การันตีการใช้งาน</strong><small>มีปัญหาติดต่อแอดมินได้</small></span></div>
+<div class="feature-card"><i class="fas fa-headset"></i><span><strong>ดูแลลูกค้า</strong><small>ติดต่อผ่าน LINE ได้ทันที</small></span></div>
+</div>
+</section>
+<section class="home-shortcuts">
+<button class="home-shortcut-card" data-page="movies" type="button">
+<span class="home-shortcut-icon"><i class="fas fa-clapperboard"></i></span>
+<div><strong>แนะนำหนัง</strong><small>รวมหนังติด TOP หนังใกล้เข้า และหนังแนะนำ</small></div>
+<i class="fas fa-chevron-right"></i>
+</button>
+<button class="home-shortcut-card" data-page="wheel" type="button">
+<span class="home-shortcut-icon"><i class="fas fa-dharmachakra"></i></span>
+<div><strong>วงล้อสุ่มโชค</strong><small>เข้าไปสุ่มรางวัลในหน้านี้</small></div>
+<i class="fas fa-chevron-right"></i>
+</button>
+<button class="home-shortcut-card" data-page="promotions" type="button">
+<span class="home-shortcut-icon"><i class="fas fa-percent"></i></span>
+<div><strong>โปรโมชั่น</strong><small>ดูโปรโมชั่นและสิทธิพิเศษล่าสุด</small></div>
+<i class="fas fa-chevron-right"></i>
+</button>
+</section>
+</section>
+<!-- PRODUCTS -->
+<section class="app-page products-catalog-page-v75" data-page-view="products">
+<header class="packages-head-v75">
+<div class="packages-head-copy-v75">
+<span class="packages-kicker-v75"><i class="fas fa-bag-shopping"></i> RICK CHEE PACKAGES</span>
+<h2 id="productsPageHeading">แพ็คเกจทั้งหมด</h2>
+<p>เลือกแพ็กเกจที่ต้องการ ดูข้อมูลให้ครบก่อนสั่งซื้อ และเพิ่มลงตะกร้าได้ทันที</p>
+</div>
+</header>
+<div class="packages-toolbar-v75">
+<div class="packages-toolbar-label-v75">
+<i class="fas fa-sliders"></i>
+<div><small>FILTER PACKAGES</small><strong>เลือกหมวดหมู่แพ็กเกจ</strong></div>
+</div>
+<div aria-label="เลือกหมวดแพ็กเกจ" class="product-filter-pills packages-filter-pills-v75" role="tablist">
+<button class="product-filter-pill is-active" data-product-filter="all" type="button"><i class="fas fa-border-all"></i><span>ทั้งหมด</span></button>
+<button class="product-filter-pill" data-product-filter="netflix" type="button"><i class="fas fa-play"></i><span>Netflix</span></button>
+<button class="product-filter-pill" data-product-filter="other" type="button"><i class="fas fa-mobile-screen-button"></i><span>แอปอื่น ๆ</span></button>
+</div>
+</div>
+<section class="products products-page-section products-page-section-v75">
+<div class="product-grid" id="products"></div>
+</section>
+</section>
+<!-- MOVIES: ALL -->
+<section class="app-page movies-page" data-page-view="movies">
+<div class="page-section-header movies-page-header">
+<div>
+<span class="page-kicker">MOVIE PICKS</span>
+<h2>แนะนำหนัง</h2>
+<p>รวมหนังติด TOP หนังใกล้เข้า และหนังแนะนำจากทางร้านไว้ในหน้าเดียว</p>
+</div>
+<div aria-label="สรุปหนังแนะนำทั้งหมด" class="movie-page-counts">
+<span><i class="fas fa-clapperboard"></i><b id="allMovieCount">0</b> เรื่อง</span>
+</div>
+</div>
+<section class="movie-shelf movie-shelf-top">
+<div class="movie-shelf-heading">
+<div><span class="movie-shelf-icon"><i class="fas fa-fire"></i></span><div><span>RANKING NOW</span><h3>หนังติด TOP</h3></div></div>
+<small>หนังยอดนิยมที่กำลังติดอันดับ</small>
+</div>
+<div class="movie-grid" id="allTopMoviesGrid"></div>
+</section>
+<section class="movie-shelf movie-shelf-upcoming">
+<div class="movie-shelf-heading">
+<div><span class="movie-shelf-icon"><i class="fas fa-calendar-check"></i></span><div><span>COMING SOON</span><h3>หนังใกล้เข้า</h3></div></div>
+<small>หนังที่กำลังจะเข้ารับชม</small>
+</div>
+<div class="movie-grid" id="allUpcomingMoviesGrid"></div>
+</section>
+<section class="movie-shelf">
+<div class="movie-shelf-heading">
+<div><span class="movie-shelf-icon"><i class="fas fa-heart"></i></span><div><span>RICK CHEE PICKS</span><h3>หนังแนะนำจากทางร้าน</h3></div></div>
+<small>รายการที่ทางร้านคัดมาแนะนำ</small>
+</div>
+<div class="movie-grid" id="allRecommendedMoviesGrid"></div>
+</section>
+</section>
+<!-- MOVIES: TOP -->
+<section class="app-page movies-page" data-page-view="movies-top">
+<div class="page-section-header movies-page-header">
+<div>
+<span class="page-kicker">TOP MOVIES</span>
+<h2>หนังติด TOP</h2>
+<p>หนังยอดนิยมที่กำลังติดอันดับ</p>
+</div>
+<div aria-label="สรุปหนังติด TOP" class="movie-page-counts">
+<span><i class="fas fa-trophy"></i><b id="topMovieCount">0</b> เรื่อง</span>
+</div>
+</div>
+<section class="movie-shelf movie-shelf-top movie-single-page-shelf">
+<div class="movie-shelf-heading">
+<div><span class="movie-shelf-icon"><i class="fas fa-fire"></i></span><div><span>RANKING NOW</span><h3>หนังติด TOP</h3></div></div>
+<small>เรียงตามอันดับที่ความนิยม</small>
+</div>
+<div class="movie-grid" id="topMoviesGrid"></div>
+</section>
+</section>
+<!-- MOVIES: UPCOMING -->
+<section class="app-page movies-page" data-page-view="movies-upcoming">
+<div class="page-section-header movies-page-header">
+<div>
+<span class="page-kicker">COMING SOON</span>
+<h2>หนังที่ใกล้จะเข้า</h2>
+<p>เช็คหนังที่กำลังจะเข้ารับชม พร้อมวันกำหนดเข้าและรายละเอียดล่าสุด</p>
+</div>
+<div aria-label="สรุปหนังใกล้เข้า" class="movie-page-counts">
+<span><i class="fas fa-calendar-days"></i><b id="upcomingMovieCount">0</b> เรื่อง</span>
+</div>
+</div>
+<section class="movie-shelf movie-shelf-upcoming movie-single-page-shelf">
+<div class="movie-shelf-heading">
+<div><span class="movie-shelf-icon"><i class="fas fa-calendar-check"></i></span><div><span>COMING SOON</span><h3>หนังที่ใกล้จะเข้า</h3></div></div>
+<small>แสดงวันกำหนดเข้าและรายละเอียดที่แอดมินตั้งไว้</small>
+</div>
+<div class="movie-grid" id="upcomingMoviesGrid"></div>
+</section>
+</section>
+<!-- MOVIES: STORE PICKS -->
+<section class="app-page movies-page" data-page-view="movies-recommended">
+<div class="page-section-header movies-page-header">
+<div>
+<span class="page-kicker">STORE PICKS</span>
+<h2>หนังแนะนำจากทางร้าน</h2>
+<p>รวมหนังที่ทางร้านคัดมาแนะนำให้ลูกค้า ทั้งเรื่องติด TOP และหนังที่กำลังจะเข้า</p>
+</div>
+<div aria-label="สรุปหนังแนะนำจากทางร้าน" class="movie-page-counts">
+<span><i class="fas fa-heart"></i><b id="recommendedMovieCount">0</b> เรื่อง</span>
+</div>
+</div>
+<section class="movie-shelf movie-single-page-shelf">
+<div class="movie-shelf-heading">
+<div><span class="movie-shelf-icon"><i class="fas fa-heart"></i></span><div><span>RICK CHEE PICKS</span><h3>หนังแนะนำจากทางร้าน</h3></div></div>
+<small>รวมรายการแนะนำที่กำลังน่าสนใจในตอนนี้</small>
+</div>
+<div class="movie-grid" id="recommendedMoviesGrid"></div>
+</section>
+</section>
+<!-- WHEEL -->
+<section class="app-page rcw-page" data-page-view="wheel">
+<div class="page-section-header wheel-page-heading rcw-page-heading">
+<div>
+<span class="page-kicker">RICK CHEE LUCKY CLUB</span>
+<h2>วงล้อสุ่มโชค</h2>
+<p>กรอกโค้ดสิทธิ์และลุ้นรางวัลได้ทันที พร้อมประวัติการใช้งานในหน้าเดียว</p>
+</div>
+<div class="wheel-heading-actions">
+<span class="wheel-live-badge"><i class="fas fa-circle"></i> ระบบพร้อมให้บริการ</span>
+</div>
+</div>
+<section aria-label="Rick Chee Lucky Wheel" class="rcw-luxury-shell">
+<div class="rcw-luxury-glow rcw-luxury-glow-gold"></div>
+<div class="rcw-luxury-glow rcw-luxury-glow-ruby"></div>
+<div class="rcw-brand-strip">
+<div class="rcw-brand-mark">
+<img alt="Rick Chee Shop" decoding="async" src="assets/optimized/logo.webp"/>
+</div>
+<div class="rcw-brand-copy">
+<span>RICK CHEE SHOP • PRIVATE REWARDS</span>
+<strong>Lucky Wheel Experience</strong>
+<small>กรอกโค้ดสิทธิ์จากร้าน แล้วหมุนเพื่อลุ้นรางวัลได้ทันที</small>
+</div>
+<div class="rcw-security-chip"><i class="fas fa-shield-halved"></i><span>Secure Reward</span></div>
+</div>
+<div class="rcw-main-grid">
+<div class="rcw-wheel-column">
+<div class="rcw-wheel-stage">
+<div class="rcw-wheel-orbit rcw-wheel-orbit-one"></div>
+<div class="rcw-wheel-orbit rcw-wheel-orbit-two"></div>
+<div aria-hidden="true" class="rcw-pointer"><span></span></div>
+<div class="rcw-wheel-ring">
+<canvas aria-label="วงล้อรางวัล" height="620" id="rcwWheelCanvas" width="620"></canvas>
+<div aria-hidden="true" class="rcw-center-hub">
+<img alt="" src="assets/optimized/logo.webp"/>
+</div>
+</div>
+</div>
+<div class="rcw-wheel-actions">
+<button class="rcw-spin-button" disabled="" id="rcwSpinBtn" type="button">
+<span class="rcw-spin-button-icon"><i class="fas fa-dharmachakra"></i></span>
+<span class="rcw-spin-button-copy"><b>กรุณาใส่โค้ด</b><small>VERIFY CODE TO UNLOCK</small></span>
+<i class="fas fa-arrow-right"></i>
+</button>
+<div class="rcw-fair-note"><i class="fas fa-gem"></i><span>ระบบสุ่มทำงานตามอัตรารางวัลและเงื่อนไขที่ร้านกำหนด</span></div>
+</div>
+</div>
+<aside class="rcw-access-card">
+<div class="rcw-access-heading">
+<span class="rcw-access-icon"><i class="fas fa-key"></i></span>
+<div><small>MEMBER ACCESS</small><h3>ปลดล็อกสิทธิ์หมุน</h3><p>ใช้โค้ดที่ได้รับจาก Rick Chee Shop เท่านั้น</p></div>
+</div>
+<label class="rcw-code-label" for="rcwCodeInput">รหัสสิทธิ์ของคุณ</label>
+<div class="rcw-code-field">
+<i class="fas fa-ticket"></i>
+<input aria-describedby="rcwCodeStatus" autocomplete="off" id="rcwCodeInput" inputmode="text" maxlength="32" placeholder="เช่น RICKCHEE2026" type="text"/>
+<button aria-label="ล้างโค้ด" id="rcwClearCode" type="button"><i class="fas fa-xmark"></i></button>
+</div>
+<button class="rcw-verify-button" id="rcwVerifyBtn" type="button"><i class="fas fa-magnifying-glass"></i><span>ตรวจสอบโค้ด</span></button>
+<div aria-live="polite" class="rcw-code-status" id="rcwCodeStatus"></div>
+<div class="rcw-credit-card" hidden="" id="rcwSpinsInfo">
+<div><small>สิทธิ์คงเหลือ</small><strong id="rcwSpinsValue">0</strong></div>
+<span>SPINS</span>
+</div>
+<div class="rcw-access-divider"><span>HOW IT WORKS</span></div>
+<div class="rcw-steps">
+<div><b>01</b><span><strong>รับโค้ดจากร้าน</strong><small>โค้ดแต่ละชุดมีจำนวนสิทธิ์กำหนดไว้</small></span></div>
+<div><b>02</b><span><strong>ตรวจสอบโค้ด</strong><small>ระบบตรวจสิทธิ์ก่อนเปิดปุ่มหมุน</small></span></div>
+<div><b>03</b><span><strong>หมุนและรับผล</strong><small>ผลการสุ่มจะถูกบันทึกในประวัติ</small></span></div>
+</div>
+</aside>
+</div>
+<div class="rcw-prize-showcase">
+<div class="rcw-section-title">
+<div><span>REWARD VAULT</span><h3>รางวัลที่มีในวงล้อ</h3></div>
+<small>รายการรางวัลอัปเดตตามการตั้งค่าของร้าน</small>
+</div>
+<div class="rcw-prizes-grid" id="rcwPrizesGrid"></div>
+</div>
+<div class="rcw-history-grid">
+<section class="rcw-history-card">
+<div class="rcw-history-heading"><div><span><i class="fas fa-key"></i></span><div><small>ACCESS LOG</small><h3>ประวัติการตรวจโค้ด</h3></div></div><span class="rcw-history-lock"><i class="fas fa-shield-halved"></i> บันทึกอัตโนมัติ</span></div>
+<div class="rcw-history-list" id="rcwCodeHistoryList"><div class="rcw-empty-state"><i class="fas fa-clock-rotate-left"></i><span>ยังไม่มีประวัติ</span></div></div>
+</section>
+<section class="rcw-history-card">
+<div class="rcw-history-heading"><div><span><i class="fas fa-gift"></i></span><div><small>REWARD LOG</small><h3>ประวัติการสุ่ม</h3></div></div><span class="rcw-history-lock"><i class="fas fa-lock"></i> ไม่สามารถล้างจากหน้าเว็บ</span></div>
+<div class="rcw-history-list" id="rcwSpinHistoryList"><div class="rcw-empty-state"><i class="fas fa-clock-rotate-left"></i><span>ยังไม่มีประวัติ</span></div></div>
+</section>
+</div>
+</section>
+<div aria-hidden="true" class="rcw-result-modal" id="rcwResultModal">
+<div aria-labelledby="rcwResultTitle" aria-modal="true" class="rcw-result-card" role="dialog">
+<div class="rcw-result-crown"><i class="fas fa-crown"></i></div>
+<span class="rcw-result-kicker">RICK CHEE REWARD</span>
+<h3 id="rcwResultTitle">ผลการสุ่มของคุณ</h3>
+<div class="rcw-result-prize" id="rcwResultPrize">-</div>
+<div class="rcw-result-details">
+<div><span>โค้ดที่ใช้</span><strong id="rcwResultCode">-</strong></div>
+<div><span>วันที่</span><strong id="rcwResultDate">-</strong></div>
+<div><span>เวลา</span><strong id="rcwResultTime">-</strong></div>
+</div>
+<button id="rcwCloseResult" type="button"><i class="fas fa-check"></i><span>รับทราบ</span></button>
+</div>
+</div>
+</section>
+<!-- REVIEWS -->
+<section class="app-page" data-page-view="reviews">
+<div class="page-section-header">
+<div>
+<span class="page-kicker">CUSTOMER REVIEWS</span>
+<h2>รีวิวจากลูกค้า</h2>
+<p>อ่านความคิดเห็นจากลูกค้าคนอื่น และแชร์ประสบการณ์ของคุณได้ในหน้าเดียว</p>
+</div>
+</div>
+<section class="review-section reviews-page-section" id="reviews">
+<div aria-label="สรุปรีวิวจากลูกค้า" class="review-overview-card">
+<div class="review-overview-main">
+<span class="review-overview-icon"><i class="fas fa-star"></i></span>
+<div>
+<span class="review-overview-kicker">รีวิวจากลูกค้าจริง</span>
+<div class="review-overview-score-row">
+<strong id="reviewAverageScore">5.0</strong>
+<div>
+<div aria-label="คะแนนเฉลี่ย 5 ดาว" class="review-overview-stars" id="reviewAverageStars"></div>
+<small><b id="reviewTotalCount">0</b> รีวิวทั้งหมด</small>
+</div>
+</div>
+</div>
+</div>
+<div class="review-overview-points">
+<span><i class="fas fa-shield-heart"></i> รีวิวจากผู้ใช้งาน</span>
+<span><i class="fas fa-image"></i> แนบรูปได้</span>
+<span><i class="fas fa-bolt"></i> ส่งรีวิวได้ง่าย</span>
+</div>
+</div>
+<div class="review-grid">
+<div class="review-card review-list-card">
+<div class="review-list-header">
+<div>
+<h4>รีวิวล่าสุด</h4>
+<p class="review-card-subtitle">ความคิดเห็นล่าสุดจากลูกค้าที่ใช้งานบริการ</p>
+</div>
+<div class="review-nav">
+<button class="carousel-btn hidden" id="reviewCarouselPrev" type="button"><i class="fas fa-chevron-left"></i></button>
+<button class="carousel-btn hidden" id="reviewCarouselNext" type="button"><i class="fas fa-chevron-right"></i></button>
+</div>
+<div class="review-page-indicator" id="reviewPageIndicator">1 / 1</div>
+</div>
+<div class="review-list-wrapper" id="reviewListWrapper">
+<div class="review-list" id="reviewList"></div>
+</div>
+<div class="no-reviews hidden" hidden="" id="reviewNoData">ยังไม่มีรีวิว สามารถแชร์ประสบการณ์ของคุณได้เลย</div>
+</div>
+<div class="review-card review-form-card">
+<div class="review-form-heading">
+<span class="review-form-heading-icon"><i class="fas fa-pen-nib"></i></span>
+<div>
+<small>SHARE YOUR EXPERIENCE</small>
+<h4>ส่งรีวิวของคุณ</h4>
+<p>แชร์ประสบการณ์ใช้งานเพื่อช่วยลูกค้าคนอื่นตัดสินใจ</p>
+</div>
+</div>
+<form class="review-form" id="reviewForm">
+<div class="review-form-group">
+<label for="reviewName">ชื่อ</label>
+<input id="reviewName" placeholder="เช่น Rick Chee" required="" type="text"/>
+</div>
+<div class="review-form-group">
+<label for="reviewRating">คะแนน</label>
+<select id="reviewRating">
+<option value="5">5 ดาว — ดีเยี่ยม</option>
+<option value="4">4 ดาว — ดีมาก</option>
+<option value="3">3 ดาว — ดี</option>
+<option value="2">2 ดาว — ธรรมดา</option>
+<option value="1">1 ดาว — ต้องปรับปรุง</option>
+</select>
+</div>
+<div class="review-form-group">
+<label for="reviewComment">ความคิดเห็น</label>
+<textarea id="reviewComment" placeholder="เช่น บริการรวดเร็ว คุณภาพดี" required="" rows="5"></textarea>
+</div>
+<div class="review-form-group review-image-upload">
+<label>รูปภาพรีวิว (ถ้ามี)</label>
+<label class="file-input-button" for="reviewImage">
+<i class="fas fa-image"></i>
                                             เพิ่มรูป
-                                            <input id="reviewImage" type="file" accept="image/*">
-                                        </label>
-                                        <div id="reviewImagePreview" class="image-upload-preview hidden">
-                                            <img id="reviewPreviewImg" alt="Preview รูปรีวิว">
-                                        </div>
-                                        <p class="review-form-note">รองรับรูปภาพ JPG / PNG ขนาดไม่เกิน 1MB</p>
-                                    </div>
-                                    <button type="submit" class="button button-primary full-width">
+                                            <input accept="image/*" id="reviewImage" type="file"/>
+</label>
+<div class="image-upload-preview hidden" id="reviewImagePreview">
+<img alt="Preview รูปรีวิว" id="reviewPreviewImg"/>
+</div>
+<p class="review-form-note">รองรับรูปภาพ JPG / PNG ขนาดไม่เกิน 1MB</p>
+</div>
+<button class="button button-primary full-width" type="submit">
                                         ส่งรีวิวของฉัน <i class="fas fa-paper-plane"></i>
-                                    </button>
-                                </form>
-                            </div>
-                        </div>
-                    </section>
-                </section>
-
-                <!-- PROMOTIONS -->
-                <section class="app-page promotions-page" data-page-view="promotions">
-                    <div class="page-section-header promotions-page-header">
-                        <div>
-                            <span class="page-kicker">PROMOTIONS</span>
-                            <h2>โปรโมชั่น</h2>
-                            <p>โปรโมชั่นพิเศษจาก Rick Chee Shop</p>
-                        </div>
-                        <div class="promotions-header-actions">
-                            <a class="button button-outline promotions-line-button" href="https://line.me/R/ti/p/%40106zyrpm" target="_blank" rel="noopener noreferrer">
-                                <i class="fab fa-line"></i> สอบถามโปรโมชั่น
+</button>
+</form>
+</div>
+</div>
+</section>
+</section>
+<!-- PROMOTIONS -->
+<section class="app-page promotions-page" data-page-view="promotions">
+<div class="page-section-header promotions-page-header">
+<div>
+<span class="page-kicker">PROMOTIONS</span>
+<h2>โปรโมชั่น</h2>
+<p>โปรโมชั่นพิเศษจาก Rick Chee Shop</p>
+</div>
+<div class="promotions-header-actions">
+<a class="button button-outline promotions-line-button" href="https://line.me/R/ti/p/%40106zyrpm" rel="noopener noreferrer" target="_blank">
+<i class="fab fa-line"></i> สอบถามโปรโมชั่น
                             </a>
-                        </div>
-                    </div>
-
-                    <div class="promotion-overview" aria-label="สรุปโปรโมชั่น">
-                        <div class="promotion-overview-card">
-                            <span class="promotion-overview-icon"><i class="fas fa-bolt"></i></span>
-                            <div><strong id="promotionActiveCount">0</strong><small>โปรที่กำลังใช้งาน</small></div>
-                        </div>
-                        <div class="promotion-overview-card">
-                            <span class="promotion-overview-icon"><i class="fas fa-calendar-alt"></i></span>
-                            <div><strong id="promotionUpcomingCount">0</strong><small>โปรที่กำลังจะมาเร็วๆนี้</small></div>
-                        </div>
-                        <div class="promotion-overview-card promotion-overview-card-wide">
-                            <span class="promotion-overview-icon"><i class="fas fa-sync-alt"></i></span>
-                            <div><strong>อัปเดตอัตโนมัติ</strong><small>ระบบจะอัปเดตโปรโมชั่นใหม่โดยอัตโนมัติ</small></div>
-                        </div>
-                    </div>
-
-                    <section id="promotionBanner" class="promotion-showcase hidden" aria-live="polite"></section>
-                    <div id="promotionEmptyState" class="promotion-page-empty">
-                        <span><i class="fas fa-gift"></i></span>
-                        <div><strong>ยังไม่มีโปรโมชั่นที่กำลังแสดง</strong><small>หากมีโปรโมชั่นใหม่ รายการจะขึ้นในหน้านี้อัตโนมัติ</small></div>
-                        <a href="https://line.me/R/ti/p/%40106zyrpm" target="_blank" rel="noopener noreferrer">สอบถามโปร <i class="fab fa-line"></i></a>
-                    </div>
-                </section>
-
-                <!-- MY ORDERS -->
-                <section class="app-page my-orders-page" data-page-view="my-orders">
-                    <div class="page-section-header my-orders-page-header">
-                        <div>
-                            <span class="page-kicker">MY ORDER HISTORY</span>
-                            <h2>ประวัติการซื้อของฉัน</h2>
-                            <p>แสดงเฉพาะออเดอร์ที่สร้างจากเบราว์เซอร์/อุปกรณ์นี้ เพื่อให้ตรวจสอบเลขออเดอร์และยอดชำระย้อนหลังได้ง่าย</p>
-                        </div>
-                        <button id="refreshMyOrdersBtn" class="button button-outline" type="button"><i class="fas fa-rotate"></i> รีเฟรชประวัติ</button>
-                    </div>
-
-                    <div class="my-orders-summary" aria-label="สรุปประวัติการซื้อ">
-                        <div class="my-orders-summary-card"><span><i class="fas fa-receipt"></i></span><div><strong id="myOrdersCount">0</strong><small>ออเดอร์ทั้งหมด</small></div></div>
-                        <div class="my-orders-summary-card"><span><i class="fas fa-wallet"></i></span><div><strong id="myOrdersTotal">฿0</strong><small>ยอดซื้อรวม</small></div></div>
-                        <div class="my-orders-summary-card"><span><i class="fas fa-ticket"></i></span><div><strong id="myOrdersDiscountCount">0</strong><small>ออเดอร์ที่ใช้ส่วนลด</small></div></div>
-                    </div>
-
-                    <div class="my-orders-device-note"><i class="fas fa-shield-halved"></i><div><strong>ประวัติของอุปกรณ์นี้</strong><small>ระบบประวัติการใช้จ่าย</small></div></div>
-                    <div id="myOrdersList" class="my-orders-list" aria-live="polite">
-                        <div class="my-orders-empty"><i class="fas fa-bag-shopping"></i><strong>ยังไม่มีประวัติการซื้อ</strong><small>เมื่อสั่งซื้อออเดอร์สำเร็จ รายการจะขึ้นที่นี่อัตโนมัติ</small></div>
-                    </div>
-                </section>
-
-                <!-- FAQ -->
-                <section class="app-page" data-page-view="faq">
-                    <div class="page-section-header">
-                        <div>
-                            <span class="page-kicker">HELP CENTER</span>
-                            <h2>คำถามที่พบบ่อย</h2>
-                            <p>รวมคำถามสำคัญไว้ในหน้าเดียว เพื่อหาคำตอบได้เร็วขึ้น</p>
-                        </div>
-                    </div>
-                    <section id="faq" class="faq-section faq-page-section">
-                        <div class="faq-container">
-                            <div class="faq-item">
-                                <button class="faq-question" type="button">
-                                    <span>1. รับรหัสผ่านอย่างไรหลังชำระเงิน?</span>
-                                    <i class="fas fa-chevron-down"></i>
-                                </button>
-                                <div class="faq-answer">
-                                    <p>หลังยืนยันการโอนสำเร็จ จะได้รับเลขออเดอร์ ให้เพิ่มเพื่อน Line <strong>@106zyrpm</strong> เพื่อแจ้งเลขออเดอร์ให้กับแอดมินและแอดมินจะตรวจสอบและส่งรหัสผ่านให้ภายใน 1-5 นาที</p>
-                                </div>
-                            </div>
-                            <div class="faq-item">
-                                <button class="faq-question" type="button">
-                                    <span>2. ไอดี Netflix เป็นของแท้หรือไม่?</span>
-                                    <i class="fas fa-chevron-down"></i>
-                                </button>
-                                <div class="faq-answer">
-                                    <p>ใช่ครับ ทุกไอดีเป็นบัญชีพรีเมียมแท้ 100% ซื้อตรงจากผู้ให้บริการอย่างเป็นทางการ มั่นใจได้ในความเสถียรและคุณภาพระดับ Ultra HD</p>
-                                </div>
-                            </div>
-                            <div class="faq-item">
-                                <button class="faq-question" type="button">
-                                    <span>3. หากไอดีมีปัญหา หรือดูไม่ได้ สามารถเคลมได้หรือไม่?</span>
-                                    <i class="fas fa-chevron-down"></i>
-                                </button>
-                                <div class="faq-answer">
-                                    <p>ได้ครับ เราการันตีการใช้งานตลอดอายุแพ็กเกจ หากพบปัญหาเข้าไม่ได้หรือรหัสเปลี่ยน สามารถแจ้งแอดมินได้ทันที โดยไม่มีค่าใช้จ่ายเพิ่ม</p>
-                                </div>
-                            </div>
-                        </div>
-                    </section>
-                </section>
-            </main>
-
-            <footer class="app-footer">
-                <p>&copy; 2026 Rick Chee Shop. All rights reserved.</p>
-            </footer>
-        </div>
-    </div>
-
-    <!-- Cart Modal -->
-    <div id="cartPanel" class="overlay cart-overlay hidden">
-        <aside class="cart-drawer" role="dialog" aria-modal="true" aria-label="ตะกร้าสินค้าของคุณ">
-            <div class="cart-header">
-                <div class="cart-header-copy">
-                    <span class="cart-kicker">RICK CHEE · SECURE CART</span>
-                    <h3><i class="fas fa-bag-shopping"></i> ตะกร้าสินค้า</h3>
-                    <small>ตรวจสอบแพ็กเกจ จำนวน และยอดรวมก่อนชำระเงิน</small>
-                </div>
-                <button id="closeCart" class="close-btn" type="button" aria-label="ปิดตะกร้า"><i class="fas fa-times"></i></button>
-            </div>
-            <div id="cartItems" class="cart-items-list"></div>
-            <div class="cart-drawer-footer">
-                <div class="cart-summary">
-                    <div><span>ยอดรวมสุทธิ</span><small id="cartSummaryMeta">0 รายการ · พร้อมดำเนินการชำระเงิน</small></div>
-                    <span id="cartTotal" class="total-price">฿0</span>
-                </div>
-                <div class="cart-safe-note"><span class="cart-safe-icon"><i class="fas fa-shield-halved"></i></span><span><b>ชำระเงินอย่างปลอดภัย</b><small>หลังสร้างเลขออเดอร์ ให้ส่งเลขออเดอร์และสลิปผ่าน LINE ร้าน</small></span></div>
-                <button id="checkoutBtn" class="button button-primary full-width cart-checkout-button" type="button">
-                    <span>ดำเนินการชำระเงิน</span> <i class="fas fa-arrow-right"></i>
-                </button>
-                <p class="cart-note"><i class="fas fa-lock"></i> ข้อมูลออเดอร์จะถูกสร้างหลังจากคุณยืนยันขั้นตอนชำระเงิน</p>
-            </div>
-        </aside>
-    </div>
-
-    <!-- Checkout Wizard -->
-    <div id="checkoutPanel" class="overlay checkout-overlay hidden">
-        <section class="checkout-modal" role="dialog" aria-modal="true" aria-label="ขั้นตอนชำระเงิน">
-            <div class="checkout-modal-header">
-                <div>
-                    <span class="cart-kicker">RICK CHEE · SECURE CHECKOUT</span>
-                    <h3><i class="fas fa-gem"></i> ชำระเงินแบบพรีเมียม</h3>
-                    <small>ทำตามขั้นตอนด้านล่าง แล้วกดยืนยันเพื่อส่งรายละเอียดเข้า LINE ร้าน</small>
-                </div>
-                <button id="closeCheckout" class="close-btn" type="button" aria-label="ปิด"><i class="fas fa-times"></i></button>
-            </div>
-            <div class="checkout-steps" aria-label="ขั้นตอนชำระเงิน">
-                <div class="checkout-step-pill is-active" data-checkout-step-pill="1"><b>1</b><span>ส่วนลด</span></div>
-                <span class="checkout-step-line"></span>
-                <div class="checkout-step-pill" data-checkout-step-pill="2"><b>2</b><span>ชำระเงิน</span></div>
-                <span class="checkout-step-line"></span>
-                <div class="checkout-step-pill" data-checkout-step-pill="3"><b>3</b><span>ยืนยัน</span></div>
-            </div>
-
-            <div class="checkout-step-view is-active" data-checkout-step="1">
-                <div class="checkout-card">
-                    <div class="checkout-card-heading"><span class="checkout-card-icon"><i class="fas fa-ticket"></i></span><div><small>DISCOUNT CODE</small><h4>มีโค้ดส่วนลดไหม?</h4><p>กรอกโค้ดแล้วกดใช้โค้ด หรือถ้าไม่มีให้กด “ไม่มีโค้ด / ต่อไป” ได้เลย</p></div></div>
-                    <div class="discount-entry-row">
-                        <input id="discountCodeInput" type="text" autocomplete="off" placeholder="เช่น RICKCHEE10" maxlength="40">
-                        <button id="applyDiscountBtn" class="button button-outline" type="button"><i class="fas fa-check"></i> ใช้โค้ด</button>
-                    </div>
-                    <div id="discountFeedback" class="discount-feedback hidden"></div>
-                </div>
-                <div id="checkoutSummaryStep1" class="checkout-price-summary"></div>
-                <div class="checkout-footer-actions">
-                    <button id="checkoutBackToCart" class="button button-outline" type="button"><i class="fas fa-arrow-left"></i> กลับตะกร้า</button>
-                    <button id="checkoutToPayment" class="button button-primary" type="button">ต่อไป <i class="fas fa-arrow-right"></i></button>
-                </div>
-            </div>
-
-            <div class="checkout-step-view" data-checkout-step="2">
-                <div class="checkout-card">
-                    <div class="checkout-card-heading"><span class="checkout-card-icon"><i class="fas fa-building-columns"></i></span><div><small>PAYMENT METHOD</small><h4>เลือกช่องทางชำระเงิน</h4><p>เลือก QR พร้อมเพย์ หรือโอนผ่านเลขบัญชี</p></div></div>
-                    <div class="payment-method-grid">
-                        <button class="payment-method-card" type="button" data-payment-method="qr"><span><i class="fas fa-qrcode"></i></span><div><strong>QR พร้อมเพย์</strong><small>สแกน QR แล้วโอนได้ทันที</small></div><i class="fas fa-circle-check payment-check"></i></button>
-                        <button class="payment-method-card" type="button" data-payment-method="bank"><span><i class="fas fa-building-columns"></i></span><div><strong>เลขบัญชี</strong><small>คัดลอกเลขบัญชีเพื่อโอน</small></div><i class="fas fa-circle-check payment-check"></i></button>
-                    </div>
-                    <div id="paymentDetail" class="payment-detail-panel">
-                        <div class="payment-placeholder"><i class="fas fa-hand-pointer"></i><span>เลือกช่องทางชำระเงินด้านบน</span></div>
-                    </div>
-                </div>
-                <div id="checkoutSummaryStep2" class="checkout-price-summary"></div>
-                <div class="checkout-footer-actions">
-                    <button id="checkoutBackDiscount" class="button button-outline" type="button"><i class="fas fa-arrow-left"></i> ย้อนกลับ</button>
-                    <button id="checkoutToConfirm" class="button button-primary" type="button">โอนเสร็จแล้ว <i class="fas fa-arrow-right"></i></button>
-                </div>
-            </div>
-
-            <div class="checkout-step-view" data-checkout-step="3">
-                <div class="checkout-confirm-hero checkout-order-success">
-                    <span><i class="fas fa-circle-check"></i></span>
-                    <h4>ออเดอร์เรียบร้อยแล้ว</h4>
-                    <p>เลขออเดอร์ด้านล่างเป็นเลขออเดอร์ของคุณ กรุณาคัดลอกไว้ติดต่อแอดมิน LINE</p>
-                </div>
-                <div id="checkoutOrderReceipt" class="checkout-order-receipt hidden">
-                    <small>ORDER NUMBER</small>
-                    <strong id="checkoutOrderNumber">-</strong>
-                    <span><i class="fas fa-shield-check"></i> บันทึกเข้าประวัติการซื้อแล้ว</span>
-                </div>
-                <div id="checkoutFinalSummary" class="checkout-final-summary"></div>
-                <div class="checkout-footer-actions checkout-order-actions">
-                    <button id="checkoutBackPayment" class="button button-outline" type="button"><i class="fas fa-arrow-left"></i> ย้อนกลับ</button>
-                    <button id="confirmPaymentBtn" class="button button-primary checkout-confirm-line" type="button"><i class="fas fa-copy"></i> คัดลอกเลขออเดอร์</button>
-                </div>
-            </div>
-        </section>
-    </div>
-
-    <div id="toast" class="toast"></div>
-    <script src="https://www.gstatic.com/firebasejs/12.18.0/firebase-app-compat.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/12.18.0/firebase-firestore-compat.js"></script>
-    <script src="firebase-config.js?v=20260902-v7-spark"></script>
-    <script src="firebase-direct.js?v=20260902-v7-spark"></script>
-    <script src="config.js?v=20260902-v7-spark"></script>
-    <script src="i18n.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js" integrity="sha512-CNgIRecGo7nphbeZ04Sc13ka07paqdeTu0WR1IM4kNcpmBAUSHSQX0FslNhTDadL4O5SAGapGt4FodqL8My0mA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <script src="script.js?v=20260902-v77-final"></script>
-    <script src="wheel-integrated.js?v=20260902-v776"></script>
+</div>
+</div>
+<div aria-label="สรุปโปรโมชั่น" class="promotion-overview">
+<div class="promotion-overview-card">
+<span class="promotion-overview-icon"><i class="fas fa-bolt"></i></span>
+<div><strong id="promotionActiveCount">0</strong><small>โปรที่กำลังใช้งาน</small></div>
+</div>
+<div class="promotion-overview-card">
+<span class="promotion-overview-icon"><i class="fas fa-calendar-alt"></i></span>
+<div><strong id="promotionUpcomingCount">0</strong><small>โปรที่กำลังจะมาเร็วๆนี้</small></div>
+</div>
+<div class="promotion-overview-card promotion-overview-card-wide">
+<span class="promotion-overview-icon"><i class="fas fa-sync-alt"></i></span>
+<div><strong>อัปเดตอัตโนมัติ</strong><small>ระบบจะอัปเดตโปรโมชั่นใหม่โดยอัตโนมัติ</small></div>
+</div>
+</div>
+<section aria-live="polite" class="promotion-showcase hidden" id="promotionBanner"></section>
+<div class="promotion-page-empty" id="promotionEmptyState">
+<span><i class="fas fa-gift"></i></span>
+<div><strong>ยังไม่มีโปรโมชั่นที่กำลังแสดง</strong><small>หากมีโปรโมชั่นใหม่ รายการจะขึ้นในหน้านี้อัตโนมัติ</small></div>
+<a href="https://line.me/R/ti/p/%40106zyrpm" rel="noopener noreferrer" target="_blank">สอบถามโปร <i class="fab fa-line"></i></a>
+</div>
+</section>
+<!-- MY ORDERS -->
+<section class="app-page my-orders-page" data-page-view="my-orders">
+<div class="page-section-header my-orders-page-header">
+<div>
+<span class="page-kicker">MY ORDER HISTORY</span>
+<h2>ประวัติการซื้อของฉัน</h2>
+<p>ตรวจสอบเลขออเดอร์ รายการสินค้า และยอดชำระย้อนหลังจากอุปกรณ์นี้ได้อย่างสะดวก</p>
+</div>
+<button class="button button-outline" id="refreshMyOrdersBtn" type="button"><i class="fas fa-rotate"></i> รีเฟรชประวัติ</button>
+</div>
+<div aria-label="สรุปประวัติการซื้อ" class="my-orders-summary">
+<div class="my-orders-summary-card"><span><i class="fas fa-receipt"></i></span><div><strong id="myOrdersCount">0</strong><small>ออเดอร์ทั้งหมด</small></div></div>
+<div class="my-orders-summary-card"><span><i class="fas fa-wallet"></i></span><div><strong id="myOrdersTotal">฿0</strong><small>ยอดซื้อรวม</small></div></div>
+<div class="my-orders-summary-card"><span><i class="fas fa-ticket"></i></span><div><strong id="myOrdersDiscountCount">0</strong><small>ออเดอร์ที่ใช้ส่วนลด</small></div></div>
+</div>
+<div class="my-orders-device-note"><i class="fas fa-shield-halved"></i><div><strong>ประวัติของอุปกรณ์นี้</strong><small>เก็บรายการสั่งซื้อของคุณไว้บนอุปกรณ์นี้เพื่อเรียกดูย้อนหลัง</small></div></div>
+<div aria-live="polite" class="my-orders-list" id="myOrdersList">
+<div class="my-orders-empty"><i class="fas fa-bag-shopping"></i><strong>ยังไม่มีประวัติการซื้อ</strong><small>เมื่อสั่งซื้อออเดอร์สำเร็จ รายการจะขึ้นที่นี่อัตโนมัติ</small></div>
+</div>
+</section>
+<!-- FAQ -->
+<section class="app-page" data-page-view="faq">
+<div class="page-section-header">
+<div>
+<span class="page-kicker">HELP CENTER</span>
+<h2>คำถามที่พบบ่อย</h2>
+<p>รวมคำถามสำคัญไว้ในหน้าเดียว เพื่อหาคำตอบได้เร็วขึ้น</p>
+</div>
+</div>
+<section class="faq-section faq-page-section" id="faq">
+<div class="faq-container">
+<div class="faq-item">
+<button class="faq-question" type="button">
+<span>1. รับรหัสผ่านอย่างไรหลังชำระเงิน?</span>
+<i class="fas fa-chevron-down"></i>
+</button>
+<div class="faq-answer">
+<p>หลังยืนยันการโอนสำเร็จ จะได้รับเลขออเดอร์ ให้เพิ่มเพื่อน Line <strong>@106zyrpm</strong> เพื่อแจ้งเลขออเดอร์ให้กับแอดมินและแอดมินจะตรวจสอบและส่งรหัสผ่านให้ภายใน 1-5 นาที</p>
+</div>
+</div>
+<div class="faq-item">
+<button class="faq-question" type="button">
+<span>2. ไอดี Netflix เป็นของแท้หรือไม่?</span>
+<i class="fas fa-chevron-down"></i>
+</button>
+<div class="faq-answer">
+<p>ใช่ครับ ทุกไอดีเป็นบัญชีพรีเมียมแท้ 100% ซื้อตรงจากผู้ให้บริการอย่างเป็นทางการ มั่นใจได้ในความเสถียรและคุณภาพระดับ Ultra HD</p>
+</div>
+</div>
+<div class="faq-item">
+<button class="faq-question" type="button">
+<span>3. หากไอดีมีปัญหา หรือดูไม่ได้ สามารถเคลมได้หรือไม่?</span>
+<i class="fas fa-chevron-down"></i>
+</button>
+<div class="faq-answer">
+<p>ได้ครับ เราการันตีการใช้งานตลอดอายุแพ็กเกจ หากพบปัญหาเข้าไม่ได้หรือรหัสเปลี่ยน สามารถแจ้งแอดมินได้ทันที โดยไม่มีค่าใช้จ่ายเพิ่ม</p>
+</div>
+</div>
+</div>
+</section>
+</section>
+</main>
+<footer class="app-footer">
+<p>© 2026 Rick Chee Shop. All rights reserved.</p>
+</footer>
+</div>
+</div>
+<!-- Cart Modal -->
+<div class="overlay cart-overlay hidden" id="cartPanel">
+<aside aria-label="ตะกร้าสินค้าของคุณ" aria-modal="true" class="cart-drawer" role="dialog">
+<div class="cart-header">
+<div class="cart-header-copy">
+<span class="cart-kicker">RICK CHEE · SECURE CART</span>
+<h3><i class="fas fa-bag-shopping"></i> ตะกร้าสินค้า</h3>
+<small>ตรวจสอบแพ็กเกจ จำนวน และยอดรวมก่อนชำระเงิน</small>
+</div>
+<button aria-label="ปิดตะกร้า" class="close-btn" id="closeCart" type="button"><i class="fas fa-times"></i></button>
+</div>
+<div class="cart-items-list" id="cartItems"></div>
+<div class="cart-drawer-footer">
+<div class="cart-summary">
+<div><span>ยอดรวมสุทธิ</span><small id="cartSummaryMeta">0 รายการ · พร้อมดำเนินการชำระเงิน</small></div>
+<span class="total-price" id="cartTotal">฿0</span>
+</div>
+<div class="cart-safe-note"><span class="cart-safe-icon"><i class="fas fa-shield-halved"></i></span><span><b>ชำระเงินอย่างปลอดภัย</b><small>หลังสร้างเลขออเดอร์ ให้ส่งเลขออเดอร์และสลิปผ่าน LINE ร้าน</small></span></div>
+<button class="button button-primary full-width cart-checkout-button" id="checkoutBtn" type="button">
+<span>ดำเนินการชำระเงิน</span> <i class="fas fa-arrow-right"></i>
+</button>
+<p class="cart-note"><i class="fas fa-lock"></i> ข้อมูลออเดอร์จะถูกสร้างหลังจากคุณยืนยันขั้นตอนชำระเงิน</p>
+</div>
+</aside>
+</div>
+<!-- Checkout Wizard -->
+<div class="overlay checkout-overlay hidden" id="checkoutPanel">
+<section aria-label="ขั้นตอนชำระเงิน" aria-modal="true" class="checkout-modal" role="dialog">
+<div class="checkout-modal-header">
+<div>
+<span class="cart-kicker">RICK CHEE · SECURE CHECKOUT</span>
+<h3><i class="fas fa-gem"></i> ชำระเงินแบบพรีเมียม</h3>
+<small>ทำตามขั้นตอนด้านล่าง แล้วกดยืนยันเพื่อส่งรายละเอียดเข้า LINE ร้าน</small>
+</div>
+<button aria-label="ปิด" class="close-btn" id="closeCheckout" type="button"><i class="fas fa-times"></i></button>
+</div>
+<div aria-label="ขั้นตอนชำระเงิน" class="checkout-steps">
+<div class="checkout-step-pill is-active" data-checkout-step-pill="1"><b>1</b><span>ส่วนลด</span></div>
+<span class="checkout-step-line"></span>
+<div class="checkout-step-pill" data-checkout-step-pill="2"><b>2</b><span>ชำระเงิน</span></div>
+<span class="checkout-step-line"></span>
+<div class="checkout-step-pill" data-checkout-step-pill="3"><b>3</b><span>ยืนยัน</span></div>
+</div>
+<div class="checkout-step-view is-active" data-checkout-step="1">
+<div class="checkout-card">
+<div class="checkout-card-heading"><span class="checkout-card-icon"><i class="fas fa-ticket"></i></span><div><small>DISCOUNT CODE</small><h4>มีโค้ดส่วนลดไหม?</h4><p>กรอกโค้ดแล้วกดใช้โค้ด หรือถ้าไม่มีให้กด “ไม่มีโค้ด / ต่อไป” ได้เลย</p></div></div>
+<div class="discount-entry-row">
+<input autocomplete="off" id="discountCodeInput" maxlength="40" placeholder="เช่น RICKCHEE10" type="text"/>
+<button class="button button-outline" id="applyDiscountBtn" type="button"><i class="fas fa-check"></i> ใช้โค้ด</button>
+</div>
+<div class="discount-feedback hidden" id="discountFeedback"></div>
+</div>
+<div class="checkout-price-summary" id="checkoutSummaryStep1"></div>
+<div class="checkout-footer-actions">
+<button class="button button-outline" id="checkoutBackToCart" type="button"><i class="fas fa-arrow-left"></i> กลับตะกร้า</button>
+<button class="button button-primary" id="checkoutToPayment" type="button">ต่อไป <i class="fas fa-arrow-right"></i></button>
+</div>
+</div>
+<div class="checkout-step-view" data-checkout-step="2">
+<div class="checkout-card">
+<div class="checkout-card-heading"><span class="checkout-card-icon"><i class="fas fa-building-columns"></i></span><div><small>PAYMENT METHOD</small><h4>เลือกช่องทางชำระเงิน</h4><p>เลือก QR พร้อมเพย์ หรือโอนผ่านเลขบัญชี</p></div></div>
+<div class="payment-method-grid">
+<button class="payment-method-card" data-payment-method="qr" type="button"><span><i class="fas fa-qrcode"></i></span><div><strong>QR พร้อมเพย์</strong><small>สแกน QR แล้วโอนได้ทันที</small></div><i class="fas fa-circle-check payment-check"></i></button>
+<button class="payment-method-card" data-payment-method="bank" type="button"><span><i class="fas fa-building-columns"></i></span><div><strong>เลขบัญชี</strong><small>คัดลอกเลขบัญชีเพื่อโอน</small></div><i class="fas fa-circle-check payment-check"></i></button>
+</div>
+<div class="payment-detail-panel" id="paymentDetail">
+<div class="payment-placeholder"><i class="fas fa-hand-pointer"></i><span>เลือกช่องทางชำระเงินด้านบน</span></div>
+</div>
+</div>
+<div class="checkout-price-summary" id="checkoutSummaryStep2"></div>
+<div class="checkout-footer-actions">
+<button class="button button-outline" id="checkoutBackDiscount" type="button"><i class="fas fa-arrow-left"></i> ย้อนกลับ</button>
+<button class="button button-primary" id="checkoutToConfirm" type="button">โอนเสร็จแล้ว <i class="fas fa-arrow-right"></i></button>
+</div>
+</div>
+<div class="checkout-step-view" data-checkout-step="3">
+<div class="checkout-confirm-hero checkout-order-success">
+<span><i class="fas fa-circle-check"></i></span>
+<h4>ออเดอร์เรียบร้อยแล้ว</h4>
+<p>เลขออเดอร์ด้านล่างเป็นเลขออเดอร์ของคุณ กรุณาคัดลอกไว้ติดต่อแอดมิน LINE</p>
+</div>
+<div class="checkout-order-receipt hidden" id="checkoutOrderReceipt">
+<small>ORDER NUMBER</small>
+<strong id="checkoutOrderNumber">-</strong>
+<span><i class="fas fa-shield-check"></i> บันทึกเข้าประวัติการซื้อแล้ว</span>
+</div>
+<div class="checkout-final-summary" id="checkoutFinalSummary"></div>
+<div class="checkout-footer-actions checkout-order-actions">
+<button class="button button-outline" id="checkoutBackPayment" type="button"><i class="fas fa-arrow-left"></i> ย้อนกลับ</button>
+<button class="button button-primary checkout-confirm-line" id="confirmPaymentBtn" type="button"><i class="fas fa-copy"></i> คัดลอกเลขออเดอร์</button>
+</div>
+</div>
+</section>
+</div>
+<div class="toast" id="toast"></div>
+<script src="https://www.gstatic.com/firebasejs/12.18.0/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/12.18.0/firebase-firestore-compat.js"></script>
+<script src="firebase-config.js?v=20260902-v7-spark"></script>
+<script src="firebase-direct.js?v=20260902-v7-spark"></script>
+<script src="config.js?v=20260902-v7-spark"></script>
+<script src="i18n.js"></script>
+<script crossorigin="anonymous" integrity="sha512-CNgIRecGo7nphbeZ04Sc13ka07paqdeTu0WR1IM4kNcpmBAUSHSQX0FslNhTDadL4O5SAGapGt4FodqL8My0mA==" referrerpolicy="no-referrer" src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+<script src="script.js?v=20260902-v77-final"></script>
+<script src="wheel-integrated.js?v=20260902-v776"></script>
 </body>
 </html>

@@ -1,0 +1,29 @@
+/* Rick Chee Shop V7.8.10 — customer detail fixes
+   1) Review form shell has no filled card background.
+   2) Remove the stray light separator line in purchase-history cards. */
+
+/* Reviews: keep the layout/padding, but remove the whole "ส่งรีวิวของคุณ" panel fill. */
+[data-page-view="reviews"] .review-form-card{
+  background:transparent!important;
+  background-image:none!important;
+  border-color:transparent!important;
+  box-shadow:none!important;
+}
+[data-page-view="reviews"] .review-form-card::before,
+[data-page-view="reviews"] .review-form-card::after{
+  display:none!important;
+  content:none!important;
+}
+[data-page-view="reviews"] .review-form-heading{
+  background:transparent!important;
+  box-shadow:none!important;
+}
+
+/* Purchase history: styles.css still contributed a pale border-bottom on .my-order-meta.
+   Remove that seam (and the duplicate top seam of preview) while keeping the rest of the card intact. */
+[data-page-view="my-orders"] .my-order-meta{
+  border-bottom:0!important;
+}
+[data-page-view="my-orders"] .my-order-preview{
+  border-top:0!important;
+}

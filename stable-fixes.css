@@ -1,0 +1,294 @@
+/* ==========================================================================
+   Rick Chee Shop V7.8.2 STABLE FIXES
+   Targeted fixes only. No broad layout overrides.
+   ========================================================================== */
+
+/* ---------- Review page ---------- */
+[data-page-view="reviews"] .review-section{
+  display:grid!important;
+  gap:16px!important;
+}
+[data-page-view="reviews"] .review-overview-card{
+  min-height:108px!important;
+  padding:16px 18px!important;
+}
+[data-page-view="reviews"] .review-grid{
+  display:grid!important;
+  grid-template-columns:minmax(0,1.45fr) minmax(320px,.55fr)!important;
+  align-items:start!important;
+  gap:16px!important;
+}
+[data-page-view="reviews"] .review-list-card,
+[data-page-view="reviews"] .review-form-card{
+  min-width:0!important;
+  height:auto!important;
+}
+[data-page-view="reviews"] .review-list-card{
+  padding:16px!important;
+}
+[data-page-view="reviews"] .review-list-header{
+  display:grid!important;
+  grid-template-columns:minmax(0,1fr) auto!important;
+  gap:10px!important;
+  align-items:center!important;
+  padding-bottom:12px!important;
+  margin-bottom:12px!important;
+  border-bottom:1px solid var(--pro-line)!important;
+}
+[data-page-view="reviews"] .review-list-header>div:first-child{
+  min-width:0!important;
+}
+[data-page-view="reviews"] .review-nav{
+  display:flex!important;
+  align-items:center!important;
+  gap:6px!important;
+}
+[data-page-view="reviews"] .review-page-indicator{
+  grid-column:2!important;
+  justify-self:end!important;
+  min-width:auto!important;
+  padding:5px 10px!important;
+  border-radius:999px!important;
+  background:rgba(255,255,255,.018)!important;
+  border:1px solid var(--pro-line)!important;
+  color:var(--pro-primary)!important;
+  font-size:.68rem!important;
+}
+[data-page-view="reviews"] .review-page-indicator.hidden{
+  display:none!important;
+}
+[data-page-view="reviews"] .review-list-wrapper{
+  min-height:0!important;
+}
+[data-page-view="reviews"] .review-list-wrapper.hidden{
+  display:none!important;
+}
+[data-page-view="reviews"] .review-list{
+  display:grid!important;
+  grid-template-columns:repeat(2,minmax(0,1fr))!important;
+  gap:10px!important;
+}
+[data-page-view="reviews"] .review-card-item{
+  min-width:0!important;
+  height:auto!important;
+  padding:14px!important;
+}
+[data-page-view="reviews"] .no-reviews{
+  min-height:128px!important;
+  display:grid!important;
+  place-items:center!important;
+  padding:20px!important;
+  text-align:center!important;
+  color:var(--pro-muted)!important;
+  border:1px dashed color-mix(in srgb,var(--pro-primary) 22%,transparent)!important;
+  border-radius:16px!important;
+  background:rgba(255,255,255,.01)!important;
+}
+[data-page-view="reviews"] .no-reviews.hidden,
+[data-page-view="reviews"] .no-reviews[hidden]{
+  display:none!important;
+}
+[data-page-view="reviews"] .review-form-card{
+  position:sticky!important;
+  top:92px!important;
+  padding:16px!important;
+}
+[data-page-view="reviews"] .review-form{
+  display:grid!important;
+  gap:12px!important;
+}
+[data-page-view="reviews"] .review-form textarea{
+  min-height:118px!important;
+  resize:vertical!important;
+}
+
+/* ---------- Promotions ---------- */
+[data-page-view="promotions"] .promotion-overview{
+  display:grid!important;
+  grid-template-columns:repeat(3,minmax(0,1fr))!important;
+  gap:10px!important;
+}
+[data-page-view="promotions"] .promotion-overview-card,
+[data-page-view="promotions"] .promotion-overview-card-wide{
+  grid-column:auto!important;
+  min-width:0!important;
+  min-height:82px!important;
+  padding:13px 14px!important;
+}
+[data-page-view="promotions"] .promotion-overview-card>div{
+  min-width:0!important;
+}
+[data-page-view="promotions"] .promotion-overview-card strong,
+[data-page-view="promotions"] .promotion-overview-card small{
+  overflow-wrap:anywhere!important;
+}
+[data-page-view="promotions"] .promotion-page-empty{
+  min-height:132px!important;
+  padding:20px 22px!important;
+  display:grid!important;
+  grid-template-columns:44px minmax(0,1fr) auto!important;
+  align-items:center!important;
+  gap:14px!important;
+  border-radius:18px!important;
+  border:1px dashed color-mix(in srgb,var(--pro-primary) 22%,transparent)!important;
+  background:rgba(255,255,255,.01)!important;
+}
+[data-page-view="promotions"] .promotion-page-empty>span{
+  width:44px!important;
+  height:44px!important;
+  display:grid!important;
+  place-items:center!important;
+  border-radius:13px!important;
+  background:var(--pro-soft)!important;
+  border:1px solid var(--pro-line)!important;
+  color:var(--pro-primary)!important;
+}
+[data-page-view="promotions"] .promotion-page-empty strong{
+  display:block!important;
+  color:var(--pro-text)!important;
+  margin-bottom:3px!important;
+}
+[data-page-view="promotions"] .promotion-page-empty small{
+  color:var(--pro-muted)!important;
+}
+[data-page-view="promotions"] .promotion-page-empty>a{
+  min-height:42px!important;
+  padding:0 13px!important;
+  display:inline-flex!important;
+  align-items:center!important;
+  justify-content:center!important;
+  gap:7px!important;
+  border-radius:12px!important;
+  background:var(--pro-soft)!important;
+  border:1px solid var(--pro-line)!important;
+  color:var(--pro-primary)!important;
+  text-decoration:none!important;
+  white-space:nowrap!important;
+}
+[data-page-view="promotions"] .promotion-page-empty>a:hover{
+  background:color-mix(in srgb,var(--pro-primary) 14%,transparent)!important;
+  border-color:var(--pro-line-strong)!important;
+}
+
+/* ---------- General page stabilizers ---------- */
+.app-page-content{
+  overflow:visible!important;
+}
+.page-section-header{
+  min-width:0!important;
+}
+.page-section-header>div{
+  min-width:0!important;
+}
+.page-section-header h2,
+.page-section-header p{
+  overflow-wrap:anywhere!important;
+}
+.package-card-v75,
+.movie-card,
+.review-card-item,
+.promotion-card,
+.my-order-card,
+.rcw-prize-card,
+.cart-item{
+  min-width:0!important;
+}
+.package-card-v75 *,
+.movie-card *,
+.review-card-item *,
+.promotion-card *,
+.my-order-card *,
+.rcw-prize-card *,
+.cart-item *{
+  min-width:0;
+}
+
+/* ---------- Mobile ---------- */
+@media(max-width:900px){
+  [data-page-view="reviews"] .review-grid{
+    grid-template-columns:1fr!important;
+  }
+  [data-page-view="reviews"] .review-form-card{
+    position:static!important;
+  }
+  [data-page-view="reviews"] .review-list{
+    grid-template-columns:1fr!important;
+  }
+  [data-page-view="promotions"] .promotion-overview{
+    grid-template-columns:1fr!important;
+  }
+}
+@media(max-width:640px){
+  [data-page-view="reviews"] .review-overview-card{
+    align-items:flex-start!important;
+    flex-direction:column!important;
+    gap:12px!important;
+  }
+  [data-page-view="reviews"] .review-overview-points{
+    justify-content:flex-start!important;
+  }
+  [data-page-view="reviews"] .review-list-header{
+    grid-template-columns:minmax(0,1fr) auto!important;
+  }
+  [data-page-view="promotions"] .promotion-page-empty{
+    grid-template-columns:1fr!important;
+    justify-items:center!important;
+    text-align:center!important;
+  }
+  [data-page-view="promotions"] .promotion-page-empty>a{
+    width:100%!important;
+  }
+}
+
+
+/* ==========================================================================
+   Rick Chee Shop V7.8.3 — HOME HERO CLEAN
+   Remove the large background/card behind the main headline.
+   ========================================================================== */
+[data-page-view="home"] .app-hero{
+  min-height:auto!important;
+  padding:clamp(20px,3vw,34px) 0!important;
+  background:transparent!important;
+  border:0!important;
+  border-radius:0!important;
+  box-shadow:none!important;
+  overflow:visible!important;
+}
+[data-page-view="home"] .app-hero::before,
+[data-page-view="home"] .app-hero::after{
+  content:none!important;
+  display:none!important;
+}
+[data-page-view="home"] .hero-content{
+  padding:18px 4px!important;
+}
+[data-page-view="home"] .hero-content .eyebrow{
+  background:transparent!important;
+  border:0!important;
+  box-shadow:none!important;
+  padding:0!important;
+}
+[data-page-view="home"] .hero-content h2{
+  background:transparent!important;
+  border:0!important;
+  box-shadow:none!important;
+  text-shadow:none!important;
+}
+[data-page-view="home"] .hero-content p{
+  background:transparent!important;
+  border:0!important;
+  box-shadow:none!important;
+}
+[data-page-view="home"] .home-status-card{
+  align-self:center!important;
+}
+
+/* keep spacing balanced after removing the hero card */
+@media(max-width:900px){
+  [data-page-view="home"] .app-hero{
+    padding:12px 0 6px!important;
+  }
+  [data-page-view="home"] .hero-content{
+    padding:10px 2px 4px!important;
+  }
+}

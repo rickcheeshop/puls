@@ -1,0 +1,106 @@
+/* Rick Chee Shop V7.8.8 — Code Manager modal isolation fix
+   Prevent storefront .modal-content flex rules from breaking admin history/dashboard dialogs. */
+
+/* The generic storefront .modal-content is flex. These admin dialogs are vertical documents. */
+.jm-code-manager-root #historyModal .modal-content,
+.jm-code-manager-root #dashboardModal .modal-content{
+  display:block!important;
+  align-items:initial!important;
+  justify-content:initial!important;
+  flex-direction:initial!important;
+  gap:0!important;
+  min-width:0!important;
+  height:auto!important;
+}
+
+/* Let fixed dialogs use the viewport instead of being trapped by section layout containment. */
+.admin-main-content #codeSection{
+  contain:none!important;
+  content-visibility:visible!important;
+}
+
+.jm-code-manager-root #historyModal,
+.jm-code-manager-root #dashboardModal{
+  position:fixed!important;
+  inset:0!important;
+  width:auto!important;
+  height:auto!important;
+  min-width:0!important;
+  min-height:0!important;
+  padding:clamp(12px,2vw,24px)!important;
+  align-items:center!important;
+  justify-content:center!important;
+  overflow:auto!important;
+}
+
+/* Keep each dialog at a sensible width after the generic modal rules are neutralized. */
+.jm-code-manager-root #historyModal .modal-content{
+  width:min(820px,calc(100vw - 40px))!important;
+  max-width:820px!important;
+  max-height:calc(100dvh - 40px)!important;
+  overflow-x:hidden!important;
+  overflow-y:auto!important;
+}
+
+.jm-code-manager-root #dashboardModal .modal-content{
+  width:min(1120px,calc(100vw - 40px))!important;
+  max-width:1120px!important;
+  max-height:calc(100dvh - 40px)!important;
+  overflow-x:hidden!important;
+  overflow-y:auto!important;
+}
+
+/* Explicit block flow for the direct dialog sections so no old flex/grid utility can squeeze them. */
+.jm-code-manager-root #historyModal .modal-content > .modal-header,
+.jm-code-manager-root #historyModal .modal-content > .modal-code,
+.jm-code-manager-root #historyModal .modal-content > .modal-stats,
+.jm-code-manager-root #historyModal .modal-content > .v75-history-title,
+.jm-code-manager-root #historyModal .modal-content > .modal-history,
+.jm-code-manager-root #historyModal .modal-content > .modal-footer,
+.jm-code-manager-root #dashboardModal .modal-content > .modal-header,
+.jm-code-manager-root #dashboardModal .modal-content > .dashboard-date-selector,
+.jm-code-manager-root #dashboardModal .modal-content > .dashboard-content{
+  width:auto!important;
+  max-width:none!important;
+  flex:none!important;
+}
+
+/* Dashboard must remain one vertical information flow. */
+.jm-code-manager-root #dashboardModal .dashboard-content.horizontal-layout{
+  width:100%!important;
+  display:grid!important;
+  grid-template-columns:minmax(0,1fr)!important;
+  gap:16px!important;
+}
+.jm-code-manager-root #dashboardModal .dashboard-main-right{
+  width:100%!important;
+  min-width:0!important;
+}
+
+/* History rows stay readable instead of collapsing into narrow vertical text. */
+.jm-code-manager-root #historyModal .modal-code{
+  width:auto!important;
+}
+.jm-code-manager-root #historyModal .modal-history-item{
+  min-width:0!important;
+}
+.jm-code-manager-root #historyModal .modal-history-item .prize,
+.jm-code-manager-root #historyModal .modal-history-item .time{
+  writing-mode:horizontal-tb!important;
+  text-orientation:mixed!important;
+}
+
+@media(max-width:640px){
+  .jm-code-manager-root #historyModal,
+  .jm-code-manager-root #dashboardModal{
+    padding:0!important;
+    align-items:flex-end!important;
+  }
+  .jm-code-manager-root #historyModal .modal-content,
+  .jm-code-manager-root #dashboardModal .modal-content{
+    width:100%!important;
+    max-width:none!important;
+    max-height:95dvh!important;
+    border-radius:23px 23px 0 0!important;
+  }
+}

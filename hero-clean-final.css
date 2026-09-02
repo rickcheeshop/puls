@@ -1,0 +1,125 @@
+/* Rick Chee Shop V7.8.5
+   Restore the premium OUTER hero background, but keep the text area clean. */
+
+section.hero.app-hero.home-hero-clean{
+  position:relative!important;
+  min-height:440px!important;
+  display:grid!important;
+  grid-template-columns:minmax(0,1.45fr) minmax(300px,.65fr)!important;
+  gap:22px!important;
+  align-items:stretch!important;
+  padding:clamp(28px,4vw,58px)!important;
+  overflow:hidden!important;
+
+  border:1px solid var(--pro-line)!important;
+  border-radius:var(--pro-radius-xl)!important;
+
+  background:
+    radial-gradient(circle at 8% 10%,rgba(214,170,77,.11),transparent 26%),
+    radial-gradient(circle at 82% 20%,rgba(169,14,25,.09),transparent 32%),
+    linear-gradient(110deg,rgba(18,18,22,.96),rgba(9,9,12,.98))!important;
+
+  box-shadow:
+    0 22px 60px rgba(0,0,0,.24)!important;
+}
+
+/* subtle luxury texture only on the outer hero */
+section.hero.app-hero.home-hero-clean::before{
+  content:""!important;
+  display:block!important;
+  position:absolute!important;
+  inset:0!important;
+  pointer-events:none!important;
+  background:
+    radial-gradient(circle at 8% 100%,rgba(214,170,77,.09),transparent 24%),
+    linear-gradient(90deg,transparent 0 70%,rgba(255,255,255,.014) 70% 100%)!important;
+  border:0!important;
+  box-shadow:none!important;
+}
+
+/* remove the giant decorative word/effect */
+section.hero.app-hero.home-hero-clean::after{
+  content:none!important;
+  display:none!important;
+}
+
+/* IMPORTANT:
+   no dark rectangle, shadow, blur, border or glow behind the headline/text */
+section.hero.app-hero.home-hero-clean > .hero-content{
+  position:relative!important;
+  z-index:1!important;
+  align-self:center!important;
+  max-width:840px!important;
+
+  padding:0!important;
+  margin:0!important;
+
+  background:transparent!important;
+  background-color:transparent!important;
+  background-image:none!important;
+
+  border:0!important;
+  outline:0!important;
+  border-radius:0!important;
+
+  box-shadow:none!important;
+  filter:none!important;
+  backdrop-filter:none!important;
+  -webkit-backdrop-filter:none!important;
+}
+
+/* Make sure headline itself has no shadow/glow */
+section.hero.app-hero.home-hero-clean .hero-content h2,
+section.hero.app-hero.home-hero-clean .hero-content p,
+section.hero.app-hero.home-hero-clean .hero-content .eyebrow{
+  background:transparent!important;
+  border:0!important;
+  box-shadow:none!important;
+  text-shadow:none!important;
+  filter:none!important;
+}
+
+/* Right status panel remains a separate premium card */
+section.hero.app-hero.home-hero-clean > .home-status-card{
+  position:relative!important;
+  z-index:1!important;
+  align-self:stretch!important;
+
+  background:
+    linear-gradient(180deg,rgba(13,13,17,.84),rgba(8,8,11,.78))!important;
+  border:1px solid rgba(214,170,77,.18)!important;
+  border-radius:22px!important;
+  box-shadow:none!important;
+  backdrop-filter:blur(12px)!important;
+  -webkit-backdrop-filter:blur(12px)!important;
+}
+
+@media(max-width:1180px){
+  section.hero.app-hero.home-hero-clean{
+    grid-template-columns:minmax(0,1.15fr) minmax(280px,.85fr)!important;
+  }
+}
+
+@media(max-width:900px){
+  section.hero.app-hero.home-hero-clean{
+    grid-template-columns:1fr!important;
+    min-height:auto!important;
+    padding:26px 20px!important;
+    border-radius:22px!important;
+  }
+
+  section.hero.app-hero.home-hero-clean > .hero-content{
+    padding:0!important;
+  }
+}
+
+@media(max-width:640px){
+  section.hero.app-hero.home-hero-clean{
+    padding:20px 16px!important;
+    border-radius:19px!important;
+  }
+
+  section.hero.app-hero.home-hero-clean .hero-content h2{
+    font-size:clamp(2rem,10vw,3rem)!important;
+  }
+}

@@ -88,7 +88,7 @@ function loadCodeManager(force = false) {
 
   codeManagerLoadingPromise = loadScriptOnce('https://cdn.jsdelivr.net/npm/chart.js', 'jmChartJs').catch(() => null)
     .then(() => loadScriptOnce('code-manager/api-config.js', 'jmCodeApiConfig'))
-    .then(() => loadScriptOnce('code-manager/script.js?v=20260902-v776', 'jmCodeManagerScript'))
+    .then(() => loadScriptOnce('code-manager/script.js?v=20260903-v7810', 'jmCodeManagerScript'))
     .then(() => {
       codeManagerLoaded = true;
       bindCodeManagerSearch();

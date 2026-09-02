@@ -1724,10 +1724,6 @@ function renderProducts() {
                             ${safeImage ? `<img src="${safeImage}" alt="${safeName}" class="product-image" loading="lazy" decoding="async">` : `<span class="package-image-empty-v75"><i class="fas fa-box-open"></i></span>`}
                         </button>
                         <div class="package-info-v75">
-                            <div class="package-badges-v75">
-                                <span class="package-brand-v75"><i class="fas ${categoryIcon}"></i>${category === 'netflix' ? 'Netflix' : 'Premium App'}</span>
-                                <span class="product-status ${product.available ? 'available' : 'unavailable'}">${product.available ? 'พร้อมขาย' : 'ปิดขาย'}</span>
-                            </div>
                             <h4>${safeName}</h4>
                             <p>${safeSummary}</p>
                             <div class="package-price-v75"><small>ราคาแพ็กเกจ</small><strong>฿${price}</strong></div>
@@ -1747,9 +1743,12 @@ function renderProducts() {
                 <header class="package-category-head-v75">
                     <div class="package-category-name-v75">
                         <span><i class="fas ${categoryIcon}"></i></span>
-                        <div><h3>${categoryLabel}</h3><p>${categorySub}</p></div>
+                        <div><small class="package-category-kicker-v7815">PREMIUM COLLECTION</small><h3>${categoryLabel}</h3><p>${categorySub}</p></div>
                     </div>
-
+                    <div class="package-category-meta-v7815" aria-label="ข้อมูลหมวด ${categoryLabel}">
+                        <span><b>${group.length}</b> แพ็กเกจ</span>
+                        <small><i class="fas fa-circle-check"></i> พร้อมสั่งซื้อ ${group.filter((item) => item.available).length}</small>
+                    </div>
                 </header>
                 <div class="package-grid-v75">${cards}</div>
             </section>`;
@@ -1951,12 +1950,16 @@ function renderStars(count) {
 
 function updateReviewCarouselControls() {
     if (!reviewList || !reviewCarouselPrev || !reviewCarouselNext) return;
-    const totalPages = Math.ceil(state.reviews.length / REVIEWS_PER_PAGE) || 1;
+    const reviewCount = Array.isArray(state.reviews) ? state.reviews.length : 0;
+    const totalPages = reviewCount > 0 ? Math.ceil(reviewCount / REVIEWS_PER_PAGE) : 0;
     reviewCarouselPrev.classList.toggle('hidden', totalPages <= 1);
     reviewCarouselNext.classList.toggle('hidden', totalPages <= 1);
     const pageIndicator = document.getElementById('reviewPageIndicator');
     if (pageIndicator) {
-        pageIndicator.textContent = `${reviewPageIndex + 1} / ${totalPages}`;
+        const shouldHide = totalPages <= 0;
+        pageIndicator.classList.toggle('hidden', shouldHide);
+        pageIndicator.hidden = shouldHide;
+        pageIndicator.textContent = shouldHide ? '' : `${reviewPageIndex + 1} / ${totalPages}`;
     }
 }
 
@@ -2031,6 +2034,10 @@ function renderReviews() {
         reviewNoData.hidden = false;
         reviewNoData.classList.remove("hidden");
         reviewNoData.style.removeProperty('display');
+        if (reviewListWrapper) {
+            reviewListWrapper.hidden = true;
+            reviewListWrapper.classList.add('hidden');
+        }
         reviewPageIndex = 0;
         updateReviewCarouselControls();
         return;
@@ -2043,6 +2050,10 @@ function renderReviews() {
     reviewNoData.hidden = true;
     reviewNoData.classList.add("hidden");
     reviewNoData.style.setProperty('display', 'none', 'important');
+    if (reviewListWrapper) {
+        reviewListWrapper.hidden = false;
+        reviewListWrapper.classList.remove('hidden');
+    }
     const startIndex = reviewPageIndex * REVIEWS_PER_PAGE;
     const pageReviews = state.reviews.slice(startIndex, startIndex + REVIEWS_PER_PAGE);
     pageReviews.forEach((review) => {
@@ -2537,25 +2548,25 @@ function renderMyOrders() {
         const discount = order.discount && order.discount.code ? order.discount : null;
         const itemPreview = items.slice(0, 2).map((item) => `<span>${escapeMovieText(item.name || '-') } × ${Math.max(1, Number(item.quantity) || 1)}</span>`).join('');
         const extra = items.length > 2 ? `<small>+${items.length - 2} ${isEnglish ? 'more' : 'รายการ'}</small>` : '';
-        const discountText = discount ? `<span class="my-order-discount"><i class="fas fa-ticket"></i>${escapeMovieText(discount.code)}</span>` : `<span class="my-order-no-discount">${isEnglish ? 'No discount code' : 'ไม่ใช้โค้ดส่วนลด'}</span>`;
+        const discountText = discount ? `<span class="my-order-discount"><i class="fas fa-ticket"></i>${escapeMovieText(discount.code)}</span>` : `<span class="my-order-no-discount">${isEnglish ? 'No discount code' : 'ไม่ได้ใช้โค้ดส่วนลด'}</span>`;
         const detailItems = items.map((item) => `<div><span>${escapeMovieText(item.name || '-')} × ${Math.max(1, Number(item.quantity) || 1)}</span><b>${money((Number(item.price) || 0) * Math.max(1, Number(item.quantity) || 1))}</b></div>`).join('');
         return `<article class="my-order-card">
             <div class="my-order-card-top">
-                <div class="my-order-number-wrap"><span>${isEnglish ? 'ORDER' : 'เลขออเดอร์'}</span><strong>${escapeMovieText(order.orderNo || '-')}</strong></div>
-                <span class="my-order-status"><i class="fas fa-circle-check"></i>${isEnglish ? 'Confirmed' : 'ยืนยันแล้ว'}</span>
+                <div class="my-order-number-wrap"><span>${isEnglish ? 'ORDER' : 'หมายเลขคำสั่งซื้อ'}</span><strong>${escapeMovieText(order.orderNo || '-')}</strong></div>
+                <span class="my-order-status"><i class="fas fa-circle-check"></i>${isEnglish ? 'Confirmed' : 'ยืนยันคำสั่งซื้อแล้ว'}</span>
             </div>
             <div class="my-order-meta"><span><i class="far fa-clock"></i>${formatMyOrderDate(order.createdAt)}</span><span><i class="fas ${order.paymentMethod === 'qr' ? 'fa-qrcode' : 'fa-building-columns'}"></i>${getStorePaymentLabel(order.paymentMethod)}</span></div>
             <div class="my-order-preview">${itemPreview}${extra}</div>
             <div class="my-order-price-row"><div>${discountText}</div><div><span>${isEnglish ? 'Paid' : 'ยอดสุทธิ'}</span><strong>${money(order.total)}</strong></div></div>
             <details class="my-order-details">
-                <summary><span><i class="fas fa-eye"></i>${isEnglish ? 'View details' : 'ดูรายละเอียด'}</span><i class="fas fa-chevron-down"></i></summary>
+                <summary><span><i class="fas fa-eye"></i>${isEnglish ? 'View order details' : 'ดูรายละเอียดคำสั่งซื้อ'}</span><i class="fas fa-chevron-down"></i></summary>
                 <div class="my-order-details-body">
                     <div class="my-order-detail-items">${detailItems || `<div><span>${isEnglish ? 'No item data' : 'ไม่มีข้อมูลสินค้า'}</span></div>`}</div>
-                    <div class="my-order-detail-totals"><div><span>${isEnglish ? 'Subtotal' : 'ยอดสินค้า'}</span><b>${money(order.subtotal)}</b></div><div><span>${isEnglish ? 'Discount' : 'ส่วนลด'}</span><b>-${money(order.discountAmount)}</b></div><div class="grand"><span>${isEnglish ? 'Total' : 'ยอดชำระ'}</span><b>${money(order.total)}</b></div></div>
+                    <div class="my-order-detail-totals"><div><span>${isEnglish ? 'Subtotal' : 'ยอดรวมสินค้า'}</span><b>${money(order.subtotal)}</b></div><div><span>${isEnglish ? 'Discount' : 'ส่วนลดที่ได้รับ'}</span><b>-${money(order.discountAmount)}</b></div><div class="grand"><span>${isEnglish ? 'Total' : 'ยอดชำระสุทธิ'}</span><b>${money(order.total)}</b></div></div>
                     ${discount ? `<div class="my-order-coupon-info"><i class="fas fa-ticket"></i><span>${isEnglish ? 'Discount code' : 'โค้ดส่วนลด'} <b>${escapeMovieText(discount.code)}</b> · ${discount.type === 'fixed' ? `${isEnglish ? 'Fixed' : 'ลดเงิน'} ${money(discount.value)}` : `${Number(discount.value) || 0}%`}</span></div>` : ''}
                 </div>
             </details>
-            <div class="my-order-actions"><button type="button" class="button button-outline my-order-copy" data-order-number="${escapeMovieText(order.orderNo || '')}"><i class="fas fa-copy"></i>${isEnglish ? 'Copy order no.' : 'คัดลอกเลขออเดอร์'}</button><a class="button button-primary" href="${escapeMovieText(getLineContactUrl())}" target="_blank" rel="noopener noreferrer"><i class="fab fa-line"></i>${isEnglish ? 'Contact LINE' : 'ติดต่อ LINE'}</a></div>
+            <div class="my-order-actions"><button type="button" class="button button-outline my-order-copy" data-order-number="${escapeMovieText(order.orderNo || '')}"><i class="fas fa-copy"></i>${isEnglish ? 'Copy order no.' : 'คัดลอกหมายเลขคำสั่งซื้อ'}</button><a class="button button-primary" href="${escapeMovieText(getLineContactUrl())}" target="_blank" rel="noopener noreferrer"><i class="fab fa-line"></i>${isEnglish ? 'Contact LINE' : 'ติดต่อร้านผ่าน LINE'}</a></div>
         </article>`;
     }).join('');
 }

@@ -1,0 +1,14 @@
+/* ==========================================================================
+   Rick Chee Shop V7.8.7 — PRODUCT CARD CLEANUP
+   package-badges-v75 removed from HTML rendering.
+   ========================================================================== */
+.package-card-v75 .package-info-v75{
+  padding-top:2px!important;
+}
+.package-card-v75 .package-info-v75 h4{
+  margin-top:0!important;
+  margin-bottom:6px!important;
+}
+.package-card-v75 .package-info-v75 p{
+  margin-top:0!important;
+}

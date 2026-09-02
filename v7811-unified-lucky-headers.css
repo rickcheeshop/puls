@@ -1,0 +1,217 @@
+/* Rick Chee Shop V7.8.11 — Unified Lucky Club page headers
+   Makes Packages / Movies / Reviews / Promotions / FAQ use the same
+   premium framed header language as the Lucky Wheel page. */
+
+:root{
+  --v7811-head-gold:var(--pro-primary,var(--rc-brand-primary,#d6aa4d));
+  --v7811-head-text:var(--pro-text,var(--rc-brand-text,#f6eddc));
+  --v7811-head-muted:var(--pro-muted,var(--rc-brand-muted,rgba(246,237,220,.62)));
+  --v7811-head-line:color-mix(in srgb,var(--v7811-head-gold) 34%,transparent);
+}
+
+/* Only the requested customer-facing page headers. */
+.app-page[data-page-view="products"] .packages-head-v75,
+.app-page.movies-page .movies-page-header,
+.app-page[data-page-view="reviews"] > .page-section-header,
+.app-page[data-page-view="promotions"] .promotions-page-header,
+.app-page[data-page-view="faq"] > .page-section-header{
+  position:relative!important;
+  isolation:isolate!important;
+  overflow:hidden!important;
+  width:100%!important;
+  min-height:156px!important;
+  margin:0 0 22px!important;
+  padding:26px 24px!important;
+  display:flex!important;
+  flex-direction:row!important;
+  align-items:center!important;
+  justify-content:space-between!important;
+  gap:24px!important;
+  border:1px solid var(--v7811-head-line)!important;
+  border-radius:27px!important;
+  background:
+    radial-gradient(430px 220px at 92% 34%,rgba(150,13,26,.13),transparent 72%),
+    radial-gradient(300px 180px at 82% 100%,rgba(214,170,77,.035),transparent 72%),
+    linear-gradient(135deg,rgba(18,18,22,.98),rgba(11,11,14,.98) 70%,rgba(25,12,17,.98))!important;
+  box-shadow:0 20px 58px rgba(0,0,0,.25),inset 0 1px 0 rgba(255,239,198,.035)!important;
+}
+
+/* Soft architectural arc on the right, matching the wheel header's luxury motif. */
+.app-page[data-page-view="products"] .packages-head-v75::before,
+.app-page.movies-page .movies-page-header::before,
+.app-page[data-page-view="reviews"] > .page-section-header::before,
+.app-page[data-page-view="promotions"] .promotions-page-header::before,
+.app-page[data-page-view="faq"] > .page-section-header::before{
+  content:""!important;
+  position:absolute!important;
+  z-index:-1!important;
+  width:270px!important;
+  height:270px!important;
+  right:-54px!important;
+  top:-92px!important;
+  border:28px solid rgba(255,255,255,.025)!important;
+  border-radius:50%!important;
+  background:transparent!important;
+  pointer-events:none!important;
+}
+
+/* Faint contextual watermark, intentionally very subtle. */
+.app-page[data-page-view="products"] .packages-head-v75::after,
+.app-page.movies-page .movies-page-header::after,
+.app-page[data-page-view="reviews"] > .page-section-header::after,
+.app-page[data-page-view="promotions"] .promotions-page-header::after,
+.app-page[data-page-view="faq"] > .page-section-header::after{
+  position:absolute!important;
+  z-index:-1!important;
+  right:34px!important;
+  bottom:-24px!important;
+  color:rgba(255,255,255,.018)!important;
+  font:800 clamp(3.8rem,8vw,7.4rem)/1 'Cinzel','Segoe UI',sans-serif!important;
+  letter-spacing:.04em!important;
+  white-space:nowrap!important;
+  pointer-events:none!important;
+}
+.app-page[data-page-view="products"] .packages-head-v75::after{content:"PACKAGES"!important;}
+.app-page.movies-page .movies-page-header::after{content:"MOVIES"!important;}
+.app-page[data-page-view="reviews"] > .page-section-header::after{content:"REVIEWS"!important;}
+.app-page[data-page-view="promotions"] .promotions-page-header::after{content:"PROMO"!important;}
+.app-page[data-page-view="faq"] > .page-section-header::after{content:"FAQ"!important;}
+
+/* Keep header content above decoration. */
+.app-page[data-page-view="products"] .packages-head-v75 > *,
+.app-page.movies-page .movies-page-header > *,
+.app-page[data-page-view="reviews"] > .page-section-header > *,
+.app-page[data-page-view="promotions"] .promotions-page-header > *,
+.app-page[data-page-view="faq"] > .page-section-header > *{
+  position:relative!important;
+  z-index:2!important;
+}
+
+/* Typography follows the Lucky Club hierarchy. */
+.app-page[data-page-view="products"] .packages-kicker-v75,
+.app-page.movies-page .movies-page-header .page-kicker,
+.app-page[data-page-view="reviews"] > .page-section-header .page-kicker,
+.app-page[data-page-view="promotions"] .promotions-page-header .page-kicker,
+.app-page[data-page-view="faq"] > .page-section-header .page-kicker{
+  display:inline-flex!important;
+  align-items:center!important;
+  gap:7px!important;
+  margin:0 0 8px!important;
+  padding:0!important;
+  border:0!important;
+  background:transparent!important;
+  color:var(--v7811-head-gold)!important;
+  font-size:.67rem!important;
+  font-weight:900!important;
+  line-height:1.2!important;
+  letter-spacing:.14em!important;
+  text-transform:uppercase!important;
+}
+
+.app-page[data-page-view="products"] .packages-head-v75 h2,
+.app-page.movies-page .movies-page-header h2,
+.app-page[data-page-view="reviews"] > .page-section-header h2,
+.app-page[data-page-view="promotions"] .promotions-page-header h2,
+.app-page[data-page-view="faq"] > .page-section-header h2{
+  margin:0!important;
+  color:var(--v7811-head-text)!important;
+  font-size:clamp(1.8rem,3.1vw,2.55rem)!important;
+  font-weight:850!important;
+  line-height:1.08!important;
+  letter-spacing:-.035em!important;
+  text-shadow:none!important;
+}
+
+.app-page[data-page-view="products"] .packages-head-v75 p,
+.app-page.movies-page .movies-page-header p,
+.app-page[data-page-view="reviews"] > .page-section-header p,
+.app-page[data-page-view="promotions"] .promotions-page-header p,
+.app-page[data-page-view="faq"] > .page-section-header p{
+  max-width:780px!important;
+  margin:9px 0 0!important;
+  color:var(--v7811-head-muted)!important;
+  font-size:.91rem!important;
+  line-height:1.55!important;
+}
+
+/* Right-side controls use the same compact badge treatment as the wheel status pill. */
+.app-page.movies-page .movie-page-counts,
+.app-page[data-page-view="promotions"] .promotions-header-actions{
+  flex:0 0 auto!important;
+  margin:0!important;
+}
+.app-page.movies-page .movie-page-counts > span,
+.app-page[data-page-view="promotions"] .promotions-line-button{
+  min-height:40px!important;
+  padding:0 14px!important;
+  display:inline-flex!important;
+  align-items:center!important;
+  justify-content:center!important;
+  gap:8px!important;
+  border:1px solid color-mix(in srgb,var(--v7811-head-gold) 38%,transparent)!important;
+  border-radius:999px!important;
+  background:color-mix(in srgb,var(--v7811-head-gold) 10%,rgba(11,11,14,.8))!important;
+  color:var(--v7811-head-text)!important;
+  box-shadow:none!important;
+  font-size:.78rem!important;
+  font-weight:800!important;
+  white-space:nowrap!important;
+}
+.app-page.movies-page .movie-page-counts > span i,
+.app-page[data-page-view="promotions"] .promotions-line-button i{
+  color:#f1c85b!important;
+}
+.app-page[data-page-view="promotions"] .promotions-line-button:hover{
+  transform:translateY(-1px)!important;
+  border-color:color-mix(in srgb,var(--v7811-head-gold) 62%,transparent)!important;
+  background:color-mix(in srgb,var(--v7811-head-gold) 15%,rgba(11,11,14,.82))!important;
+}
+
+@media(max-width:920px){
+  .app-page[data-page-view="products"] .packages-head-v75,
+  .app-page.movies-page .movies-page-header,
+  .app-page[data-page-view="reviews"] > .page-section-header,
+  .app-page[data-page-view="promotions"] .promotions-page-header,
+  .app-page[data-page-view="faq"] > .page-section-header{
+    min-height:142px!important;
+    padding:23px 21px!important;
+    gap:16px!important;
+  }
+}
+
+@media(max-width:720px){
+  .app-page[data-page-view="products"] .packages-head-v75,
+  .app-page.movies-page .movies-page-header,
+  .app-page[data-page-view="reviews"] > .page-section-header,
+  .app-page[data-page-view="promotions"] .promotions-page-header,
+  .app-page[data-page-view="faq"] > .page-section-header{
+    min-height:0!important;
+    padding:20px 17px!important;
+    flex-direction:column!important;
+    align-items:flex-start!important;
+    justify-content:center!important;
+    gap:14px!important;
+    border-radius:22px!important;
+  }
+  .app-page[data-page-view="products"] .packages-head-v75::before,
+  .app-page.movies-page .movies-page-header::before,
+  .app-page[data-page-view="reviews"] > .page-section-header::before,
+  .app-page[data-page-view="promotions"] .promotions-page-header::before,
+  .app-page[data-page-view="faq"] > .page-section-header::before{
+    width:210px!important;height:210px!important;right:-76px!important;top:-88px!important;border-width:22px!important;
+  }
+  .app-page[data-page-view="products"] .packages-head-v75::after,
+  .app-page.movies-page .movies-page-header::after,
+  .app-page[data-page-view="reviews"] > .page-section-header::after,
+  .app-page[data-page-view="promotions"] .promotions-page-header::after,
+  .app-page[data-page-view="faq"] > .page-section-header::after{
+    right:12px!important;bottom:-12px!important;font-size:3.7rem!important;
+  }
+  .app-page.movies-page .movie-page-counts,
+  .app-page[data-page-view="promotions"] .promotions-header-actions{
+    width:100%!important;
+  }
+  .app-page[data-page-view="promotions"] .promotions-line-button{
+    width:auto!important;
+  }
+}

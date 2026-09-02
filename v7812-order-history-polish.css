@@ -1,0 +1,135 @@
+/* Rick Chee Shop V7.8.12 — Purchase history refinement
+   - Keep the order detail trigger completely transparent.
+   - Improve hierarchy/spacing without changing order logic.
+   - Preserve rounded premium dark/gold visual language. */
+
+[data-page-view="my-orders"] .my-order-details{
+  margin:4px 0 0!important;
+  background:transparent!important;
+  background-image:none!important;
+  border:0!important;
+  box-shadow:none!important;
+}
+
+[data-page-view="my-orders"] .my-order-details summary{
+  width:100%!important;
+  min-height:42px!important;
+  padding:8px 0!important;
+  margin:0!important;
+  display:flex!important;
+  align-items:center!important;
+  justify-content:space-between!important;
+  gap:12px!important;
+  list-style:none!important;
+  cursor:pointer!important;
+  background:transparent!important;
+  background-image:none!important;
+  border:0!important;
+  border-radius:0!important;
+  box-shadow:none!important;
+  color:var(--pro-primary, #d6aa4d)!important;
+  font-weight:750!important;
+  transition:color .18s ease,opacity .18s ease!important;
+}
+
+[data-page-view="my-orders"] .my-order-details summary::before,
+[data-page-view="my-orders"] .my-order-details summary::after{
+  display:none!important;
+  content:none!important;
+}
+
+[data-page-view="my-orders"] .my-order-details summary::-webkit-details-marker{
+  display:none!important;
+}
+
+[data-page-view="my-orders"] .my-order-details summary>span{
+  display:inline-flex!important;
+  align-items:center!important;
+  gap:8px!important;
+  min-width:0!important;
+  background:transparent!important;
+  border:0!important;
+  box-shadow:none!important;
+  padding:0!important;
+}
+
+[data-page-view="my-orders"] .my-order-details summary>span>i{
+  width:20px!important;
+  height:20px!important;
+  display:grid!important;
+  place-items:center!important;
+  color:var(--pro-primary, #d6aa4d)!important;
+  font-size:.72rem!important;
+}
+
+[data-page-view="my-orders"] .my-order-details summary>i:last-child{
+  flex:0 0 auto!important;
+  color:var(--pro-muted, #8f8c86)!important;
+  font-size:.66rem!important;
+  transition:transform .2s ease,color .18s ease!important;
+}
+
+[data-page-view="my-orders"] .my-order-details summary:hover,
+[data-page-view="my-orders"] .my-order-details summary:focus-visible{
+  color:var(--pro-primary-hi, #f0d477)!important;
+  background:transparent!important;
+  outline:none!important;
+}
+
+[data-page-view="my-orders"] .my-order-details summary:hover>i:last-child,
+[data-page-view="my-orders"] .my-order-details summary:focus-visible>i:last-child{
+  color:var(--pro-primary, #d6aa4d)!important;
+}
+
+[data-page-view="my-orders"] .my-order-details[open] summary{
+  color:var(--pro-primary-hi, #f0d477)!important;
+}
+
+[data-page-view="my-orders"] .my-order-details[open] summary>i:last-child{
+  transform:rotate(180deg)!important;
+}
+
+[data-page-view="my-orders"] .my-order-details-body{
+  margin-top:2px!important;
+  padding:12px 0 2px!important;
+  border-top:1px solid color-mix(in srgb,var(--pro-primary, #d6aa4d) 12%,transparent)!important;
+}
+
+[data-page-view="my-orders"] .my-order-detail-items,
+[data-page-view="my-orders"] .my-order-detail-totals{
+  border-radius:14px!important;
+  background:rgba(255,255,255,.012)!important;
+  border:1px solid color-mix(in srgb,var(--pro-primary, #d6aa4d) 12%,transparent)!important;
+  box-shadow:none!important;
+}
+
+[data-page-view="my-orders"] .my-order-detail-items>div,
+[data-page-view="my-orders"] .my-order-detail-totals>div{
+  min-height:27px!important;
+  line-height:1.45!important;
+}
+
+[data-page-view="my-orders"] .my-order-detail-totals .grand{
+  margin-top:2px!important;
+  padding-top:8px!important;
+  border-top:1px solid color-mix(in srgb,var(--pro-primary, #d6aa4d) 13%,transparent)!important;
+}
+
+[data-page-view="my-orders"] .my-order-price-row{
+  border-top:0!important;
+  border-bottom:0!important;
+}
+
+[data-page-view="my-orders"] .my-order-actions{
+  margin-top:8px!important;
+}
+
+@media (max-width:600px){
+  [data-page-view="my-orders"] .my-order-details summary{
+    min-height:40px!important;
+    font-size:.67rem!important;
+  }
+  [data-page-view="my-orders"] .my-order-details-body{
+    padding-top:10px!important;
+  }
+}
