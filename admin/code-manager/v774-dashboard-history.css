@@ -1,0 +1,104 @@
+/* Rick Chee Shop V7.7.4 — Wheel dashboard/history redesign */
+.jm-code-manager-root{--cm-bg:#07080a;--cm-panel:#101115;--cm-panel2:#15161a;--cm-gold:#d6aa4d;--cm-gold-hi:#f4d98b;--cm-red:#c5101d;--cm-text:#f4ecdf;--cm-muted:#aaa39a;--cm-line:rgba(214,170,77,.20)}
+
+/* modal shell */
+.jm-code-manager-root #dashboardModal,
+.jm-code-manager-root #historyModal{padding:18px!important;backdrop-filter:blur(12px)!important;background:rgba(0,0,0,.78)!important}
+.jm-code-manager-root #dashboardModal .modal-content,
+.jm-code-manager-root #historyModal .modal-content{
+  width:min(1160px,96vw)!important;max-width:1160px!important;max-height:min(900px,92dvh)!important;
+  overflow:auto!important;border-radius:28px!important;border:1px solid rgba(214,170,77,.28)!important;
+  background:radial-gradient(circle at 90% 0,rgba(214,170,77,.10),transparent 28rem),linear-gradient(150deg,#15161a,#08090b 70%)!important;
+  box-shadow:0 40px 100px rgba(0,0,0,.62),inset 0 1px 0 rgba(255,255,255,.025)!important;color:var(--cm-text)!important
+}
+.jm-code-manager-root #dashboardModal .modal-header,
+.jm-code-manager-root #historyModal .modal-header{position:sticky!important;top:0!important;z-index:3!important;padding:22px 24px!important;background:rgba(11,12,15,.93)!important;backdrop-filter:blur(16px)!important;border-bottom:1px solid var(--cm-line)!important}
+.jm-code-manager-root .v75-modal-heading{display:flex!important;align-items:center!important;gap:14px!important}
+.jm-code-manager-root .v75-modal-icon{width:46px!important;height:46px!important;border-radius:15px!important;display:grid!important;place-items:center!important;background:linear-gradient(145deg,rgba(214,170,77,.20),rgba(197,16,29,.08))!important;border:1px solid rgba(214,170,77,.25)!important;color:var(--cm-gold-hi)!important}
+.jm-code-manager-root .v75-modal-heading small{display:block!important;color:var(--cm-gold)!important;font-weight:900!important;letter-spacing:.16em!important;font-size:.66rem!important}
+.jm-code-manager-root .v75-modal-heading h3{margin:2px 0 0!important;color:#fff3d6!important;font-size:clamp(1.22rem,2vw,1.75rem)!important}
+.jm-code-manager-root .v75-modal-heading p{margin:4px 0 0!important;color:var(--cm-muted)!important;font-size:.78rem!important}
+.jm-code-manager-root .modal-close{width:42px!important;height:42px!important;border-radius:14px!important;background:#0b0c0f!important;border:1px solid rgba(214,170,77,.26)!important;color:var(--cm-gold-hi)!important;font-size:1.45rem!important}
+.jm-code-manager-root .modal-close:hover{background:rgba(214,170,77,.11)!important;transform:translateY(-1px)!important}
+
+/* dashboard */
+.jm-code-manager-root #dashboardModal .dashboard-date-selector{padding:16px 22px!important;display:flex!important;gap:12px!important;align-items:center!important;justify-content:space-between!important;background:#0b0c0f!important;border-bottom:1px solid rgba(214,170,77,.12)!important}
+.jm-code-manager-root #dashboardModal .date-range-buttons{display:flex!important;flex-wrap:wrap!important;gap:8px!important}
+.jm-code-manager-root #dashboardModal .date-btn,
+.jm-code-manager-root #dashboardModal .custom-date-input{min-height:40px!important;border-radius:12px!important;border:1px solid rgba(214,170,77,.22)!important;background:#111216!important;color:var(--cm-text)!important;padding:0 14px!important;font-weight:800!important}
+.jm-code-manager-root #dashboardModal .date-btn.active{color:#171208!important;background:linear-gradient(135deg,#b77e18,#efd173)!important;border-color:#efd173!important;box-shadow:0 8px 22px rgba(214,170,77,.15)!important}
+.jm-code-manager-root #dashboardModal .dashboard-content{padding:20px 22px 24px!important;display:grid!important;grid-template-columns:minmax(0,1.55fr) minmax(300px,.75fr)!important;gap:18px!important;background:transparent!important}
+.jm-code-manager-root #dashboardModal .dashboard-summary{display:grid!important;grid-template-columns:repeat(3,minmax(0,1fr))!important;gap:10px!important;margin-bottom:14px!important}
+.jm-code-manager-root #dashboardModal .summary-card{min-height:108px!important;padding:16px!important;border-radius:18px!important;background:linear-gradient(145deg,#141519,#0c0d10)!important;border:1px solid rgba(214,170,77,.18)!important;display:flex!important;flex-direction:column!important;justify-content:space-between!important}
+.jm-code-manager-root #dashboardModal .summary-card::before{content:''!important;width:32px!important;height:4px!important;border-radius:99px!important;background:linear-gradient(90deg,var(--cm-gold),var(--cm-red))!important}
+.jm-code-manager-root #dashboardModal .summary-label{color:var(--cm-muted)!important;font-size:.72rem!important;font-weight:700!important}
+.jm-code-manager-root #dashboardModal .summary-value{color:var(--cm-gold-hi)!important;font-size:2rem!important;line-height:1!important;font-weight:900!important}
+.jm-code-manager-root #dashboardModal .dashboard-chart-container,
+.jm-code-manager-root #dashboardModal .dashboard-history-list{border-radius:20px!important;border:1px solid rgba(214,170,77,.17)!important;background:#0c0d10!important;padding:16px!important}
+.jm-code-manager-root #dashboardModal .dashboard-chart-container h4,
+.jm-code-manager-root #dashboardModal .dashboard-history-list h4{margin:0 0 12px!important;color:#fff0cf!important;font-size:.88rem!important;display:flex!important;align-items:center!important;gap:8px!important}
+.jm-code-manager-root #dashboardModal .charts-grid{display:grid!important;grid-template-columns:1.35fr .8fr!important;gap:12px!important}
+.jm-code-manager-root #dashboardModal .chart-box{height:280px!important;border-radius:15px!important;background:#08090b!important;border:1px solid rgba(214,170,77,.10)!important;padding:12px!important}
+.jm-code-manager-root #dashboardModal .dashboard-history-list{min-height:100%!important;display:flex!important;flex-direction:column!important}
+.jm-code-manager-root #dashboardModal .history-items{display:grid!important;gap:8px!important;max-height:520px!important;overflow:auto!important;padding-right:4px!important}
+.jm-code-manager-root #dashboardModal .dashboard-history-item{display:grid!important;grid-template-columns:minmax(0,1fr) auto!important;gap:6px 12px!important;padding:12px 13px!important;border-radius:14px!important;background:#111216!important;border:1px solid rgba(214,170,77,.13)!important;position:relative!important;overflow:hidden!important}
+.jm-code-manager-root #dashboardModal .dashboard-history-item::before{content:''!important;position:absolute!important;left:0!important;top:0!important;bottom:0!important;width:3px!important;background:var(--cm-gold)!important}
+.jm-code-manager-root #dashboardModal .dashboard-history-item.miss::before{background:var(--cm-red)!important}
+.jm-code-manager-root #dashboardModal .item-code{color:#fff0ce!important;font-weight:900!important;letter-spacing:.05em!important}
+.jm-code-manager-root #dashboardModal .status-dot{display:inline-flex!important;margin-left:6px!important;padding:3px 7px!important;border-radius:999px!important;background:rgba(214,170,77,.12)!important;color:var(--cm-gold-hi)!important;font-size:.58rem!important}
+.jm-code-manager-root #dashboardModal .dashboard-history-item.miss .status-dot{background:rgba(197,16,29,.12)!important;color:#ff8e96!important}
+.jm-code-manager-root #dashboardModal .item-prize{grid-column:1!important;color:var(--cm-muted)!important;font-size:.74rem!important}
+.jm-code-manager-root #dashboardModal .item-time{grid-row:1/3!important;grid-column:2!important;align-self:center!important;color:#c4bcae!important;font-size:.68rem!important;white-space:nowrap!important}
+
+/* history / audit modal */
+.jm-code-manager-root #historyModal .modal-code{margin:18px 22px 10px!important;padding:15px 18px!important;border-radius:18px!important;background:linear-gradient(145deg,#121317,#090a0c)!important;border:1px solid rgba(214,170,77,.22)!important;display:flex!important;justify-content:space-between!important;align-items:center!important}
+.jm-code-manager-root #historyModal .modal-code::before{content:'WHEEL CODE'!important;color:var(--cm-muted)!important;font-size:.62rem!important;font-weight:900!important;letter-spacing:.17em!important}
+.jm-code-manager-root #historyModal .modal-code .code{color:var(--cm-gold-hi)!important;font-size:clamp(1.2rem,4vw,2rem)!important;font-weight:900!important;letter-spacing:.16em!important}
+.jm-code-manager-root #historyModal .modal-stats{padding:0 22px 12px!important;display:grid!important;grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:10px!important}
+.jm-code-manager-root #historyModal .modal-stat{padding:14px 16px!important;border-radius:16px!important;background:#0d0e11!important;border:1px solid rgba(214,170,77,.14)!important}
+.jm-code-manager-root #historyModal .modal-stat .value{color:var(--cm-gold-hi)!important;font-size:1.65rem!important;font-weight:900!important}
+.jm-code-manager-root #historyModal .modal-stat .label{color:var(--cm-muted)!important;font-size:.69rem!important}
+.jm-code-manager-root #historyModal .v75-history-title{margin:0 22px!important;padding:14px 0 10px!important;border-top:1px solid rgba(214,170,77,.12)!important;display:flex!important;justify-content:space-between!important;align-items:end!important;gap:12px!important}
+.jm-code-manager-root #historyModal .v75-history-title small{color:var(--cm-gold)!important;letter-spacing:.14em!important;font-size:.6rem!important;font-weight:900!important}
+.jm-code-manager-root #historyModal .v75-history-title h4{margin:2px 0 0!important;color:#fff0d0!important;font-size:1rem!important}
+.jm-code-manager-root #historyModal .v75-history-title>span{font-size:.66rem!important;color:var(--cm-gold-hi)!important;border:1px solid rgba(214,170,77,.20)!important;background:rgba(214,170,77,.07)!important;padding:6px 9px!important;border-radius:999px!important}
+.jm-code-manager-root #historyModal .modal-history{margin:0 22px!important;display:grid!important;gap:8px!important;max-height:390px!important;overflow:auto!important;padding:2px 2px 6px!important}
+.jm-code-manager-root #historyModal .modal-history-item{display:grid!important;grid-template-columns:auto minmax(0,1fr) auto!important;align-items:center!important;gap:10px!important;padding:12px 13px!important;border-radius:14px!important;background:#111216!important;border:1px solid rgba(214,170,77,.13)!important}
+.jm-code-manager-root #historyModal .modal-history-item::before{content:attr(data-seq)!important;width:28px!important;height:28px!important;display:grid!important;place-items:center!important;border-radius:10px!important;background:rgba(214,170,77,.10)!important;color:var(--cm-gold-hi)!important;font-size:.66rem!important;font-weight:900!important}
+.jm-code-manager-root #historyModal .modal-history-item.miss::before{background:rgba(197,16,29,.10)!important;color:#ff8b94!important}
+.jm-code-manager-root #historyModal .modal-history-item .prize{display:flex!important;align-items:center!important;gap:9px!important;color:#f8edd7!important;font-weight:800!important}
+.jm-code-manager-root #historyModal .modal-history-item .dot{width:8px!important;height:8px!important;border-radius:50%!important;background:var(--cm-gold)!important;box-shadow:0 0 0 4px rgba(214,170,77,.08)!important}
+.jm-code-manager-root #historyModal .modal-history-item.miss .dot{background:var(--cm-red)!important;box-shadow:0 0 0 4px rgba(197,16,29,.08)!important}
+.jm-code-manager-root #historyModal .modal-history-item .time{color:var(--cm-muted)!important;font-size:.7rem!important;white-space:nowrap!important}
+.jm-code-manager-root #historyModal .no-history{padding:34px 18px!important;text-align:center!important;border-radius:16px!important;border:1px dashed rgba(214,170,77,.20)!important;color:var(--cm-muted)!important;background:#0a0b0d!important}
+.jm-code-manager-root #historyModal .modal-footer{margin:14px 22px 22px!important;padding:13px 15px!important;border-radius:16px!important;display:grid!important;grid-template-columns:repeat(3,minmax(0,1fr))!important;gap:8px!important;background:#090a0c!important;border:1px solid rgba(214,170,77,.12)!important;color:var(--cm-muted)!important;font-size:.68rem!important}
+.jm-code-manager-root #historyModal .modal-footer span{display:block!important;color:#f0dfbd!important;font-weight:800!important;margin-top:4px!important}
+
+/* buttons */
+.jm-code-manager-root .btn-dashboard,.jm-code-manager-root .btn-history-pill{border-radius:13px!important;border:1px solid rgba(214,170,77,.28)!important;background:linear-gradient(145deg,#17181c,#0d0e11)!important;color:var(--cm-gold-hi)!important;box-shadow:none!important}
+.jm-code-manager-root .btn-dashboard:hover,.jm-code-manager-root .btn-history-pill:hover{background:rgba(214,170,77,.11)!important;transform:translateY(-1px)!important}
+
+@media(max-width:900px){
+ .jm-code-manager-root #dashboardModal .dashboard-content{grid-template-columns:1fr!important}
+ .jm-code-manager-root #dashboardModal .charts-grid{grid-template-columns:1fr!important}
+ .jm-code-manager-root #dashboardModal .chart-box{height:230px!important}
+}
+@media(max-width:620px){
+ .jm-code-manager-root #dashboardModal,.jm-code-manager-root #historyModal{padding:0!important;align-items:flex-end!important}
+ .jm-code-manager-root #dashboardModal .modal-content,.jm-code-manager-root #historyModal .modal-content{width:100%!important;max-width:none!important;max-height:94dvh!important;border-radius:24px 24px 0 0!important;border-left:0!important;border-right:0!important;border-bottom:0!important}
+ .jm-code-manager-root #dashboardModal .dashboard-date-selector{align-items:stretch!important;flex-direction:column!important;padding:12px 14px!important}
+ .jm-code-manager-root #dashboardModal .date-range-buttons{display:grid!important;grid-template-columns:repeat(3,1fr)!important}
+ .jm-code-manager-root #dashboardModal .date-btn{padding:0 7px!important}
+ .jm-code-manager-root #dashboardModal .dashboard-content{padding:14px!important}
+ .jm-code-manager-root #dashboardModal .dashboard-summary{grid-template-columns:1fr!important}
+ .jm-code-manager-root #dashboardModal .summary-card{min-height:82px!important}
+ .jm-code-manager-root #historyModal .modal-code,.jm-code-manager-root #historyModal .modal-stats,.jm-code-manager-root #historyModal .v75-history-title,.jm-code-manager-root #historyModal .modal-history,.jm-code-manager-root #historyModal .modal-footer{margin-left:14px!important;margin-right:14px!important}
+ .jm-code-manager-root #historyModal .modal-footer{grid-template-columns:1fr!important}
+ .jm-code-manager-root #historyModal .modal-history-item{grid-template-columns:auto minmax(0,1fr)!important}
+ .jm-code-manager-root #historyModal .modal-history-item .time{grid-column:2!important;white-space:normal!important}
+}
+.jm-code-manager-root #dashboardModal .item-time{display:grid!important;gap:2px!important;text-align:right!important}
+.jm-code-manager-root #dashboardModal .item-time b{color:#eadab8!important;font-size:.7rem!important}.jm-code-manager-root #dashboardModal .item-time small{color:#7f796f!important;font-size:.58rem!important}
+.jm-code-manager-root #historyModal .v774-code-status{margin-left:auto!important;padding:7px 10px!important;border-radius:999px!important;background:rgba(214,170,77,.09)!important;border:1px solid rgba(214,170,77,.22)!important;color:var(--cm-gold-hi)!important;font-size:.64rem!important;font-weight:900!important;letter-spacing:.03em!important}
+.jm-code-manager-root #historyModal .v774-code-status[data-state="expired"],.jm-code-manager-root #historyModal .v774-code-status[data-state="empty"]{background:rgba(197,16,29,.09)!important;border-color:rgba(197,16,29,.24)!important;color:#ff9299!important}
+.jm-code-manager-root #dashboardModal .chart-box{position:relative!important}.jm-code-manager-root #dashboardModal .chart-box.is-empty::after{content:'ยังไม่มีข้อมูลการสุ่มในช่วงเวลานี้';position:absolute;inset:0;display:grid;place-items:center;text-align:center;padding:22px;color:var(--cm-muted);font-size:.75rem;background:radial-gradient(circle at 50% 45%,rgba(214,170,77,.06),transparent 9rem)}

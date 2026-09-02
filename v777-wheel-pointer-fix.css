@@ -1,0 +1,58 @@
+/* Rick Chee Shop V7.7.7 — Lucky Wheel pointer fix
+   Loaded LAST on purpose so dynamic theme colors cannot turn the triangle into a block. */
+.rcw-pointer{
+  position:absolute!important;
+  z-index:30!important;
+  top:0!important;
+  left:50%!important;
+  width:64px!important;
+  height:78px!important;
+  transform:translateX(-50%)!important;
+  pointer-events:none!important;
+  filter:drop-shadow(0 10px 12px rgba(0,0,0,.62))!important;
+}
+.rcw-pointer::before{
+  content:""!important;
+  position:absolute!important;
+  top:0!important;
+  left:50%!important;
+  width:42px!important;
+  height:42px!important;
+  transform:translateX(-50%)!important;
+  border-radius:50%!important;
+  border:2px solid color-mix(in srgb,var(--rc-brand-primary,#d6aa4d) 76%,#fff)!important;
+  background:radial-gradient(circle at 34% 26%,#fff4c5 0 8%,#efcf75 20%,var(--rc-brand-primary,#d6aa4d) 48%,#70450c 78%,#241707 100%)!important;
+  box-shadow:0 0 0 4px #0b0c0f,0 7px 16px rgba(0,0,0,.48),0 0 18px color-mix(in srgb,var(--rc-brand-primary,#d6aa4d) 24%,transparent)!important;
+}
+.rcw-pointer span{
+  position:absolute!important;
+  top:31px!important;
+  left:50%!important;
+  width:0!important;
+  height:0!important;
+  transform:translateX(-50%)!important;
+  border-style:solid!important;
+  border-width:0 19px 39px 19px!important;
+  border-color:transparent transparent var(--rc-brand-primary,#d6aa4d) transparent!important;
+  /* rotate 180deg so the triangle tip points down toward the wheel */
+  transform:translateX(-50%) rotate(180deg)!important;
+  filter:drop-shadow(0 -2px 0 #fff0b3) drop-shadow(0 5px 6px rgba(0,0,0,.5))!important;
+}
+.rcw-pointer span::after{
+  content:""!important;
+  position:absolute!important;
+  left:-11px!important;
+  top:6px!important;
+  width:0!important;
+  height:0!important;
+  border-style:solid!important;
+  border-width:0 11px 24px 11px!important;
+  border-color:transparent transparent #7d4d0d transparent!important;
+  opacity:.7!important;
+}
+@media(max-width:720px){
+  .rcw-pointer{width:54px!important;height:67px!important;top:-1px!important}
+  .rcw-pointer::before{width:35px!important;height:35px!important}
+  .rcw-pointer span{top:26px!important;border-width:0 16px 32px 16px!important}
+  .rcw-pointer span::after{left:-9px!important;top:5px!important;border-width:0 9px 20px 9px!important}
+}

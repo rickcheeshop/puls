@@ -1,0 +1,115 @@
+/* Rick Chee Shop V7.7.10 — remove boxed/white label backgrounds across admin + code manager */
+:root{
+  --v7710-surface:#0f1013;
+  --v7710-surface-2:#131418;
+  --v7710-text:#f6eddc;
+  --v7710-muted:#b7ab94;
+  --v7710-gold:#d6aa4d;
+  --v7710-gold-hi:#f3dc96;
+  --v7710-line:rgba(214,170,77,.18);
+  --v7710-line-strong:rgba(214,170,77,.32);
+  --v7710-ruby:rgba(169,14,25,.16);
+}
+
+/* Global chip/badge cleanup for admin surfaces */
+.admin-main-content :where(.badge,.chip,.pill,.status-chip,.status-badge,.tag,.admin-status-badge,.admin-detail-ready-badge,.admin-reset-request-title code,.admin-product-group-head-v75>b,.admin-product-meta-v75>span,.admin-product-meta-v75>span.has-detail,.admin-user-created-v63,.admin-role-control-v63,.admin-user-security-v63 .security-tile,.admin-user-metrics-v63>div,.admin-user-directory-head-v66 .admin-user-directory-tools>span),
+.admin-sidebar :where(.badge,.chip,.pill,.status-chip,.status-badge,.tag),
+.admin-auth-gate :where(.badge,.chip,.pill,.status-chip,.status-badge,.tag){
+  background:transparent!important;
+  color:var(--v7710-gold-hi)!important;
+  border:1px solid var(--v7710-line)!important;
+  box-shadow:none!important;
+  backdrop-filter:none!important;
+}
+
+/* Dashboard/stat counters in backend */
+.admin-main-content .admin-mini-stats>div,
+.admin-main-content .mini-stat,
+.admin-main-content .metric-card,
+.admin-main-content .summary-card,
+.admin-main-content .stats-grid>div,
+.admin-main-content .stat-tile,
+.admin-main-content .overview-stat,
+.admin-main-content .dashboard-stat{
+  background:transparent!important;
+  border:1px solid var(--v7710-line)!important;
+  color:var(--v7710-text)!important;
+  box-shadow:none!important;
+}
+.admin-main-content .admin-mini-stats span,
+.admin-main-content .mini-stat span,
+.admin-main-content .metric-card span,
+.admin-main-content .summary-card span,
+.admin-main-content .stats-grid>div span,
+.admin-main-content .stat-tile span,
+.admin-main-content .overview-stat span,
+.admin-main-content .dashboard-stat span{color:var(--v7710-muted)!important}
+.admin-main-content .admin-mini-stats b,
+.admin-main-content .mini-stat b,
+.admin-main-content .metric-card b,
+.admin-main-content .summary-card b,
+.admin-main-content .stats-grid>div b,
+.admin-main-content .stat-tile b,
+.admin-main-content .overview-stat b,
+.admin-main-content .dashboard-stat b{color:var(--v7710-gold-hi)!important}
+
+/* Product actions and utility outline buttons should stay themed */
+.admin-main-content .button-outline,
+.admin-main-content .button-secondary,
+.admin-main-content .admin-product-actions-v75 .admin-toggle-product-edit,
+.admin-main-content #refreshAdminUsersBtn{
+  background:rgba(12,12,15,.75)!important;
+  color:var(--v7710-gold-hi)!important;
+  border:1px solid var(--v7710-line)!important;
+  box-shadow:none!important;
+}
+.admin-main-content .button-outline:hover,
+.admin-main-content .button-secondary:hover,
+.admin-main-content .admin-product-actions-v75 .admin-toggle-product-edit:hover,
+.admin-main-content #refreshAdminUsersBtn:hover{
+  background:rgba(214,170,77,.10)!important;
+  border-color:var(--v7710-line-strong)!important;
+}
+.admin-main-content .admin-delete-product,
+.admin-main-content .button-danger,
+.admin-main-content .is-danger{
+  background:var(--v7710-ruby)!important;
+  border-color:rgba(210,29,42,.42)!important;
+  color:#f3b0b5!important;
+  box-shadow:none!important;
+}
+
+/* Code manager / wheel dashboard history area */
+.jm-code-manager-root :where(.badge,.chip,.pill,.status,[class*="badge"],[class*="status"]),
+.jm-code-manager-root :where(.summary-card,.stat-card,.modal-stat,.dashboard-summary>div,.history-summary>div,.search-count,.select-all-row,.code-sort-bar),
+.jm-code-manager-root :where(.btn-history-pill,.date-btn,.code-sort-btn){
+  background:transparent!important;
+  color:var(--v7710-gold-hi)!important;
+  border:1px solid var(--v7710-line)!important;
+  box-shadow:none!important;
+}
+.jm-code-manager-root :where(.summary-card,.stat-card,.modal-stat,.dashboard-summary>div,.history-summary>div) .number,
+.jm-code-manager-root :where(.summary-card,.stat-card,.modal-stat,.dashboard-summary>div,.history-summary>div) strong,
+.jm-code-manager-root :where(.summary-card,.stat-card,.modal-stat,.dashboard-summary>div,.history-summary>div) b{
+  color:var(--v7710-gold-hi)!important;
+}
+.jm-code-manager-root .date-btn.active,
+.jm-code-manager-root .btn-history-pill:hover,
+.jm-code-manager-root .code-sort-btn:hover,
+.jm-code-manager-root .date-btn:hover{
+  background:rgba(214,170,77,.10)!important;
+  border-color:var(--v7710-line-strong)!important;
+}
+
+/* Remove white autofill remnants */
+.admin-main-content input:-webkit-autofill,
+.admin-main-content input:-webkit-autofill:hover,
+.admin-main-content input:-webkit-autofill:focus,
+.admin-auth-gate input:-webkit-autofill,
+.admin-auth-gate input:-webkit-autofill:hover,
+.admin-auth-gate input:-webkit-autofill:focus{
+  -webkit-text-fill-color:var(--v7710-text)!important;
+  -webkit-box-shadow:0 0 0 1000px #08080a inset!important;
+  box-shadow:0 0 0 1000px #08080a inset!important;
+  caret-color:var(--v7710-text)!important;
+}

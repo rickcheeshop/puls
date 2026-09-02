@@ -1,0 +1,33 @@
+/* Rick Chee Shop V7.7.4 — Admin security / promotions / code manager polish */
+:root{--v774-gold:#d6aa4d;--v774-gold-hi:#f4d98b;--v774-red:#c5101d;--v774-bg:#050506;--v774-panel:#101115;--v774-panel2:#15161a;--v774-text:#f4ecdf;--v774-muted:#aaa39a;--v774-line:rgba(214,170,77,.2)}
+
+/* 2FA pending request alert shown after manager login */
+.admin-2fa-recovery-alert{width:100%;margin:0 0 18px;padding:14px 16px;display:grid;grid-template-columns:auto minmax(0,1fr) auto auto;align-items:center;gap:12px;border-radius:18px;border:1px solid rgba(214,170,77,.25);background:linear-gradient(135deg,rgba(214,170,77,.12),rgba(197,16,29,.045) 58%,#0c0d10);color:var(--v774-text);text-align:left;cursor:pointer;box-shadow:0 14px 34px rgba(0,0,0,.18)}
+.admin-2fa-recovery-alert.hidden{display:none!important}.admin-2fa-recovery-alert:hover{border-color:rgba(214,170,77,.42);transform:translateY(-1px)}
+.admin-2fa-recovery-alert-icon{width:44px;height:44px;border-radius:14px;display:grid;place-items:center;color:var(--v774-gold-hi);background:rgba(214,170,77,.10);border:1px solid rgba(214,170,77,.22)}
+.admin-2fa-recovery-alert-copy{display:grid}.admin-2fa-recovery-alert-copy small{color:var(--v774-gold);font-size:.6rem;font-weight:900;letter-spacing:.16em}.admin-2fa-recovery-alert-copy strong{font-size:.95rem}.admin-2fa-recovery-alert-copy em{font-style:normal;color:var(--v774-muted);font-size:.72rem;margin-top:2px}.admin-2fa-recovery-alert-count{min-width:34px;height:34px;padding:0 9px;border-radius:12px;display:grid;place-items:center;background:var(--v774-red);color:#fff;font-weight:900}.admin-2fa-recovery-alert-action{color:var(--v774-gold-hi);font-weight:800;font-size:.72rem;white-space:nowrap}
+
+/* Recovery center cards */
+.admin-reset-requests-panel,.admin-reset-request-row,.admin-reset-code-modal-card{background:linear-gradient(145deg,#121317,#090a0d)!important;border-color:var(--v774-line)!important;color:var(--v774-text)!important}
+.admin-reset-request-row{border:1px solid rgba(214,170,77,.16)!important;border-radius:17px!important;padding:14px!important}
+.admin-reset-request-row strong,.admin-reset-requests-head h3{color:#fff0cf!important}.admin-reset-request-row small,.admin-reset-requests-head p{color:var(--v774-muted)!important}
+.admin-reset-pending-badge{background:rgba(214,170,77,.09)!important;color:var(--v774-gold-hi)!important;border-color:rgba(214,170,77,.22)!important}
+.admin-reset-approve,.admin-reset-show-code{border-radius:12px!important;background:linear-gradient(135deg,#b67d18,#efcf72)!important;color:#171208!important;border:0!important;font-weight:900!important}.admin-reset-reject{border-radius:12px!important;background:rgba(197,16,29,.10)!important;color:#ff9097!important;border:1px solid rgba(197,16,29,.28)!important}
+.admin-reset-code-display{background:#08090b!important;border-color:rgba(214,170,77,.23)!important}.admin-reset-code-display code{color:var(--v774-gold-hi)!important}
+
+/* Admin Promotions: hard lock away legacy white/blue cards */
+#promoSection .admin-section-dashboard,#promoSection .admin-card,#promoSection .admin-promotion-card,#promoSection .promotion-card,#promoSection .admin-data-card,#promoSection .admin-table-row,#promoSection .promotion-row{background:linear-gradient(145deg,#121317,#090a0d)!important;color:var(--v774-text)!important;border-color:var(--v774-line)!important}
+#promoSection input,#promoSection textarea,#promoSection select{background:#08090b!important;color:var(--v774-text)!important;border:1px solid rgba(214,170,77,.23)!important;border-radius:13px!important}
+#promoSection h2,#promoSection h3,#promoSection strong{color:#fff0cf!important}#promoSection p,#promoSection small,#promoSection label,#promoSection .admin-field span{color:var(--v774-muted)!important}
+#promoSection .button-primary,#promoSection .promo-save,#promoSection .admin-save-button{background:linear-gradient(135deg,#b67d18,#efcf72)!important;color:#171208!important;border-color:#efcf72!important;border-radius:13px!important}
+#promoSection .button-outline,#promoSection .button-secondary{background:#0b0c0f!important;color:var(--v774-gold-hi)!important;border-color:rgba(214,170,77,.25)!important;border-radius:13px!important}
+
+/* Code manager embedded shell should never revert to blue/white */
+#codeSection .code-admin-card,#codeSection .code-manager-shell,#codeSection .jm-code-manager-root .card,#codeSection .jm-code-manager-root .stat-card,#codeSection .jm-code-manager-root .code-card{background:linear-gradient(145deg,#111216,#090a0c)!important;border-color:var(--v774-line)!important;color:var(--v774-text)!important}
+#codeSection .jm-code-manager-root input,#codeSection .jm-code-manager-root select{background:#08090b!important;color:var(--v774-text)!important;border-color:rgba(214,170,77,.22)!important;border-radius:13px!important}
+#codeSection .jm-code-manager-root .btn-primary{background:linear-gradient(135deg,#b67d18,#efcf72)!important;color:#171208!important;border:0!important;border-radius:14px!important}
+
+@media(max-width:720px){.admin-2fa-recovery-alert{grid-template-columns:auto 1fr auto}.admin-2fa-recovery-alert-action{display:none}.admin-2fa-recovery-alert-copy em{display:none}}
+.admin-reset-request-card{background:linear-gradient(145deg,#121317,#090a0d)!important;border:1px solid rgba(214,170,77,.16)!important;border-radius:17px!important;padding:14px!important;color:var(--v774-text)!important}
+.admin-reset-request-card.status-pending{box-shadow:inset 3px 0 0 #d6aa4d!important}.admin-reset-request-card.status-approved{box-shadow:inset 3px 0 0 #f4d98b!important}.admin-reset-request-card.status-rejected,.admin-reset-request-card.status-expired{box-shadow:inset 3px 0 0 #c5101d!important}
+.admin-reset-request-title strong{color:#fff0cf!important}.admin-reset-request-title code{color:var(--v774-gold-hi)!important;background:rgba(214,170,77,.08)!important;border:1px solid rgba(214,170,77,.15)!important}.admin-reset-request-meta{color:var(--v774-muted)!important}

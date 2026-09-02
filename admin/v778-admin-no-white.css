@@ -1,0 +1,203 @@
+/* Rick Chee Shop V7.7.8 — final dark-surface cleanup
+   Loaded LAST. Removes legacy pale/white wrappers without touching QR scan surfaces. */
+:root{
+  --v778-bg:#070708;
+  --v778-surface:#0d0d10;
+  --v778-surface-2:#111114;
+  --v778-surface-3:#151418;
+  --v778-gold:#d6aa4d;
+  --v778-gold-hi:#f1d57b;
+  --v778-red:#a90e19;
+  --v778-text:#f6eddc;
+  --v778-muted:#a49d92;
+  --v778-line:rgba(214,170,77,.18);
+  --v778-line-strong:rgba(214,170,77,.32);
+}
+
+/* Product editor — remove the pale boxes shown behind every field. */
+#productSection .admin-product-editor-panel-v75,
+#productSection .admin-edit-panel{
+  background:linear-gradient(180deg,#0b0b0e,#08080a)!important;
+  border-color:var(--v778-line)!important;
+}
+#productSection .admin-product-editor-panel-v75::before{
+  background:rgba(214,170,77,.08)!important;
+  border:1px solid var(--v778-line)!important;
+  color:var(--v778-gold-hi)!important;
+}
+#productSection .admin-product-editor-section-v75{
+  background:linear-gradient(150deg,#121216,#0c0c0f)!important;
+  border:1px solid var(--v778-line)!important;
+  box-shadow:none!important;
+}
+#productSection .admin-editor-section-head-v75{
+  border-bottom-color:var(--v778-line)!important;
+}
+#productSection .admin-editor-section-head-v75>span{
+  background:rgba(214,170,77,.10)!important;
+  color:var(--v778-gold-hi)!important;
+  border:1px solid var(--v778-line)!important;
+}
+
+/* The legacy .field-row had a big white rounded panel. Flatten it completely. */
+#productSection .admin-product-fields .field-row,
+#productSection .admin-product-image-fields-v75 .field-row,
+#productSection .admin-product-fields-v75 .field-row{
+  background:transparent!important;
+  border:0!important;
+  border-radius:0!important;
+  padding:0!important;
+  box-shadow:none!important;
+}
+#productSection .admin-product-fields .field-row:focus-within,
+#productSection .admin-product-image-fields-v75 .field-row:focus-within{
+  border:0!important;
+  box-shadow:none!important;
+}
+#productSection .admin-product-fields-v75 label,
+#productSection .admin-product-image-fields-v75 label{
+  color:var(--v778-muted)!important;
+}
+#productSection .admin-product-fields-v75 input,
+#productSection .admin-product-fields-v75 select,
+#productSection .admin-product-fields-v75 textarea,
+#productSection .admin-product-image-fields-v75 input{
+  background:#08080a!important;
+  color:var(--v778-text)!important;
+  border:1px solid var(--v778-line)!important;
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.015)!important;
+}
+#productSection .admin-product-fields-v75 input:focus,
+#productSection .admin-product-fields-v75 select:focus,
+#productSection .admin-product-fields-v75 textarea:focus,
+#productSection .admin-product-image-fields-v75 input:focus{
+  background:#09090c!important;
+  border-color:var(--v778-gold)!important;
+  box-shadow:0 0 0 3px rgba(214,170,77,.10)!important;
+}
+#productSection .admin-product-preview-editor-v75{
+  background:#08080a!important;
+  border:1px solid var(--v778-line)!important;
+}
+#productSection .admin-product-image-fields-v75 .file-input-button>span{
+  background:#101014!important;
+  color:var(--v778-gold-hi)!important;
+  border:1px solid var(--v778-line)!important;
+}
+#productSection .admin-product-image-fields-v75 .file-input-button>span:hover{
+  background:rgba(214,170,77,.10)!important;
+  border-color:var(--v778-line-strong)!important;
+}
+#productSection .admin-product-savebar-v75{
+  border-top-color:var(--v778-line)!important;
+}
+#productSection .admin-product-savebar-v75>span,
+#productSection .admin-field-hint{
+  color:var(--v778-muted)!important;
+}
+
+/* Product list summary: remove remaining blue/pale chips and surfaces. */
+#productSection .admin-product-group-head-v75>b,
+#productSection .admin-product-meta-v75>span,
+#productSection .admin-product-meta-v75>span.has-detail,
+#productSection .admin-product-actions-v75 .admin-toggle-product-edit{
+  background:#101014!important;
+  color:var(--v778-gold-hi)!important;
+  border:1px solid var(--v778-line)!important;
+}
+#productSection .admin-product-actions-v75 .admin-toggle-product-edit:hover{
+  background:rgba(214,170,77,.12)!important;
+  border-color:var(--v778-line-strong)!important;
+}
+#productSection .admin-product-thumb-v75{
+  background:#09090b!important;
+  border-color:var(--v778-line)!important;
+}
+#productSection .admin-product-price-v75{
+  border-left-color:var(--v778-line)!important;
+}
+
+/* Reusable admin forms/cards — prevent old white/blue styles from resurfacing. */
+.admin-main-content .admin-card,
+.admin-main-content .admin-data-card,
+.admin-main-content .admin-management-card,
+.admin-main-content .admin-section-note,
+.admin-main-content .admin-mini-stats>div,
+.admin-main-content .admin-section-icon,
+.admin-main-content .admin-empty-state,
+.admin-main-content .empty-state,
+.admin-main-content .review-edit-panel,
+.admin-main-content .admin-edit-panel{
+  background:linear-gradient(150deg,#121216,#0b0b0e)!important;
+  color:var(--v778-text)!important;
+  border-color:var(--v778-line)!important;
+  box-shadow:none!important;
+}
+.admin-main-content .admin-section-icon{
+  color:var(--v778-gold-hi)!important;
+}
+.admin-main-content .admin-mini-stats span,
+.admin-main-content .admin-section-note,
+.admin-main-content .admin-empty-state,
+.admin-main-content .empty-state{
+  color:var(--v778-muted)!important;
+}
+.admin-main-content .admin-mini-stats b{
+  color:var(--v778-gold-hi)!important;
+}
+
+/* Flatten white field containers in reviews, promotions and movie editor too. */
+.admin-main-content .admin-review-fields .field-row,
+.admin-main-content .admin-movie-fields .field-row,
+.admin-main-content .admin-promotion-fields .field-row,
+.admin-main-content .admin-edit-grid .field-row{
+  background:transparent!important;
+  border:0!important;
+  padding:0!important;
+  box-shadow:none!important;
+}
+.admin-main-content .admin-movie-fields input,
+.admin-main-content .admin-movie-fields select,
+.admin-main-content .admin-movie-fields textarea,
+.admin-main-content .admin-review-fields input,
+.admin-main-content .admin-review-fields select,
+.admin-main-content .admin-review-fields textarea{
+  background:#08080a!important;
+  color:var(--v778-text)!important;
+  border:1px solid var(--v778-line)!important;
+}
+
+/* File upload controls used by multiple admin sections. */
+.admin-main-content .file-input-button,
+.admin-main-content .file-input-button>span{
+  background:#101014!important;
+  color:var(--v778-gold-hi)!important;
+  border-color:var(--v778-line)!important;
+}
+
+/* Keep destructive actions red, never pink/white. */
+.admin-main-content .button-danger,
+.admin-main-content .admin-delete-product,
+.admin-main-content .is-danger{
+  background:rgba(169,14,25,.17)!important;
+  color:#f3b0b5!important;
+  border-color:rgba(210,29,42,.42)!important;
+}
+
+/* Browser native autofill can inject pale backgrounds. */
+.admin-main-content input:-webkit-autofill,
+.admin-main-content input:-webkit-autofill:hover,
+.admin-main-content input:-webkit-autofill:focus,
+.admin-auth-gate input:-webkit-autofill,
+.admin-auth-gate input:-webkit-autofill:hover,
+.admin-auth-gate input:-webkit-autofill:focus{
+  -webkit-text-fill-color:var(--v778-text)!important;
+  -webkit-box-shadow:0 0 0 1000px #08080a inset!important;
+  box-shadow:0 0 0 1000px #08080a inset!important;
+  caret-color:var(--v778-text)!important;
+}
+
+@media(max-width:760px){
+  #productSection .admin-product-editor-section-v75{padding:13px!important}
+  #productSection .admin-product-editor-panel-v75{padding:11px!important}
+}

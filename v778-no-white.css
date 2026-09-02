@@ -1,0 +1,55 @@
+/* Rick Chee Shop V7.7.8 — storefront dark-surface finalizer.
+   QR scan areas intentionally stay light for scan reliability. */
+:root{
+  --v778-bg:#070708;
+  --v778-surface:#0d0d10;
+  --v778-surface-2:#111114;
+  --v778-text:#f6eddc;
+  --v778-muted:#a49d92;
+  --v778-gold:#d6aa4d;
+  --v778-gold-hi:#f1d57b;
+  --v778-red:#a90e19;
+  --v778-line:rgba(214,170,77,.18);
+}
+
+/* Final guard against old pale cards resurfacing on customer-facing pages. */
+.product-card,.product-card-v73,.product-card-v74,.product-card-v75,
+.product-detail-modal,.product-detail-card,.product-detail-info-box,.product-detail-media,
+.review-card,.review-card-item,.review-form-card,.review-list-card,.review-overview-card,
+.promotion-card,.promotion-overview-card,.promotion-showcase,.promotion-page-empty,
+.my-order-card,.my-orders-summary-card,.my-orders-device-note,
+.cart-drawer,.cart-header,.cart-item,.cart-drawer-footer,.cart-summary,
+.checkout-modal,.checkout-card,.checkout-price-summary,.checkout-final-summary,.checkout-order-receipt,.payment-detail-panel,
+.movie-card,.movie-detail-card,.faq-item,.empty-state,.no-reviews{
+  background:linear-gradient(150deg,#131216,#0a0a0d)!important;
+  color:var(--v778-text)!important;
+  border-color:var(--v778-line)!important;
+  box-shadow:none!important;
+}
+
+/* Customer inputs should stay dark. */
+input:not([type="color"]),select,textarea,
+.discount-entry-row input,.review-form input,.review-form textarea,.review-form select{
+  background:#08080a!important;
+  color:var(--v778-text)!important;
+  border-color:var(--v778-line)!important;
+}
+input:not([type="color"]):focus,select:focus,textarea:focus{
+  background:#09090c!important;
+  border-color:var(--v778-gold)!important;
+  box-shadow:0 0 0 3px rgba(214,170,77,.10)!important;
+}
+
+/* Quantity controls / status chips / action chips: no white tile behind them. */
+.quantity-controls,.review-page-indicator,.product-filter-pill,.movie-page-counts>span,
+.promotion-status-badge,.promotion-list-heading b,.line-id{
+  background:#101014!important;
+  color:var(--v778-gold-hi)!important;
+  border-color:var(--v778-line)!important;
+}
+
+/* QR needs a clean light quiet zone; this is intentionally the only bright utility surface. */
+.payment-qr-box,#qrcode{
+  background:#fffaf0!important;
+  border-color:#fffaf0!important;
+}

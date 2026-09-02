@@ -1,0 +1,13 @@
+{
+  "name": "rick-chee-shop-v7-firebase-spark-github",
+  "private": true,
+  "scripts": {
+    "firebase:login": "firebase login",
+    "firebase:use": "firebase use --add",
+    "firebase:deploy": "firebase deploy --only firestore",
+    "firebase:deploy:rules": "firebase deploy --only firestore:rules"
+  },
+  "devDependencies": {
+    "firebase-tools": "^14.0.0"
+  }
+}

@@ -1,0 +1,126 @@
+/* Rick Chee Shop V7.7.9 — flatten remaining boxed labels/chips in admin product UI */
+:root{
+  --v779-line: rgba(214,170,77,.18);
+  --v779-line-strong: rgba(214,170,77,.32);
+  --v779-text: #f6eddc;
+  --v779-muted: #b5ab9a;
+  --v779-gold: #d6aa4d;
+  --v779-gold-hi: #f1d57b;
+  --v779-surface: rgba(10,10,12,.72);
+}
+
+/* Remove pale/white card fills behind mini stats. Keep clean text with subtle outline only. */
+#productSection .admin-mini-stats,
+#reviewSection .admin-mini-stats,
+#promoSection .admin-mini-stats,
+#movieSection .admin-mini-stats,
+#discountSection .admin-mini-stats,
+#ordersSection .admin-mini-stats,
+#adminAuditSection .admin-mini-stats{
+  gap: 10px !important;
+}
+
+#productSection .admin-mini-stats > div,
+#reviewSection .admin-mini-stats > div,
+#promoSection .admin-mini-stats > div,
+#movieSection .admin-mini-stats > div,
+#discountSection .admin-mini-stats > div,
+#ordersSection .admin-mini-stats > div,
+#adminAuditSection .admin-mini-stats > div{
+  background: transparent !important;
+  box-shadow: none !important;
+  border: 1px solid var(--v779-line) !important;
+  backdrop-filter: none !important;
+}
+
+#productSection .admin-mini-stats span,
+#reviewSection .admin-mini-stats span,
+#promoSection .admin-mini-stats span,
+#movieSection .admin-mini-stats span,
+#discountSection .admin-mini-stats span,
+#ordersSection .admin-mini-stats span,
+#adminAuditSection .admin-mini-stats span{
+  color: var(--v779-muted) !important;
+}
+
+#productSection .admin-mini-stats b,
+#reviewSection .admin-mini-stats b,
+#promoSection .admin-mini-stats b,
+#movieSection .admin-mini-stats b,
+#discountSection .admin-mini-stats b,
+#ordersSection .admin-mini-stats b,
+#adminAuditSection .admin-mini-stats b{
+  color: var(--v779-gold-hi) !important;
+}
+
+/* Product group count badge on the right side */
+#productSection .admin-product-group-head-v75 > b{
+  background: transparent !important;
+  color: var(--v779-gold-hi) !important;
+  border: 1px solid var(--v779-line) !important;
+  box-shadow: none !important;
+}
+
+/* Product metadata chips under title: remove filled boxes */
+#productSection .admin-product-meta-v75 > span,
+#productSection .admin-product-meta-v75 > span.has-detail,
+#productSection .admin-product-title-v75 .admin-status-badge,
+#productSection .admin-detail-ready-badge,
+#productSection .admin-detail-ready-badge.is-empty{
+  background: transparent !important;
+  color: var(--v779-gold-hi) !important;
+  border: 1px solid var(--v779-line) !important;
+  box-shadow: none !important;
+}
+
+/* Make the add/refresh buttons fit the unified dark premium theme */
+#productSection .admin-card-header .button,
+#productSection .admin-card-header .button-primary,
+#productSection .admin-card-header .button-outline,
+#productSection .admin-card-header .button-secondary{
+  border-radius: 14px !important;
+  box-shadow: none !important;
+}
+#productSection .admin-card-header .button-primary{
+  background: linear-gradient(135deg,#9a6d1f,#d6aa4d) !important;
+  border: 1px solid rgba(214,170,77,.24) !important;
+  color: #120d04 !important;
+}
+#productSection .admin-card-header .button-primary:hover{
+  background: linear-gradient(135deg,#b9852d,#f1d57b) !important;
+}
+#productSection .admin-card-header .button-outline,
+#productSection .admin-card-header .button-secondary{
+  background: rgba(12,12,15,.75) !important;
+  color: var(--v779-gold-hi) !important;
+  border: 1px solid var(--v779-line) !important;
+}
+#productSection .admin-card-header .button-outline:hover,
+#productSection .admin-card-header .button-secondary:hover{
+  background: rgba(214,170,77,.10) !important;
+  border-color: var(--v779-line-strong) !important;
+}
+
+/* Ensure product cards remain clean without white leftovers */
+#productSection .admin-product-summary-v75,
+#productSection .admin-product-card-v75,
+#productSection .admin-product-group-v75,
+#productSection .admin-management-card{
+  box-shadow: none !important;
+}
+
+/* On small screens keep stat cards narrower without hard boxed feel */
+@media (max-width: 820px){
+  #productSection .admin-mini-stats,
+  #reviewSection .admin-mini-stats,
+  #promoSection .admin-mini-stats,
+  #movieSection .admin-mini-stats,
+  #discountSection .admin-mini-stats,
+  #ordersSection .admin-mini-stats,
+  #adminAuditSection .admin-mini-stats{
+    display:grid !important;
+    grid-template-columns:repeat(3,minmax(0,1fr)) !important;
+  }
+  #promoSection .admin-mini-stats,
+  #movieSection .admin-mini-stats{grid-template-columns:repeat(2,minmax(0,1fr)) !important;}
+}

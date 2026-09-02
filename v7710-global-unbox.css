@@ -1,0 +1,124 @@
+/* Rick Chee Shop V7.7.10 — remove boxed/white label backgrounds across storefront */
+:root{
+  --v7710-surface:#0f1013;
+  --v7710-surface-2:#101115;
+  --v7710-text:#f6eddc;
+  --v7710-muted:#b7ab94;
+  --v7710-gold:#d6aa4d;
+  --v7710-gold-hi:#f3dc96;
+  --v7710-line:rgba(214,170,77,.18);
+  --v7710-line-strong:rgba(214,170,77,.32);
+  --v7710-ruby:rgba(169,14,25,.16);
+}
+
+/* Home / overview chips that still looked milky */
+.home-status-card,
+.home-status-card .feature-card{
+  background:linear-gradient(145deg,rgba(16,16,19,.86),rgba(10,10,13,.86))!important;
+  border-color:var(--v7710-line)!important;
+  box-shadow:none!important;
+}
+.home-status-card .feature-card i{
+  background:transparent!important;
+  border:1px solid var(--v7710-line)!important;
+  color:var(--v7710-gold-hi)!important;
+}
+.home-status-card .feature-card small{color:var(--v7710-muted)!important}
+
+/* Remove boxed strip behind category pills / small utility labels */
+.product-filter-pills,
+.promotion-banner-meta,
+.promotion-featured-meta,
+.movie-page-counts,
+.review-page-tools,
+.review-tools,
+.product-meta-row,
+.product-quick-tags,
+.product-tags,
+.promotion-featured-badges{
+  background:transparent!important;
+  box-shadow:none!important;
+}
+
+/* Unified premium pills/badges without white tiles */
+.user-badge,
+.promotion-tag,
+.product-status,
+.review-card-status,
+.review-local-badge,
+.wheel-live-badge,
+.cart-item-badge,
+.promotion-status-badge,
+.promotion-featured-card .promotion-status-badge,
+.movie-rank-badge,
+.movie-coming-badge,
+.movie-store-pick-tag,
+.product-filter-pill,
+.quantity-controls,
+.review-page-indicator,
+.promotion-list-heading b,
+.line-id,
+.movie-page-counts>span,
+.maintenance-status-pill,
+.my-order-status,
+.order-status,
+.product-badge,
+.page-kicker,
+.section-kicker,
+.hero-badge,
+.summary-pill,
+.summary-badge{
+  background:transparent!important;
+  color:var(--v7710-gold-hi)!important;
+  border:1px solid var(--v7710-line)!important;
+  box-shadow:none!important;
+  backdrop-filter:none!important;
+}
+
+/* Keep active selections visible but still not boxed in white/blue */
+.product-filter-pill:hover,
+.product-filter-pill.is-active,
+.quantity-controls:hover,
+.review-page-indicator:hover,
+.promotion-status-badge:hover,
+.movie-page-counts>span:hover{
+  background:rgba(214,170,77,.10)!important;
+  border-color:var(--v7710-line-strong)!important;
+  color:var(--v7710-gold-hi)!important;
+}
+
+/* Tone down any leftover bright stat mini cards on the customer side */
+[class*="summary-card"] .mini-stat,
+[class*="summary-card"] .stat-item,
+[class*="summary-card"] .status-item,
+.customer-mini-stats > div,
+.order-summary-stats > div{
+  background:transparent!important;
+  border:1px solid var(--v7710-line)!important;
+  box-shadow:none!important;
+  color:var(--v7710-text)!important;
+}
+
+/* Decorative placeholders should stay dark too */
+.promotion-placeholder-art,
+.movie-placeholder-art,
+.empty-thumb,
+.product-placeholder,
+.no-image,
+.no-poster{
+  background:linear-gradient(145deg,rgba(18,18,22,.88),rgba(10,10,13,.88))!important;
+  border-color:var(--v7710-line)!important;
+  color:var(--v7710-gold-hi)!important;
+}
+
+/* Remove accidental white autofill patches */
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+textarea:-webkit-autofill,
+select:-webkit-autofill{
+  -webkit-text-fill-color:var(--v7710-text)!important;
+  -webkit-box-shadow:0 0 0 1000px #08080a inset!important;
+  box-shadow:0 0 0 1000px #08080a inset!important;
+  caret-color:var(--v7710-text)!important;
+}

@@ -1,0 +1,142 @@
+// Rick Chee Shop V7.7 — Spark direct Firestore rules
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    function signedIn() { return request.auth != null; }
+    function rootEmail() {
+      return signedIn() && request.auth.token.email != null && request.auth.token.email in [
+        'admin@rickcheeshop.example',
+        'adminbank@rickcheeshop.example'
+      ];
+    }
+    function hasAccessDoc() {
+      return signedIn() && exists(/databases/$(database)/documents/adminAccess/$(request.auth.uid));
+    }
+    function accessDoc() {
+      return get(/databases/$(database)/documents/adminAccess/$(request.auth.uid)).data;
+    }
+    function isAdmin() {
+      return rootEmail() || (hasAccessDoc() && accessDoc().active == true);
+    }
+    function isManager() {
+      return rootEmail() || (hasAccessDoc() && accessDoc().active == true && accessDoc().role == 'manager');
+    }
+
+
+    // Per-admin 2-step Authenticator profile.
+    // A signed-in user may enroll a fresh TOTP profile, but cannot disable/replace an active one
+    // unless a manager-approved 8-digit recovery request is verified in the same atomic batch.
+    match /adminSecurity/{uid} {
+      allow read: if signedIn() && (request.auth.uid == uid || isManager());
+      allow create: if isManager() || (signedIn() && request.auth.uid == uid
+        && request.resource.data.totpEnabled == true
+        && request.resource.data.totpSecret is string
+        && request.resource.data.totpSecret.size() >= 16);
+      allow update: if isManager() || (signedIn() && request.auth.uid == uid
+        && resource.data.totpEnabled != true
+        && request.resource.data.totpEnabled == true
+        && request.resource.data.totpSecret is string
+        && request.resource.data.totpSecret.size() >= 16);
+      allow delete: if isManager() || (signedIn() && request.auth.uid == uid
+        && exists(/databases/$(database)/documents/twoFactorResetRequests/$(uid))
+        && getAfter(/databases/$(database)/documents/twoFactorResetRequests/$(uid)).data.status == 'used'
+        && exists(/databases/$(database)/documents/twoFactorResetSecrets/$(uid))
+        && get(/databases/$(database)/documents/twoFactorResetSecrets/$(uid)).data.code == getAfter(/databases/$(database)/documents/twoFactorResetRequests/$(uid)).data.submittedCode
+        && request.time < get(/databases/$(database)/documents/twoFactorResetSecrets/$(uid)).data.expiresAtTs);
+    }
+
+    // V7.7.4 2FA recovery: requester can create/read only their own request.
+    // The 8-digit recovery code lives in a manager-only document and is checked inside Security Rules.
+    match /twoFactorResetRequests/{uid} {
+      allow get: if signedIn() && (request.auth.uid == uid || isManager());
+      allow list: if isManager();
+      allow create: if signedIn() && request.auth.uid == uid
+        && request.resource.data.uid == uid
+        && request.resource.data.status == 'pending'
+        && request.resource.data.requestId is string;
+      allow update: if isManager() || (signedIn() && request.auth.uid == uid && (
+        (resource.data.status == 'approved'
+          && request.resource.data.status == 'used'
+          && request.resource.data.uid == uid
+          && request.resource.data.diff(resource.data).affectedKeys().hasOnly(['status','submittedCode','usedAt'])
+          && exists(/databases/$(database)/documents/twoFactorResetSecrets/$(uid))
+          && get(/databases/$(database)/documents/twoFactorResetSecrets/$(uid)).data.requestId == resource.data.requestId
+          && get(/databases/$(database)/documents/twoFactorResetSecrets/$(uid)).data.code == request.resource.data.submittedCode
+          && request.time < get(/databases/$(database)/documents/twoFactorResetSecrets/$(uid)).data.expiresAtTs)
+        || ((resource.data.status == 'used' || resource.data.status == 'rejected')
+          && request.resource.data.status == 'pending'
+          && request.resource.data.uid == uid
+          && request.resource.data.requestId is string)
+      ));
+      allow delete: if isManager();
+    }
+    match /twoFactorResetSecrets/{uid} {
+      allow read, create, update: if isManager();
+      allow delete: if isManager() || (signedIn() && request.auth.uid == uid
+        && exists(/databases/$(database)/documents/twoFactorResetRequests/$(uid))
+        && getAfter(/databases/$(database)/documents/twoFactorResetRequests/$(uid)).data.status == 'used'
+        && resource.data.code == getAfter(/databases/$(database)/documents/twoFactorResetRequests/$(uid)).data.submittedCode
+        && request.time < resource.data.expiresAtTs);
+    }
+
+    // Dynamic manager directory for Spark (no Cloud Functions required).
+    match /adminAccess/{uid} {
+      allow read: if isAdmin();
+      allow create, update, delete: if isManager();
+    }
+
+    match /products/{id} { allow read: if true; allow create, update, delete: if isAdmin(); }
+    match /reviews/{id} {
+      allow read: if true;
+      allow create: if request.resource.data.keys().hasOnly(['id','name','rating','comment','displayDate','imageUrl','createdAt'])
+        && request.resource.data.name is string && request.resource.data.name.size() >= 1 && request.resource.data.name.size() <= 120
+        && request.resource.data.comment is string && request.resource.data.comment.size() >= 1 && request.resource.data.comment.size() <= 4000
+        && request.resource.data.rating >= 1 && request.resource.data.rating <= 5;
+      allow update, delete: if isAdmin();
+    }
+    match /promotions/{id} { allow read: if true; allow create, update, delete: if isAdmin(); }
+    match /discounts/{id} { allow read: if true; allow create, update, delete: if isAdmin(); }
+    match /storeSettings/{id} { allow read: if true; allow create, update, delete: if isAdmin(); }
+    match /adminRecords/{id} { allow read, write: if isAdmin(); }
+    match /orders/{id} {
+      allow create: if request.resource.data.orderNo is string && request.resource.data.clientId is string
+        && request.resource.data.cancelToken is string && request.resource.data.items is list
+        && request.resource.data.items.size() > 0 && request.resource.data.items.size() <= 50 && request.resource.data.total >= 0;
+      allow read, delete: if isAdmin();
+      allow update: if isAdmin() || (
+        request.resource.data.diff(resource.data).affectedKeys().hasOnly(['status','canceledAt','cancelProof'])
+        && resource.data.status == 'confirmed' && request.resource.data.status == 'canceled'
+        && request.resource.data.cancelProof == resource.data.cancelToken
+      );
+    }
+    match /discountUsages/{id} {
+      allow create: if request.resource.data.code is string && request.resource.data.clientIdHash is string && request.resource.data.uses == 1;
+      allow get: if true; allow list: if isAdmin();
+      allow update: if request.resource.data.diff(resource.data).affectedKeys().hasOnly(['uses','updatedAt']) && request.resource.data.uses == resource.data.uses + 1;
+      allow delete: if isAdmin();
+    }
+    match /settings/{id} { allow read: if id == 'maintenanceMode' || id == 'bootstrapState'; allow create, update, delete: if isAdmin(); }
+    match /wheelCodes/{code} {
+      allow get: if true;
+      allow list: if isAdmin();
+      allow create: if isAdmin();
+      // V7.7: wheel history is audit data. Client-side hard delete is disabled.
+      allow delete: if false;
+      allow update: if (
+        isAdmin()
+        && (
+          !(resource.data.history is list)
+          || (request.resource.data.history is list && request.resource.data.history.size() >= resource.data.history.size())
+        )
+      ) || (
+        request.resource.data.diff(resource.data).affectedKeys().hasOnly(['spins','history','firstUsedAt','lastUsedAt'])
+        && resource.data.deletedAt == null && request.resource.data.spins == resource.data.spins - 1
+        && request.resource.data.spins >= 0 && request.resource.data.history is list && resource.data.history is list
+        && ((resource.data.history.size() < 100 && request.resource.data.history.size() == resource.data.history.size() + 1)
+          || (resource.data.history.size() >= 100 && request.resource.data.history.size() == 100))
+      );
+    }
+    match /wheelResults/{id} { allow read, write: if isAdmin(); }
+    match /{document=**} { allow read, write: if false; }
+  }
+}
